@@ -9,7 +9,7 @@ Installation: <https://lambda.informatik.uni-tuebingen.de/eagerwiki/doku.php?id=
 
 Issues: <https://github.com/apeltzer/EAGER-GUI/issues>
 
-Tools that we contributed ourselves are all (same as the EAGER Pipeline) available under a GPLv3 licence on GitHub:
+Tools that we contributed ourselves are all (same as the EAGER Pipeline) available under a GPLv3 license on GitHub:
 
 - [EAGER-CLI](https://github.com/apeltzer/EAGER-CLI)
 - [EAGER-GUI](https://github.com/apeltzer/EAGER-GUI)
