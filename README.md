@@ -9,3 +9,15 @@ Installation: <https://lambda.informatik.uni-tuebingen.de/eagerwiki/doku.php?id=
 
 Issues: <https://github.com/apeltzer/EAGER-GUI/issues>
 
+Tools that we contributed ourselves are all (same as the EAGER Pipeline) available under a GPLv3 licence on GitHub:
+
+VCF2Genome: https://github.com/apeltzer/VCF2Genome
+MTNucRatioCalculator: https://github.com/apeltzer/MTNucRatioCalculator
+MergedReadExtractor: https://github.com/apeltzer/MergedReadExtractor
+CircularMapper: https://github.com/apeltzer/CircularMapper
+DeDup: https://github.com/apeltzer/DeDup
+ClipAndMerge: https://github.com/apeltzer/ClipAndMerge
+EAGER-lib: https://github.com/apeltzer/EAGER-lib
+EAGER-CLI: https://github.com/apeltzer/EAGER-CLI
+EAGER-GUI: https://github.com/apeltzer/EAGER-GUI
+
