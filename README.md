@@ -11,13 +11,16 @@ Issues: <https://github.com/apeltzer/EAGER-GUI/issues>
 
 Tools that we contributed ourselves are all (same as the EAGER Pipeline) available under a GPLv3 licence on GitHub:
 
-VCF2Genome: apeltzer/VCF2Genome
-MTNucRatioCalculator: https://github.com/apeltzer/MTNucRatioCalculator
-MergedReadExtractor: https://github.com/apeltzer/MergedReadExtractor
-CircularMapper: https://github.com/apeltzer/CircularMapper
-DeDup: https://github.com/apeltzer/DeDup
-ClipAndMerge: https://github.com/apeltzer/ClipAndMerge
-EAGER-lib: https://github.com/apeltzer/EAGER-lib
-EAGER-CLI: https://github.com/apeltzer/EAGER-CLI
-EAGER-GUI: https://github.com/apeltzer/EAGER-GUI
+[EAGER-CLI](apeltzer/EAGER-CLI)
+[EAGER-GUI](apeltzer/EAGER-GUI)
+[EAGER-lib](apeltzer/EAGERlib)
+[ClipAndMerge](apeltzer/ClipAndMerge)
+[CircularMapper](apeltzer/CircularMapper)
+[DeDup](apeltzer/DeDup)
+[VCF2Genome](apeltzer/VCF2Genome)
+[MTNucRatioCalculator](apeltzer/MTNucRatioCalculator)
+[MergedReadExtractor](apeltzer/MergedReadExtractor)
+
+
+
 
