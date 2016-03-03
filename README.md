@@ -21,6 +21,8 @@ Tools that we contributed ourselves are all (same as the EAGER Pipeline) availab
 - [MTNucRatioCalculator](https://github.com/apeltzer/MTNucRatioCalculator)
 - [MergedReadExtractor](https://github.com/apeltzer/MergedReadExtractor)
 
+Contact me via GitHub or via e-Mail <alexander.peltzer@uni-tuebingen.de> for questions. 
+
 
 
 
