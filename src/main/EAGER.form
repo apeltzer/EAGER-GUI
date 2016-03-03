@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="main.EAGER">
+  <grid id="27dc6" binding="Masterpanel" layout-manager="GridLayoutManager" row-count="14" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="629" height="727"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="c813" binding="mainpanel" layout-manager="GridLayoutManager" row-count="17" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="2" column="0" row-span="9" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none" title=""/>
+        <children>
+          <component id="d80cd" class="javax.swing.JCheckBox" binding="fastQCAnalysisCheckBox" default-binding="true">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="&amp;FastQC Analysis"/>
+              <toolTipText value="This will provide you with reports on the quality of your raw sequencing data."/>
+            </properties>
+          </component>
+          <component id="9fb12" class="javax.swing.JCheckBox" binding="map">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Ma&amp;pping"/>
+              <toolTipText value="This will actually determine whether you want your data to be mapped or not."/>
+            </properties>
+          </component>
+          <component id="2e87a" class="javax.swing.JCheckBox" binding="coverage">
+            <constraints>
+              <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Coverage / Statistics Calculation"/>
+              <toolTipText value="Calculate coverage statistics."/>
+            </properties>
+          </component>
+          <component id="d6f6c" class="javax.swing.JCheckBox" binding="mapdamage">
+            <constraints>
+              <grid row="12" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Map&amp;Damage Calculation"/>
+              <toolTipText value="Calculates post mortem damage pattern."/>
+            </properties>
+          </component>
+          <component id="ebd2a" class="javax.swing.JCheckBox" binding="gatksnpcall">
+            <constraints>
+              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="SNP Calling"/>
+              <toolTipText value="Select this and SNP Calling will be run in the pipeline, using the method available in the dropdown menu next to this checkbox."/>
+            </properties>
+          </component>
+          <component id="7fb8c" class="javax.swing.JComboBox" binding="genotyper" default-binding="true">
+            <constraints>
+              <grid row="13" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="UnifiedGenotyper"/>
+                <item value="HaplotypeCaller"/>
+                <item value="ANGSD"/>
+              </model>
+              <toolTipText value="Select the genotyper of choice here."/>
+            </properties>
+          </component>
+          <component id="2d7ef" class="javax.swing.JButton" binding="snpcalladvanced">
+            <constraints>
+              <grid row="13" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="d0aa6" class="javax.swing.JButton" binding="MapButton">
+            <constraints>
+              <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="16f37" class="javax.swing.JButton" binding="MapDamageButton">
+            <constraints>
+              <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="b5935" class="javax.swing.JCheckBox" binding="VCF2DraftCheckBox" default-binding="true">
+            <constraints>
+              <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="&amp;VCF2Genome"/>
+              <toolTipText value="Generate a draft genome with some filtering parameters set."/>
+            </properties>
+          </component>
+          <component id="4a209" class="javax.swing.JButton" binding="advancedVCF2DraftButton">
+            <constraints>
+              <grid row="15" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="ea42c" class="javax.swing.JCheckBox" binding="GATKSNPFilteringCheckBox" default-binding="true">
+            <constraints>
+              <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="SNP Filtering"/>
+              <toolTipText value="Select this and set the min coverage and min quality that you want your variants to have in the resulting VCF file you created using the genotyper of your choice."/>
+            </properties>
+          </component>
+          <component id="27c08" class="javax.swing.JButton" binding="SNPFilterButton">
+            <constraints>
+              <grid row="14" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="4e5bb" class="javax.swing.JTextField" binding="cpucores_textfield">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="4"/>
+              <toolTipText value="Enter the number of CPU cores to use here. Do not choose more than the number of cores you have on your machine."/>
+            </properties>
+          </component>
+          <component id="7d24b" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="CPU Cores to be used"/>
+            </properties>
+          </component>
+          <component id="b62c" class="javax.swing.JCheckBox" binding="cleanUpBox">
+            <constraints>
+              <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <selected value="true"/>
+              <text value="CleanUp"/>
+              <toolTipText value="Select this and redundant data files will be deleted. Redundant means, that only files are deleted that are still reproducible without the whole pipeline to rerun, e.g. we delete files to get rid unsorted BAM files (as the sorted BAM inherits the same data!)."/>
+            </properties>
+          </component>
+          <component id="73920" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Memory in GB"/>
+            </properties>
+          </component>
+          <component id="8f3c1" class="javax.swing.JTextField" binding="maxmemory_textfield">
+            <constraints>
+              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="32"/>
+              <toolTipText value="Choose the amount of memory you'd like to use with the pipeline. Do not choose more than you actually have, this might crash the pipeline!"/>
+            </properties>
+          </component>
+          <component id="3680f" class="javax.swing.JCheckBox" binding="merge">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Clip and Merge"/>
+              <toolTipText value="Do you want to merge your reads, e.g. when having paired end reads with negative overlap?"/>
+            </properties>
+          </component>
+          <component id="1907b" class="javax.swing.JCheckBox" binding="qualityFilteringCheckBox" default-binding="true">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <selected value="true"/>
+              <text value="&amp;QualityFiltering"/>
+              <toolTipText value="This will determine whether you want to quality trim or apply a length filter on your data. If you use the Merging step, you don't need to do this, as this is done inside the Clip&amp;Merge tool already."/>
+            </properties>
+          </component>
+          <component id="df537" class="javax.swing.JButton" binding="MergeButton">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="95f5c" class="javax.swing.JButton" binding="QualityButton">
+            <constraints>
+              <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="5d31c" class="javax.swing.JComboBox" binding="mapper_selection">
+            <constraints>
+              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="BWA"/>
+                <item value="CircularMapper"/>
+                <item value="BWAMem"/>
+                <item value="Bowtie 2"/>
+                <item value="Stampy"/>
+              </model>
+              <toolTipText value="Choose the mapping algorithm you'd like your data to be mapped with. If unsure, choose BWA."/>
+            </properties>
+          </component>
+          <component id="ab905" class="javax.swing.JCheckBox" binding="checkbox_rmdup">
+            <constraints>
+              <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Remove Duplicates"/>
+              <toolTipText value="This will determine whether you want to run duplicate removal on your data or not."/>
+            </properties>
+          </component>
+          <component id="83a4" class="javax.swing.JButton" binding="selectall">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Select / Deselect All"/>
+            </properties>
+          </component>
+          <component id="5fb17" class="javax.swing.JSeparator">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="9c659" class="javax.swing.JCheckBox" binding="complexity">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="C&amp;omplexity Estimation"/>
+              <toolTipText value="Select this if you'd like to get a library complexity estimation to be done, e.g. for screening a library and finding out if there are enough unique DNA fragments in the library, so a further sequencing would be beneficial."/>
+            </properties>
+          </component>
+          <component id="a33ad" class="javax.swing.JButton" binding="preseq_advanced_button">
+            <constraints>
+              <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+          <component id="48916" class="javax.swing.JComboBox" binding="rmdup_combobox">
+            <constraints>
+              <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="DeDup"/>
+                <item value="MarkDuplicates"/>
+              </model>
+            </properties>
+          </component>
+          <component id="aaa1d" class="javax.swing.JCheckBox" binding="schmutzi_checkbox">
+            <constraints>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <selected value="true"/>
+              <text value="Contamination Estimation"/>
+            </properties>
+          </component>
+          <component id="ac877" class="javax.swing.JButton" binding="schmutzi_advanced_button">
+            <constraints>
+              <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Advanced"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="b04e5" class="javax.swing.JButton" binding="selectInputFqFilesButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Select Input *.fq/*.fq.gz Files"/>
+          <toolTipText value="Please select your input FastQ files here, OR a folder containing your unzipped (!) FastQ files."/>
+        </properties>
+      </component>
+      <component id="a9d39" class="javax.swing.JButton" binding="referenceButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Select Reference"/>
+          <toolTipText value="Select your reference sequence in FASTA format here. You do not need to create indices, these will be created if required by the pipeline itself."/>
+        </properties>
+      </component>
+      <component id="f8a63" class="javax.swing.JCheckBox" binding="runReportGenerator">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <selected value="true"/>
+          <text value="Create Report?"/>
+          <toolTipText value="Generates useful reports of your processed data."/>
+        </properties>
+      </component>
+      <component id="69b" class="javax.swing.JButton" binding="RunButton">
+        <constraints>
+          <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Generate Config File"/>
+          <toolTipText value="&lt;html&gt;&#10;&lt;br&gt;This will generate the EAGER config file required to process the data.&lt;/br&gt;&#10;&lt;br&gt;This is inactive as long as you didn't select reference, input and output folders&lt;/br&gt;&#10;&lt;/html&gt;"/>
+        </properties>
+      </component>
+      <component id="e9a6f" class="javax.swing.JButton" binding="aboutButton">
+        <constraints>
+          <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="About"/>
+        </properties>
+      </component>
+      <component id="4c7d6" class="javax.swing.JSeparator">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="84b34" class="javax.swing.JButton" binding="output_button">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Select output folder"/>
+          <toolTipText value="Select your output folder here. This can be a single folder for one sample or a general output folder for more than one sample."/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+  <inspectionSuppressions>
+    <suppress inspection="NoLabelFor" id="7fb8c"/>
+  </inspectionSuppressions>
+</form>
