@@ -13,7 +13,7 @@ Tools that we contributed ourselves are all (same as the EAGER Pipeline) availab
 
 - [EAGER-CLI](https://github.com/apeltzer/EAGER-CLI)
 - [EAGER-GUI](https://github.com/apeltzer/EAGER-GUI)
-- [EAGER-lib](https://github.com/apeltzer/EAGERlib)
+- [EAGER-lib](https://github.com/apeltzer/EAGER-lib)
 - [ClipAndMerge](https://github.com/apeltzer/ClipAndMerge)
 - [CircularMapper](https://github.com/apeltzer/CircularMapper)
 - [DeDup](https://github.com/apeltzer/DeDup)
