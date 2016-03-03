@@ -18,6 +18,7 @@ Tools that we contributed ourselves are all (same as the EAGER Pipeline) availab
 - [CircularMapper](https://github.com/apeltzer/CircularMapper)
 - [DeDup](https://github.com/apeltzer/DeDup)
 - [VCF2Genome](https://github.com/apeltzer/VCF2Genome)
+- [ReportTable](https://github.com/apeltzer/ReportTable)
 - [MTNucRatioCalculator](https://github.com/apeltzer/MTNucRatioCalculator)
 - [MergedReadExtractor](https://github.com/apeltzer/MergedReadExtractor)
 
