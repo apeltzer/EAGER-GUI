@@ -24,16 +24,18 @@ import java.awt.event.*;
 public class MapBowtie2Dialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
+    private JTextField bowtie2_advanced_params;
     private JButton buttonCancel;
 
-    public MapBowtie2Dialog(Communicator c) {
+    public MapBowtie2Dialog(final Communicator c) {
+        initialize(c);
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                onOK(c);
             }
         });
 
@@ -41,14 +43,20 @@ public class MapBowtie2Dialog extends JDialog {
 
     }
 
-    private void onOK() {
-// add your code here
+    private void onOK(Communicator communicator) {
+        communicator.setMapper_advanced(this.bowtie2_advanced_params.getText());
         dispose();
     }
 
     private void onCancel() {
 // add your code here if necessary
         dispose();
+    }
+
+    private void initialize(Communicator communicator){
+        if(communicator.getMapper_advanced() != null){
+            this.bowtie2_advanced_params.setText(communicator.getMapper_advanced());
+        }
     }
 
 }
