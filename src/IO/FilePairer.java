@@ -17,18 +17,13 @@
 package IO;
 
 import com.google.common.base.Function;
-import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;
 import com.google.common.io.Files;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,8 +32,7 @@ import java.util.Comparator;
 public class FilePairer {
     private ArrayList<UnpairedFile> listoffiles = new ArrayList<UnpairedFile>();
     private ArrayList<FilePair> listofpairs = new ArrayList<FilePair>();
-    private FileReader fr;
-    private BufferedReader bf;
+
 
 
     public FilePairer(ArrayList<String> allinputfiles) throws IOException {
@@ -137,6 +131,60 @@ public class FilePairer {
 
     public ArrayList<FilePair> getListofpairs() {
         return listofpairs;
+    }
+
+    public ArrayList<ArrayList<String>> getSingleEndDataList(){
+        ArrayList<ArrayList<String>> out = new ArrayList<ArrayList<String>>();
+        String common= "";
+        String lane = "";
+        String commonTemp = "";
+        ArrayList<String> tmp = new ArrayList<String>();
+
+        for(UnpairedFile entry : listoffiles){
+            String[] split = entry.getDescriptor().split("_");
+
+
+
+            //Information for File #1
+            for (String s : split) {
+                if (s.startsWith("L")) {
+                    //then we have the lane information here
+                    continue;
+                }
+                if(s.startsWith("R")){
+                    //then we have the pair information like R1 = forward, R2 = reverse
+                    continue;
+                }
+                if(lane.isEmpty()){
+                    common +=s;
+                    continue;
+                }
+            }
+
+            //Initialize
+
+            if(commonTemp.isEmpty()){
+               commonTemp = common;
+            }
+
+            if(common.equals(commonTemp)){
+                //then we have a file that shares the same type with our other files up to this point...
+                tmp.add(entry.getFilepath());
+                commonTemp = common;
+                common = "";
+            } else {
+                out.add(tmp);
+                tmp = new ArrayList<String>();
+                tmp.add(entry.getFilepath());
+                commonTemp = common;
+                common = "";
+            }
+        }
+
+        //Clear case
+        out.add(tmp);
+
+        return out;
     }
 
 }
