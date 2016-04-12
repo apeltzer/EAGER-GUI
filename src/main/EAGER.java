@@ -470,7 +470,6 @@ public class EAGER {
                                 } else if (!communicator.isPairmenttype() && !communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
-
                                     for (ArrayList<String> filename : filePairs) {
                                         communicator.setGUI_inputfiles(filename);
                                         File parent = new File(new File(filename.get(0)).getParent());
@@ -479,7 +478,17 @@ public class EAGER {
                                         communicator.setGUI_resultspath(fileoutput);
                                         generateConfiguration(communicator, fileoutput);
                                     }
-
+                                } else if (!communicator.isPairmenttype() && communicator.isMerge_bam_files()) {
+                                    FilePairer fp = new FilePairer(listoffiles);
+                                    ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
+                                    for (ArrayList<String> filename : filePairs) {
+                                        communicator.setGUI_inputfiles(filename);
+                                        File parent = new File(new File(filename.get(0)).getParent());
+                                        parent.mkdirs();
+                                        String fileoutput = resultsfolder + "/" + parent.getName();
+                                        communicator.setGUI_resultspath(fileoutput);
+                                        generateConfiguration(communicator, fileoutput);
+                                    }
                                 } else if (communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<FilePair> filePairs = fp.getListofpairs();
