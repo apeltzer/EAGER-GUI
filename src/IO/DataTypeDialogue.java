@@ -34,6 +34,7 @@ public class DataTypeDialogue extends JDialog {
     private JTextField mtcapture_jtextfield;
     private JComboBox capture_type_combobox;
     private JButton capture_button_select;
+    private JButton capture_mt_button_select;
 
     public DataTypeDialogue(final Communicator communicator) {
         setContentPane(contentPane);
@@ -51,8 +52,10 @@ public class DataTypeDialogue extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 if(mt_capture_jcheckbox.isSelected()){
                     mtcapture_jtextfield.setEnabled(true);
+                    capture_mt_button_select.setEnabled(true);
                 } else {
                     mtcapture_jtextfield.setEnabled(false);
+                    capture_mt_button_select.setEnabled(false);
                 }
             }
         });
@@ -74,6 +77,10 @@ public class DataTypeDialogue extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 BEDFileChooser bdf = new BEDFileChooser(communicator);
             }
+        });
+        capture_mt_button_select.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { BEDFileChooser bdf = new BEDFileChooser(communicator); }
         });
     };
 
