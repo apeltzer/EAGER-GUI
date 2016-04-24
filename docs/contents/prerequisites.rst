@@ -46,6 +46,7 @@ If you would like to install EAGER as a VirtualBox image, to simply try out the 
 
 For OSX users, we also created a video, describing the whole process on a OSX Yosemite client machine. Afterwards, you can follow the setup instructions on VirtualBox Installation Guide for EAGER
 
+.. _naming_scheme:
 
 File Naming Scheme
 ~~~~~~~~~~~~~~~~~~

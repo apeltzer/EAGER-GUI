@@ -1,7 +1,7 @@
 Citations
 ---------
 
-If you like EAGER and use it for any purpose, please cite
+If you use EAGER, please cite
 
 - A. Peltzer; G. Jäger; A. Herbig; S. Seitz; C. Kniep; J. Krause; K. Nieselt: EAGER: efficient ancient genome reconstruction (Genome Biology 2016, 17:60, doi:10.1186/s13059-016-0918-z)
 
@@ -9,8 +9,8 @@ The project URL is:
 
 https://github.com/apeltzer/eager-gui
 
-Tools
-~~~~~
+Tools & Methods
+~~~~~~~~~~~~~~~
 
 * Andrews, S. (2010). FastQC: A quality control tool for high throughput sequence data. Reference Source.
 * Daley, T., & Smith, A. D. (2013). Predicting the molecular complexity of sequencing libraries. Nature Methods, 10(4), 325–7. doi:10.1038/nmeth.2375

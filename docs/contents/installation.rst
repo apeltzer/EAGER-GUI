@@ -72,8 +72,8 @@ If you now switch to the directory where the **deager** executable lays, you wil
 
 A more extensive description of the options required to run the pipeline can be found by using the help function of "deager":
 
-
 .. code-block:: bash
+
    ./deager -h
    Eager Docker Client
     Usage:
