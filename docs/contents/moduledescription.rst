@@ -21,20 +21,34 @@ This is our in-house application for adapter clipping and read merging. Clicking
 
 You can select forward and reverse read adapters here that are then subsequently clipped off your sequencing reads during analysis. Furthermore, Clip&Merge performs a base quality trimming of unmerged reads, filters out sequences falling below a certain length. If you don't want to merge your reads, you can also specify to only clip adapters without merging reads afterwards. Barcodes are supported too, you can specify to trim bases from both 3' and 5' ends as well in the application.
 
+.. warning::
+
+  Specifying wrong adapters, trimming too many bases here will result in poor analysis performance, so make sure beforehand which adapters to use in your analysis.
+
 
 QualityFiltering
 ----------------
 
+For downward compatibility reasons, we have the possibility to filter sequences based on quality in the pipeline, too. This tool has been replaced by Clip and Merge and is therefore deactivated by default when Clip and Merge is selected.
+
 Mapping
 -------
 
+These modules configure the read mapping process. EAGER currently features four mapping algorithms, which can be used. `BWA`, `CircularMapper` and `BWAMem` have been tested intensively, `Bowtie2`works well too but can not be configured as of now in detail.`Stampy` is currently to be seen as experimental and may not work in all conditions.
+
 BWA
 ^^^
+
+This is the default mapping algorithm, largely used for mapping reads to ancient genomes and has been used in many ancient sequencing projects. If you're not sure what to use, use this algorithm.
 
 .. image:: images/modules/02_mapping_BWA.png
     :width: 300px
     :height: 300px
     :align: center
+
+.. note::
+
+  If you're not sure which parameter you should be using for `-n`, use this web service to determine an optimal parameter for your data using an interactive choice `tool <https://apeltzer.shinyapps.io/BWAmismatches/>`_
 
 CircularMapper
 ^^^^^^^^^^^^^^
