@@ -130,6 +130,7 @@ Note that the initial download of the image might take some time, depending on y
 
 Manual Installation
 -------------------
+
 . note::
 
   This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system.
@@ -141,7 +142,7 @@ The manual installation on an infrastructure without access to a docker containe
 
 After this, the following tools need to be installed by the user, ideally system wide or (if this is not possible due to access rights), by manually compiling them. In parentheses you can find the version(s) EAGER has been tested with.
 
-. note::
+.. note::
 
   The EAGER-GUI and EAGER-CLI components can be downloaded as precompiled JAR files from the GitHub repository listed under "Release(s)" in the respective repository.
 
@@ -175,7 +176,7 @@ List of Tools tested with EAGER:
 
 In order to make installation more easy, I provide `installation files for linking <https://github.com/apeltzer/EAGER-links>`_ the tools correctly. You will have to adjust in each file (open with a text editor) the correct location to the executables. Once you've done this and installed all the tools required for EAGER, you can simply add the location of these scripts to your path, e.g.
 
-. code-block:: bash
+.. code-block:: bash
 
   PATH=/data/eager-links/:$PATH
 
@@ -183,7 +184,7 @@ This will *add* links to the respective tools in order to allow EAGER to find th
 
 Now you can check by e.g. entering `eager` whether you get a message about running EAGER. If you set EAGER up on a cluster infrastructure, you may need to have X11 forwarding enabled there to run the pipeline. For windows clients, there is a howto available `here <https://www.youtube.com/watch?v=QRsma2vkEQE>`_. For Linux client machines, you'd probably only have to run:
 
-. code-block:: bash
+.. code-block:: bash
 
   ssh you@yourheadnode.yourcluster -Y
 
