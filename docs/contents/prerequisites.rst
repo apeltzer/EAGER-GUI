@@ -10,6 +10,8 @@ EAGER has been successfully tested on several types of operating systems, suppor
 
 Mac OSX
 =======
+.. note::  This is a **note** box.
+
 The pipeline can be installed and configured on Mac OSX 10.x as well, however some of the tools used by EAGER are stating that they might be unstable on OSX. Therefore, we do not recommend to run the pipeline directly on OSX, but instead rely on a Linux workstation, cluster or the usage of our Docker based EAGER image instead, which is running perfectly fine on OSX as well.
 
 Windows
