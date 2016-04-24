@@ -17,3 +17,4 @@ Contents:
    contents/tutorials
    contents/faq
    contents/licencing
+   contents/citations
