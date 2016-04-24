@@ -70,3 +70,7 @@ Typically, depending on your local sequencing infrastructure or if you received 
             /UVW_LaneIdentifier_R2.fq.gz
 
 In this case you can simply select the parent folder of your input data containing the folders "Sample_XYZ" and "Sample_UVW" and EAGER will cope with the data itself.
+
+.. note::
+
+  EAGER does not require your data to be uncompressed such as other pipelines do. All of the tools in the pipeline have been tuned to enable input to be compressed as `fq.gz`, so input from Illumina sequencers can directly processed without uncompressing the datasets first. 
