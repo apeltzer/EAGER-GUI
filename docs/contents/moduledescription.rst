@@ -153,6 +153,7 @@ This module handles calculation of DNA damage, which is used for authentication 
 
 SNP Calling
 -----------
+
 This section is used to specify methods for genotyping your mapped datasets. Note that these depend on your mapping results, meaning that samples containing very few reads will not result in good genotyping results either.
 
 UnifiedGenotyper
@@ -164,6 +165,7 @@ You can set parameters for genotyping using the UnifiedGenotyper here. In case y
 
 HaplotypeCaller
 ^^^^^^^^^^^^^^^^
+
 You can set parameters for genotyping using the HaplotypeCaller here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php>`_
  to receive up to date information about the parameters offered here in EAGER.
 
@@ -222,4 +224,4 @@ This module is responsible for cleaning up intermediate results. Mainly, these a
 Create Report
 -------------
 
-This will generate a report of your whole analysis run. After each sample, the CSV file gets updated by EAGER automatically. This way, you can basically evaluate your results while waiting for other samples to finish. 
+This will generate a report of your whole analysis run. After each sample, the CSV file gets updated by EAGER automatically. This way, you can basically evaluate your results while waiting for other samples to finish.
