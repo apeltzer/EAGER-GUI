@@ -28,10 +28,11 @@ Docker Image Based Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 You will only need to install Docker on your host system. There are several manuals available to install and run docker on your machine, depending on your operating system. Note that this is the only supported installation method on OSX and Windows host machines.
 
-- For Linux, look up the installation manual `here https://docs.docker.com/linux/started/`
-- For OSX, look up the installation manual `here https://docs.docker.com/mac/started/`
-- For Windows, look up the installation manual `here https://docs.docker.com/windows/started/`
-Furthermore, you will need to install the `Docker compose framework https://docs.docker.com/compose/install/` to make installation and maintenance of the Docker infrastructure easier. Furthermore, you will need `Git https://git-scm.com/` (>2.0) on your system.
+- For Linux, look up the installation manual `here <https://docs.docker.com/linux/started/>`_
+- For OSX, look up the installation manual `here <https://docs.docker.com/mac/started/>`_
+- For Windows, look up the installation manual `here <https://docs.docker.com/windows/started/>`_
+
+Furthermore, you will need to install the `Docker compose framework <https://docs.docker.com/compose/install/>`_ to make installation and maintenance of the Docker infrastructure easier. Furthermore, you will need `Git <https://git-scm.com/>`_ on your system.
 
 .. note:: The usage of Docker on both OSX and Windows machines is relying on virtualization technology. This means that you will experience a performance drawback of roughly 10-20% compared to a native installation on a similar Linux machine. This is not specific to EAGER, but to the Windows operating system and Docker connection between the host and guest system.
 
@@ -44,3 +45,27 @@ VirtualBox Installation
 If you would like to install EAGER as a VirtualBox image, to simply try out the pipeline without having to install many software packages, you will be required to install VirtualBox first on your operating system. To install the VirtualBox software, simply follow the instructions available here.
 
 For OSX users, we also created a video, describing the whole process on a OSX Yosemite client machine. Afterwards, you can follow the setup instructions on VirtualBox Installation Guide for EAGER
+
+
+File Naming Scheme
+~~~~~~~~~~~~~~~~~~
+
+EAGER relies on naming patterns that files should follow, to determine read pairs for example. For sample identification, the pipeline assumes that samples are sharing a same identifier and follow this kind of naming pattern:
+
+.. code-block:: bash
+
+  SomeIDentifier_LaneIdentifier_R1.fq.gz
+  SomeIDentifier_LaneIdentifier_R2.fq.gz
+
+If you select several samples like this, EAGER will automatically determine which ones belong to each other and process all of them in a single processing run.
+
+Typically, depending on your local sequencing infrastructure or if you received samples from e.g. other labs, downloaded them from the SRA or other resources, you will receive several folders with each folder corresponding to a sample, e.g.:
+
+.. code-block:: bash
+
+  Sample_XYZ/XYZ_LaneIdentifier_R1.fq.gz
+            /XYZ_LaneIdentifier_R2.fq.gz
+  Sample_UVW/UVW_LaneIdentifier_R1.fq.gz
+            /UVW_LaneIdentifier_R2.fq.gz
+
+In this case you can simply select the parent folder of your input data containing the folders "Sample_XYZ" and "Sample_UVW" and EAGER will cope with the data itself.
