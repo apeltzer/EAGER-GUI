@@ -19,10 +19,6 @@ Ideally, your folder structure should look like:
    :height: 200px
    :align: center
 
-.. note::
-
-  You don't need to index any reference genomes manually. EAGER will take care of generating required indices on-the-fly when running the pipeline.
-
 .. warning::
   If you need to perform genotyping, please ensure that your genome FastA file is ending with a `.fasta` file extension, or otherwise the GATK might complain about this.
 
@@ -64,12 +60,97 @@ In our case here, we choose that our data has not been treated with UDG, we have
 
 .. note::
 
-  You have so specify a **BED** file for your reference genome if you want to analyse capture data in general. A typical BED file that could be used e.g. for HG19 mitochondrial analysis could look like this.
+  You have to specify a **BED** file for your reference genome if you want to analyse capture data in general. A typical BED file that could be used e.g. for HG19 mitochondrial analysis could look like this.
 
   .. code-block:: bash
 
     chrMT 1 16770 MT 1 +
 
+Once you are done with selecting the appropriate BED file, you can click *ok* and the *Select input \*fq/\*.fq.gz Files* button on top of the GUI should be green to display, that you have successfully selected your input dataset.
+
+Selecting your reference genome
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Continue now by clicking on *Select Reference* and select your reference genome in FastA format.
+
+.. note::
+
+  You don't need to index any reference genomes manually. EAGER will take care of generating required indices on-the-fly when running the pipeline. If an index has been created, the pipeline will figure this out and no new one will be generated to save disk space and time.
+
+.. image:: images/tutorials/mito/05_input_reference.png
+    :width: 200px
+    :height: 200px
+    :align: center
+
+Selecting your results folder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+  EAGER uses a typical folder structure to store any produced output. This is called the results folder, in which EAGER creates subfolders on a per-sample basis, then populating these with the typical EAGER folder structure.
+
+Simply click on the *Select output folder* button, then select a folder of your choice to store the analysis results in the end.
+
+.. image:: images/tutorials/mito/06_input_results.png
+    :width: 200px
+    :height: 200px
+    :align: center
+
+.. warning::
+
+  You have to ensure that you have proper access rights to the results folder and the reference genome FastA file or otherwise the analysis will fail.
+
+Step IV: Configure your Analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now that you have selected your input data, your reference genome and the corresponding output folder, you can configure the pipeline more in detail. For a mitochondrial analysis, EAGER offers special features, e.g. a special mapping application called `CircularMapper` that produces improved mappings at both ends of your reference genome. In this case we basically keep most of the configuration at default settings, keeping initial FastQC analysis, Clip&Merge, Mapping with CircularMapper, Duplicate Removal, Contamination Estimation with Schmutzi, Coverage Calculation and MapDamage Calculation turned on but disabling the genotyping part of the pipeline. A final report in CSV format is also desirable in many applications, so we keep this turned on as well.
+
+.. image:: images/tutorials/mito/07_configuration_selection.png
+    :width: 200px
+    :height: 200px
+    :align: center
+
+.. note::
+
+  The CleanUp module is removing *redundant* data, e.g. intermediate processing results, that are stored in different file formats to save disk space. In almost all cases you can safely keep this module turned on without compromising your analysis results.
+
+After you are done with the configuration of the selected modules, e.g. by clicking on the *Advanced* buttons of the respective tools, you may click on *Generate Config File* on the bottom of the GUI to generate the required pipeline configuration files. A window should open up, telling you that your analysis run has been configured successfully.
+
+.. image:: images/tutorials/mito/08_configuration_created.png
+    :width: 200px
+    :height: 200px
+    :align: center
+
+Step V: Run the Analysis Pipeline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In order to execute the generated configuration files, the GUI is already giving you a little hint on how to run the execution part of the pipeline. Open up a Terminal application of your choice and then navigate to your folder(s) containing the configuration files (your *result* folder) and run the `eagercli` command to execute the configuration file(s):
+
+.. code-block: bash
+
+  cd /Users/peltzer/Desktop/Results
+  eagercli .
+
+.. image:: images/tutorials/mito/09_run_configuration.png
+    :width: 200px
+    :height: 100px
+    :align: center
+
+.. note::
+
+  You don't need to specify the full path to the generated configuration files, e.g. if you specify the *results* folder, EAGER will detect all configuration files automatically and run these sequentially after each other. For some purposes (e.g. a cluster system) you might want to schedule single jobs for each configuration file however, which can be done by specifying the path to the respective configuration files directly.
+
+Step VI: Pick up results!
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EAGER creates a CSV based report file in the results folder, which contains statistics for the analysis run. A typical results report looks like this:
+
+.. image:: images/tutorials/mito/10_results_table.png
+    :width: 200px
+    :height: 100px
+    :align: center
+
+All the output BAM files, VCF files and other important analysis results can be found in the sample specific folders in the results folder.
 
 Bacterial analysis
 ------------------

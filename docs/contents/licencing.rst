@@ -1,7 +1,7 @@
 Licencing
 =========
 
-The EAGER pipeline uses several tools and methods in order to process data. The following list contains all tools and methods with respective links to the corresponding webpages. For licencing information regarding these methods and tools, please see the respective webpages.
+The EAGER pipeline uses several tools and methods in order to process data. The following list contains all tools and methods with respective links to the corresponding webpages. For licencing information regarding these methods and tools, please see the respective web pages.
 
   * FastQC
   * FastXTools
