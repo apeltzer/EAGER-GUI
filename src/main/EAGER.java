@@ -85,6 +85,8 @@ public class EAGER {
     public Image icon;
 
 
+
+
     /**
      * Important Variables for Configuration Generator
      */
