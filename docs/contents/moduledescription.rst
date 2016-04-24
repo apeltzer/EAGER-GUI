@@ -48,31 +48,54 @@ This is the default mapping algorithm, largely used for mapping reads to ancient
 
 .. note::
 
-  If you're not sure which parameter you should be using for `-n`, use this web service to determine an optimal parameter for your data using an interactive choice `tool <https://apeltzer.shinyapps.io/BWAmismatches/>`_
+  If you're not sure which parameter you should be using for ``-n``, use this web service to determine an optimal parameter for your data using an interactive choice `tool <https://apeltzer.shinyapps.io/BWAmismatches/>`_
+
+.. note::
+
+  In many ancient DNA sequencing projects, analysts turn off the seeding factor ``-l`` by setting it to a value significantly larger than the read length is done to gain better mapping rates for damaged ancient fragments. In case you receive bad mapping results, consider disabling seeding.
 
 CircularMapper
 ^^^^^^^^^^^^^^
+
+This relies on the BWA mapper, but utilizes some tricks to obtain better mapping results on circular genomes. You can set the elongation factor to longer values in case you have data that includes longer reads. The *Reference to extend* value needs to describe the FastA entry that is used by the mapper for extension, e.g. if you have multiple chromosomes in your FastA reference, you need to specify one (or more, separated by a `;`) chromosome to be extended by the algorithm.
 
 .. image:: images/modules/03_mapping_CircularMapper.png
     :width: 300px
     :height: 300px
     :align: center
 
+You can further adjust the BWA mapping parameters here, too.
+
 BWAMem
 ^^^^^^
+
+BWAMem can not be configured in the pipeline and is executed with default values if you select this algorithm. We will add more parameters in an upcoming version of EAGER.
+
+Bowtie2
+^^^^^^^
+
+You can specify parameters for Bowtie 2 here. These will be simply passed through to the mapping algorithm.
+
 .. image:: images/modules/04_mapping_Bowtie2.png
     :width: 300px
     :height: 300px
     :align: center
 
-Bowtie2
-^^^^^^^
+.. warning::
+
+  If you specify parameters that are either non-existent or incorrect for the mapper, your analysis will fail subsequently.
+
 
 Stampy
 ^^^^^^
 
+Stampy can not be configured in the pipeline and is executed with default values if you select this algorithm. We will add more parameters in an upcoming version of EAGER.
+
+
 Complexity Estimation
 ---------------------
+
+The complexity estimation is done using Preseq, running both components ``c_curve`` and ``lc_extrap`` after each other to determine the library complexity. Enable this module if you are testing a new sequencing library for complexity, to determine whether further deeper sequencing is justifiable.
 
 .. image:: images/modules/05_complexityEstimation.png
     :width: 300px
@@ -82,12 +105,17 @@ Complexity Estimation
 Remove Duplicates
 -----------------
 
+EAGER provides two different duplicate removal procedures: The *DeDup* and the *MarkDuplicates* method (provided by Picard).
+
 DeDup
 ^^^^^^
 
+Use this if you're working with merged reads, single ended reads or a mixture of merged and remaining single ended reads that could not have been merged previously. This produces increased coverages as merged reads are treated correctly by looking at both ends of the merged reads instead of only considering start positions of these reads.
 
 MarkDuplicates
 ^^^^^^^^^^^^^^
+
+Use this if you're working with paired end data, that has **not been merged**. 
 
 Contamination Estimation
 ------------------------
