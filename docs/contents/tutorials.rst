@@ -103,7 +103,13 @@ Simply click on the *Select output folder* button, then select a folder of your 
 Step IV: Configure your Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now that you have selected your input data, your reference genome and the corresponding output folder, you can configure the pipeline more in detail. For a mitochondrial analysis, EAGER offers special features, e.g. a special mapping application called `CircularMapper` that produces improved mappings at both ends of your reference genome. In this case we basically keep most of the configuration at default settings, keeping initial FastQC analysis, Clip&Merge, Mapping with CircularMapper, Duplicate Removal, Contamination Estimation with Schmutzi, Coverage Calculation and MapDamage Calculation turned on but disabling the genotyping part of the pipeline. A final report in CSV format is also desirable in many applications, so we keep this turned on as well.
+Now that you have selected your input data, your reference genome and the corresponding output folder, you can configure the pipeline more in detail. Start by configuring how many CPU cores and how much random access memory (RAM) can be used by the pipeline for your analysis.
+
+.. warning::
+
+  If you're unsure what to select for CPU cores and/or RAM consumption, you may want to look up your system configuration prior to starting an analysis here. Some processes can fail and make your system unstable when failing if you select too many CPU cores / use too much memory.
+
+For a mitochondrial analysis, EAGER offers special features, e.g. a special mapping application called `CircularMapper` that produces improved mappings at both ends of your reference genome. In this case we basically keep most of the configuration at default settings, keeping initial FastQC analysis, Clip&Merge, Mapping with CircularMapper, Duplicate Removal, Contamination Estimation with Schmutzi, Coverage Calculation and MapDamage Calculation turned on but disabling the genotyping part of the pipeline. A final report in CSV format is also desirable in many applications, so we keep this turned on as well.
 
 .. image:: images/tutorials/mito/07_configuration_selection.png
     :width: 300px
@@ -152,7 +158,7 @@ EAGER creates a CSV based report file in the results folder, which contains stat
 
 All the output BAM files, VCF files and other important analysis results can be found in the sample specific folders in the results folder.
 
-.. note:: You can import the results table in CSV format in any compatible sheet calculation software, LibreOffice for example works very well. 
+.. note:: You can import the results table in CSV format in any compatible sheet calculation software, LibreOffice for example works very well.
 
 Bacterial analysis
 ------------------
