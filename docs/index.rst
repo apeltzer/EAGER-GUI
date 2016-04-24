@@ -17,12 +17,14 @@ Contents:
 
    contents/userguide
 
+   contents/moduledescription
+
    contents/tutorials
 
    contents/faq
 
    contents/licencing
-   
+
    contents/citations
 
 
