@@ -131,7 +131,7 @@ Note that the initial download of the image might take some time, depending on y
 Manual Installation
 -------------------
 
-. note::
+.. note::
 
   This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system.
 
@@ -178,7 +178,7 @@ In order to make installation more easy, I provide `installation files for linki
 
 .. code-block:: bash
 
-  PATH=/data/eager-links/:$PATH
+   PATH=/data/eager-links/:$PATH
 
 This will *add* links to the respective tools in order to allow EAGER to find the corresponding tools. If you for example already have working installations of `BWA`, `samtools` or similar, you will only need to install the missing tools of course. Please make sure, that you have the proper versions of the tools installed that EAGER needs or otherwise you might have to define these in your path as well.
 
@@ -186,6 +186,6 @@ Now you can check by e.g. entering `eager` whether you get a message about runni
 
 .. code-block:: bash
 
-  ssh you@yourheadnode.yourcluster -Y
+   ssh you@yourheadnode.yourcluster -Y
 
 If you are uncertain on how to run X11 forwarded applications on your local infrastructure, your IT department should be able to set this up for you or will help you in achieving this.
