@@ -109,6 +109,7 @@ You will be able to run the EAGER pipeline now with just these four commands off
 Afterwards, you can open the GUI to configure an analysis run, illustrated in this little `helper video <https://www.youtube.com/watch?v=cKrBuoiGgNE>`_
 
 .. code-block:: bash
+
    deager gui --gatk ~/gatk --data ~/data
 
 
@@ -117,6 +118,7 @@ This should open a graphical interface on your machine, enabling you to configur
 You may then execute your configuration files by issuing:
 
 .. code-block:: bash
+
    deager run --data /path/to/your/data
 
 And EAGER will process your data given your configuration files sequentially. Afterwards, your output will be in the provided datafolder and you can then have a look at e.g. the ReportTable created by the pipeline. All data that has been processed will be available outside of the docker container, so you can basically spin up a container, analyse your data and destroy the container after the analysis process, leaving your system unchanged.
