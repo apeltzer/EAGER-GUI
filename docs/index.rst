@@ -10,13 +10,19 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
-   
+
    contents/prerequisites
+
    contents/installation
+
    contents/userguide
+
    contents/tutorials
+
    contents/faq
+
    contents/licencing
+   
    contents/citations
 
 
