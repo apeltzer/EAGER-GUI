@@ -132,7 +132,7 @@ Manual Installation
 -------------------
 . note::
 
-This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system.
+  This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system.
 
 The manual installation on an infrastructure without access to a docker container is a bit more complex than installing the docker image, as all the requirements and subsequent tools for EAGER need to be linked correctly on the system running the pipeline in the end. This has certain requirements:
 
@@ -143,7 +143,7 @@ After this, the following tools need to be installed by the user, ideally system
 
 . note::
 
-The EAGER-GUI and EAGER-CLI components can be downloaded as precompiled JAR files from the GitHub repository listed under "Release(s)" in the respective repository.
+  The EAGER-GUI and EAGER-CLI components can be downloaded as precompiled JAR files from the GitHub repository listed under "Release(s)" in the respective repository.
 
 List of Tools tested with EAGER:
 
@@ -177,7 +177,7 @@ In order to make installation more easy, I provide `installation files for linki
 
 . code-block:: bash
 
-PATH=/data/eager-links/:$PATH
+  PATH=/data/eager-links/:$PATH
 
 This will *add* links to the respective tools in order to allow EAGER to find the corresponding tools. If you for example already have working installations of `BWA`, `samtools` or similar, you will only need to install the missing tools of course. Please make sure, that you have the proper versions of the tools installed that EAGER needs or otherwise you might have to define these in your path as well.
 
@@ -185,6 +185,6 @@ Now you can check by e.g. entering `eager` whether you get a message about runni
 
 . code-block:: bash
 
-ssh you@yourheadnode.yourcluster -Y
+  ssh you@yourheadnode.yourcluster -Y
 
 If you are uncertain on how to run X11 forwarded applications on your local infrastructure, your IT department should be able to set this up for you or will help you in achieving this.
