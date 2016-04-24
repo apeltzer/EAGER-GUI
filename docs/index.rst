@@ -9,11 +9,10 @@ This is the main EAGER wiki, where all the information regarding installation, m
 Contents:
 .. contents::
    :depth: 2
-
-    contents/prerequisites.rst
-    contents/installation.rst
-    contents/userguide.rst
-    contents/tutorials.rst
-    contents/faq.rst
-    contents/licencing.rst
-    contents/citations.rst
+     contents/prerequisites
+     contents/installation
+     contents/userguide
+     contents/tutorials
+     contents/faq
+     contents/licencing
+     contents/citations
