@@ -115,21 +115,37 @@ Use this if you're working with merged reads, single ended reads or a mixture of
 MarkDuplicates
 ^^^^^^^^^^^^^^
 
-Use this if you're working with paired end data, that has **not been merged**. 
+Use this if you're working with paired end data, that has **not been merged**.
 
 Contamination Estimation
 ------------------------
+
+This module is used to configure contamination estimation using ``schmutzi``. In order to make this work, you will need to specify whether you have single stranded or double stranded libraries sequenced. Afterwards, you will need to specify the mitochondrial genome you would like to test against (usually of your human genome). Finally, select the folder with frequency data of putative mitochondrial sequences.
 
 .. image:: images/modules/06_contaminationEstimation.png
     :width: 300px
     :height: 300px
     :align: center
 
+.. note::
+
+  If you are not working on *mitochondrial* data and did not select this, you may only specify the library type without configuring the other options. You don't need to specify these for bacterial data, too as the mitochondrial test can only be performed with a library of putative mitochondrial reference genomes.
+
+.. warning:
+
+  If you forget to specify the references here and are analysing mitochondrial data, you will only get an estimation of contamination based on DNA damage, which is usually not statistically founded enough to produce a meaning and might give you a wrong assumption on your actual contamination of your dataset.
+
 Coverage/Statistics Calculation
 -------------------------------
 
+This module handles coverage and other statistics calculation using QualiMap. In almost all cases, just leave this enabled.
+
+
 MapDamage Calculation
 ---------------------
+
+This module handles calculation of DNA damage, which is used for authentication of samples. You will get a plot and damage statistics telling you whether you truly see ancient fragments in your dataset or not. You may specify more advanced parameters here, too.
+
 .. image:: images/modules/07_mapDamage.png
     :width: 300px
     :height: 300px
@@ -137,22 +153,33 @@ MapDamage Calculation
 
 SNP Calling
 -----------
+This section is used to specify methods for genotyping your mapped datasets. Note that these depend on your mapping results, meaning that samples containing very few reads will not result in good genotyping results either.
 
 UnifiedGenotyper
 ^^^^^^^^^^^^^^^^
 
+You can set parameters for genotyping using the UnifiedGenotyper here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php>`_
+ to receive up to date information about the parameters offered here in EAGER.
+
 
 HaplotypeCaller
 ^^^^^^^^^^^^^^^^
+You can set parameters for genotyping using the HaplotypeCaller here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php>`_
+ to receive up to date information about the parameters offered here in EAGER.
 
 .. image:: images/modules/08_SNPcalling_GATK.png
     :width: 894px
     :height: 319px
     :align: center
 
+.. warning::
+
+  Selecting the ``EMIT All Sites?`` option should only be done on small reference genomes. For a human genome, this produces uncompressed VCF files in the size of up to 90GB/sample. For some purposes, it might still be required but in most cases its not advisable to turn this on.
 
 ANGSD
 ^^^^^
+
+This can be used to configure the ANGSD method for genotyping low coverage genomes using genotype likelihoods. You can specify the likelihood model to use, the output format you want to generate and method to make a call at a certain position. Furthermore, you can specify whether you'd like to generate a FastA sequence of your calls in the end.
 
 .. image:: images/modules/09_SNPcalling_ANGSD.png
     :width: 882px
@@ -162,14 +189,21 @@ ANGSD
 SNP Filtering
 -------------
 
+This can be used to filter variants based on minimum quality of a genotyping call and a minimum coverage using the GATK VariantFilter application.
+
 .. image:: images/modules/10_SNPFiltering_GATK.png
     :width: 300px
     :height: 300px
     :align: center
 
+.. note::
+
+  Note that this only has an effect on genotypes. If you used the ANGSD method producing genotype likelihoods as an output format, you will not be able to perform SNP filtering using this method.
 
 VCF2Genome
 ----------
+
+This method can be used to generate FastA files incorporating called variants from a generated VCF file. Particularly useful for bacterial data, it allows the user to select minimum genotyping quality, coverage and SNP allele frequency to consider a call as true. For a more detailed description, see the paper :ref:`citations`.
 
 .. image:: images/modules/11_VCF2Genome.png
     :width: 300px
@@ -179,5 +213,13 @@ VCF2Genome
 CleanUp
 -------
 
+This module is responsible for cleaning up intermediate results. Mainly, these are files generated during file conversion, e.g. SAM files and unsorted BAM files that have been converted to sorted BAM format already and can thus be safely deleted.
+
+.. note::
+
+  This will only delete files that are redundant, e.g. from which there exist copies with the exact same content.
+
 Create Report
 -------------
+
+This will generate a report of your whole analysis run. After each sample, the CSV file gets updated by EAGER automatically. This way, you can basically evaluate your results while waiting for other samples to finish. 

@@ -1,6 +1,7 @@
 Citations
 ---------
 
+.. _citations:
 If you use EAGER, please cite
 
 - A. Peltzer; G. Jäger; A. Herbig; S. Seitz; C. Kniep; J. Krause; K. Nieselt: EAGER: efficient ancient genome reconstruction (Genome Biology 2016, 17:60, doi:10.1186/s13059-016-0918-z)
