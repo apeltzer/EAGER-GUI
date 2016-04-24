@@ -1,6 +1,12 @@
 Citations
 ---------
 
+If you like EAGER and use it for any purpose, please cite
+
+- A. Peltzer; G. Jäger; A. Herbig; S. Seitz; C. Kniep; J. Krause; K. Nieselt: EAGER: efficient ancient genome reconstruction (Genome Biology 2016, 17:60, doi:10.1186/s13059-016-0918-z)
+
+The project URL is:
+
 https://github.com/apeltzer/eager-gui
 
 Tools
