@@ -128,6 +128,8 @@ Note that the initial download of the image might take some time, depending on y
 
 
 
+Manual Installation
+-------------------
+. note::
 
-
-- Native installation EAGER Pipeline: This is a more advanced version, requiring you to install all the tools manually. Maximum performance, but requires manual installation.
+This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system. 
