@@ -159,15 +159,13 @@ This section is used to specify methods for genotyping your mapped datasets. Not
 UnifiedGenotyper
 ^^^^^^^^^^^^^^^^
 
-You can set parameters for genotyping using the UnifiedGenotyper here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php>`_
- to receive up to date information about the parameters offered here in EAGER.
+You can set parameters for genotyping using the UnifiedGenotyper here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_genotyper_UnifiedGenotyper.php>`_  to receive up to date information about the parameters offered here in EAGER.
 
 
 HaplotypeCaller
 ^^^^^^^^^^^^^^^^
 
-You can set parameters for genotyping using the HaplotypeCaller here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php>`_
- to receive up to date information about the parameters offered here in EAGER.
+You can set parameters for genotyping using the HaplotypeCaller here. In case you have a reference database of known variants in VCF format for your respective organism (e.g. dbSNP for humans), you may specify this here, too. Refer to the `GATK documentation <https://www.broadinstitute.org/gatk/guide/tooldocs/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php>`_  to receive up to date information about the parameters offered here in EAGER.
 
 .. image:: images/modules/08_SNPcalling_GATK.png
     :width: 894px
