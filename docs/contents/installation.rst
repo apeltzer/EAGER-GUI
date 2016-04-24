@@ -132,4 +132,59 @@ Manual Installation
 -------------------
 . note::
 
-This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system. 
+This is the native installation of the EAGER pipeline. It requires you to download tools manually, compile them and set paths accordingly in order for the pipeline to work on your operating system.
+
+The manual installation on an infrastructure without access to a docker container is a bit more complex than installing the docker image, as all the requirements and subsequent tools for EAGER need to be linked correctly on the system running the pipeline in the end. This has certain requirements:
+
+  * Java 7 Environment, preferrably the Oracle JDK7
+  * GNU Bash
+
+After this, the following tools need to be installed by the user, ideally system wide or (if this is not possible due to access rights), by manually compiling them. In parentheses you can find the version(s) EAGER has been tested with.
+
+. note::
+
+The EAGER-GUI and EAGER-CLI components can be downloaded as precompiled JAR files from the GitHub repository listed under "Release(s)" in the respective repository.
+
+List of Tools tested with EAGER:
+
+  * [[http://popgen.dk/wiki/index.php/ANGSD|ANGSD (v0.910)]]
+  * [[http://genomeview.org/manual/Bam2tdf|BAM2TDF (v14)]]
+  * BGZip (depending on your linux distribution, you have this already installed)
+  * [[http://bowtie-bio.sourceforge.net/bowtie2/index.shtml|Bowtie2 (v2.2.7)]]
+  * [[https://sourceforge.net/projects/bio-bwa/|BWA (v0.7.12)]]
+  * [[https://github.com/apeltzer/CircularMapper|CircularMapper(v1.92.0)]]
+  * [[https://github.com/apeltzer/ClipAndMerge|Clip&Merge (v1.7.3)]]
+  * [[https://github.com/grenaud/schmutzi|Schmutzi(current)]]
+  * [[https://github.com/apeltzer/DeDup|DeDup (v0.9.10)]]
+  * [[https://github.com/apeltzer/EAGER-GUI|EAGER (GUI) (v1.92.0)]]
+  * [[https://github.com/apeltzer/EAGER-CLI|EAGER (CLI) (v1.92.0)]]
+  * [[http://hannonlab.cshl.edu/fastx_toolkit/|FastXTools (v0.0.13)]]
+  * [[http://www.bioinformatics.babraham.ac.uk/projects/fastqc/|FastQC (v0.11.4)]]
+  * [[https://www.broadinstitute.org/gatk/|GATK (v3.5.0)]]
+  * [[http://ginolhac.github.io/mapDamage/|mapDamage (v2.0.1)]]
+  * [[https://github.com/apeltzer/MergedReadExtractor|MergedReadExtractor (v1.92.0)]]
+  * [[https://github.com/apeltzer/MTNucRatioCalculator|MTNucRatioCalculator (v1.92.0)]]
+  * [[http://broadinstitute.github.io/picard/|PicardTools (v1.140)]]
+  * [[http://smithlabresearch.org/software/preseq/|Preseq (v2.0)]]
+  * [[http://qualimap.bioinfo.cipf.es/|QualiMap(v2.2)]]
+  * [[https://github.com/apeltzer/ReportTable|ReportTable(v1.92.0)]]
+  * [[http://www.htslib.org/|Samtools(v1.3.0)]]
+  * [[http://www.well.ox.ac.uk/project-stampy|Stampy (current)]]
+  * [[http://www.htslib.org/download/|Tabix (v1.3.0)]]
+  * [[https://github.com/apeltzer/VCF2Genome|VCF2Genome]]
+
+In order to make installation more easy, I provide `installation files for linking <https://github.com/apeltzer/EAGER-links>`_ the tools correctly. You will have to adjust in each file (open with a text editor) the correct location to the executables. Once you've done this and installed all the tools required for EAGER, you can simply add the location of these scripts to your path, e.g.
+
+.. code-block:: bash
+
+PATH=/data/eager-links/:$PATH
+
+This will *add* links to the respective tools in order to allow EAGER to find the corresponding tools. If you for example already have working installations of `BWA`, `samtools` or similar, you will only need to install the missing tools of course. Please make sure, that you have the proper versions of the tools installed that EAGER needs or otherwise you might have to define these in your path as well.
+
+Now you can check by e.g. entering `eager` whether you get a message about running EAGER. If you set EAGER up on a cluster infrastructure, you may need to have X11 forwarding enabled there to run the pipeline. For windows clients, there is a howto available `here <https://www.youtube.com/watch?v=QRsma2vkEQE>`_. For Linux client machines, you'd probably only have to run:
+
+. code-block:: bash
+
+ssh you@yourheadnode.yourcluster -Y
+
+If you are uncertain on how to run X11 forwarded applications on your local infrastructure, your IT department should be able to set this up for you or will help you in achieving this. 
