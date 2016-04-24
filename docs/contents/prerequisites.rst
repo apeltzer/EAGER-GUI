@@ -14,5 +14,4 @@ The pipeline can be installed and configured on Mac OSX 10.x as well, however so
 
 Windows
 =======
-.. note::
-There are currently no plans to support Windows based operating systems, as most of the tools EAGER uses can not be run on Windows either. This is not a limitation of EAGER itself, but rather of the underlying methods and tools which are developed for Linux operating systems in many cases.
+.. note:: There are currently no plans to support Windows based operating systems, as most of the tools EAGER uses can not be run on Windows either. This is not a limitation of EAGER itself, but rather of the underlying methods and tools which are developed for Linux operating systems in many cases.
