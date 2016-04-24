@@ -12,12 +12,14 @@ This module can not be configured and is utilized to gain first insight into a r
 Clip and Merge
 --------------
 
-This is our in-house application for adapter clipping and read merging. Clicking on the *Advanced* button next to this application, will
+This is our in-house application for adapter clipping and read merging. Clicking on the *Advanced* button next to this application, will open up a configuration window as depicted below.
 
 .. image:: images/modules/01_clipandmerge.png
     :width: 300px
     :height: 300px
     :align: center
+
+You can select forward and reverse read adapters here that are then subsequently clipped off your sequencing reads during analysis. Furthermore, Clip&Merge performs a base quality trimming of unmerged reads, filters out sequences falling below a certain length. If you don't want to merge your reads, you can also specify to only clip adapters without merging reads afterwards. Barcodes are supported too, you can specify to trim bases from both 3' and 5' ends as well in the application.
 
 
 QualityFiltering
