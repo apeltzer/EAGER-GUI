@@ -175,7 +175,7 @@ List of Tools tested with EAGER:
 
 In order to make installation more easy, I provide `installation files for linking <https://github.com/apeltzer/EAGER-links>`_ the tools correctly. You will have to adjust in each file (open with a text editor) the correct location to the executables. Once you've done this and installed all the tools required for EAGER, you can simply add the location of these scripts to your path, e.g.
 
-.. code-block:: bash
+. code-block:: bash
 
 PATH=/data/eager-links/:$PATH
 
@@ -187,4 +187,4 @@ Now you can check by e.g. entering `eager` whether you get a message about runni
 
 ssh you@yourheadnode.yourcluster -Y
 
-If you are uncertain on how to run X11 forwarded applications on your local infrastructure, your IT department should be able to set this up for you or will help you in achieving this. 
+If you are uncertain on how to run X11 forwarded applications on your local infrastructure, your IT department should be able to set this up for you or will help you in achieving this.
