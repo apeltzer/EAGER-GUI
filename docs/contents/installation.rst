@@ -148,11 +148,11 @@ After this, the following tools need to be installed by the user, ideally system
 
 List of Tools tested with EAGER:
 
-  * [[http://popgen.dk/wiki/index.php/ANGSD|ANGSD (v0.910)]]
-  * [[http://genomeview.org/manual/Bam2tdf|BAM2TDF (v14)]]
+  * `ANGSD(v0.910) <http://popgen.dk/wiki/index.php/ANGSD>`_
+  * `BAM2TDF(v14) <http://genomeview.org/manual/Bam2tdf>`_
   * BGZip (depending on your linux distribution, you have this already installed)
-  * [[http://bowtie-bio.sourceforge.net/bowtie2/index.shtml|Bowtie2 (v2.2.7)]]
-  * [[https://sourceforge.net/projects/bio-bwa/|BWA (v0.7.12)]]
+  * `Bowtie 2(v2.2.8) <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
+  * `BWA (v0.7.13) <https://sourceforge.net/projects/bio-bwa/>`_
   * [[https://github.com/apeltzer/CircularMapper|CircularMapper(v1.92.0)]]
   * [[https://github.com/apeltzer/ClipAndMerge|Clip&Merge (v1.7.3)]]
   * [[https://github.com/grenaud/schmutzi|Schmutzi(current)]]
