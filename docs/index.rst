@@ -8,11 +8,11 @@ This is the main EAGER wiki, where all the information regarding installation, m
 
 Contents:
 .. toctree::
-   :maxdepth: 2
-   contents/prerequisites
-   contents/installation
-   contents/userguide
-   contents/tutorials
-   contents/faq
-   contents/licencing
-   contents/citations
+    :maxdepth: 2
+    contents/prerequisites
+    contents/installation
+    contents/userguide
+    contents/tutorials
+    contents/faq
+    contents/licencing
+    contents/citations
