@@ -146,11 +146,13 @@ Step VI: Pick up results!
 EAGER creates a CSV based report file in the results folder, which contains statistics for the analysis run. A typical results report looks like this:
 
 .. image:: images/tutorials/mito/10_results_table.png
-    :width: 300px
-    :height: 200px
+    :width: 951px
+    :height: 59px
     :align: center
 
 All the output BAM files, VCF files and other important analysis results can be found in the sample specific folders in the results folder.
+
+.. note:: You can import the results table in CSV format in any compatible sheet calculation software, LibreOffice for example works very well. 
 
 Bacterial analysis
 ------------------
