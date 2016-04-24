@@ -34,7 +34,7 @@ For downward compatibility reasons, we have the possibility to filter sequences 
 Mapping
 -------
 
-These modules configure the read mapping process. EAGER currently features four mapping algorithms, which can be used. `BWA`, `CircularMapper` and `BWAMem` have been tested intensively, `Bowtie2`works well too but can not be configured as of now in detail.`Stampy` is currently to be seen as experimental and may not work in all conditions.
+These modules configure the read mapping process. EAGER currently features four mapping algorithms, which can be used. `BWA`, `CircularMapper` and `BWAMem` have been tested intensively, `Bowtie2` works well too, but can not be configured in detail as of now. `Stampy` is currently to be seen as experimental and may not work in all conditions.
 
 BWA
 ^^^
