@@ -144,7 +144,7 @@ After this, the following tools need to be installed by the user, ideally system
 
 .. note::
 
-  The EAGER-GUI and EAGER-CLI components can be downloaded as precompiled JAR files from the GitHub repository listed under "Release(s)" in the respective repository.
+  The EAGER-GUI, EAGER-CLI and all other components developed within the EAGER pipeline can be downloaded from their respective **Release** sections on GitHub as pre-compiled JAR files. You don't need to re-compile these applications manually. In case you want to, please use `IntelliJ IDE <https://jetbrains.org`_ to do so.
 
 List of Tools tested with EAGER:
 
@@ -153,26 +153,26 @@ List of Tools tested with EAGER:
   * BGZip (depending on your linux distribution, you have this already installed)
   * `Bowtie 2(v2.2.8) <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
   * `BWA (v0.7.13) <https://sourceforge.net/projects/bio-bwa/>`_
-  * [[https://github.com/apeltzer/CircularMapper|CircularMapper(v1.92.0)]]
-  * [[https://github.com/apeltzer/ClipAndMerge|Clip&Merge (v1.7.3)]]
-  * [[https://github.com/grenaud/schmutzi|Schmutzi(current)]]
-  * [[https://github.com/apeltzer/DeDup|DeDup (v0.9.10)]]
-  * [[https://github.com/apeltzer/EAGER-GUI|EAGER (GUI) (v1.92.0)]]
-  * [[https://github.com/apeltzer/EAGER-CLI|EAGER (CLI) (v1.92.0)]]
-  * [[http://hannonlab.cshl.edu/fastx_toolkit/|FastXTools (v0.0.13)]]
-  * [[http://www.bioinformatics.babraham.ac.uk/projects/fastqc/|FastQC (v0.11.4)]]
-  * [[https://www.broadinstitute.org/gatk/|GATK (v3.5.0)]]
-  * [[http://ginolhac.github.io/mapDamage/|mapDamage (v2.0.1)]]
-  * [[https://github.com/apeltzer/MergedReadExtractor|MergedReadExtractor (v1.92.0)]]
-  * [[https://github.com/apeltzer/MTNucRatioCalculator|MTNucRatioCalculator (v1.92.0)]]
-  * [[http://broadinstitute.github.io/picard/|PicardTools (v1.140)]]
-  * [[http://smithlabresearch.org/software/preseq/|Preseq (v2.0)]]
-  * [[http://qualimap.bioinfo.cipf.es/|QualiMap(v2.2)]]
-  * [[https://github.com/apeltzer/ReportTable|ReportTable(v1.92.0)]]
-  * [[http://www.htslib.org/|Samtools(v1.3.0)]]
-  * [[http://www.well.ox.ac.uk/project-stampy|Stampy (current)]]
-  * [[http://www.htslib.org/download/|Tabix (v1.3.0)]]
-  * [[https://github.com/apeltzer/VCF2Genome|VCF2Genome]]
+  * `CircularMapper(latest) <https://github.com/apeltzer/CircularMapper>`_
+  * `Clip & Merge(latest) <https://github.com/apeltzer/ClipAndMerge>`_
+  * `Schmutzi (latest) <https://github.com/grenaud/schmutzi>`_
+  * `DeDup (latest) <https://github.com/apeltzer/DeDup>`_
+  * `EAGER (latest) <https://github.com/apeltzer/EAGER-GUI>`_
+  * `EAGER-CLI (latest) <https://github.com/apeltzer/EAGER-CLI>`_
+  * `FastX-Tools (v0.0.13) <http://hannonlab.cshl.edu/fastx_toolkit/>`_
+  * `FastQC (v0.11.4) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
+  * `GATK (v3.5) <https://www.broadinstitute.org/gatk/>`_
+  * `mapDamage (v2.0) <http://ginolhac.github.io/mapDamage/>`_
+  * `MergedReadExtractor (latest) <https://github.com/apeltzer/MergedReadExtractor>`_
+  * `MTNucRatioCalculator (latest) <https://github.com/apeltzer/MTNucRatioCalculator>`_
+  * `Picard-Tools (v1.140) <http://broadinstitute.github.io/picard/>`_
+  * `Preseq (v2.0) <http://smithlabresearch.org/software/preseq/>`_
+  * `QualiMap (v2.3) <http://qualimap.bioinfo.cipf.es/>`_
+  * `ReportTable (latest) <https://github.com/apeltzer/ReportTable>`_
+  * `Samtools (v1.3.0) <http://www.htslib.org/>`_
+  * `Stampy (current) <http://www.well.ox.ac.uk/project-stampy>`_
+  * `Tabix (v1.3.0) <http://www.htslib.org/download/>`_
+  * `VCF2Genome (latest) <https://github.com/apeltzer/VCF2Genome>`_
 
 In order to make installation more easy, I provide `installation files for linking <https://github.com/apeltzer/EAGER-links>`_ the tools correctly. You will have to adjust in each file (open with a text editor) the correct location to the executables. Once you've done this and installed all the tools required for EAGER, you can simply add the location of these scripts to your path, e.g.
 
