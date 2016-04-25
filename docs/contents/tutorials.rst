@@ -207,18 +207,48 @@ You can now click on *Select input \*fq/\*.fq.gz Files* and navigate to your fol
 
 In our case here, we simply select the folder `RAW` and click on *Choose*. A new window is opening up, asking you several questions to determine which kind of analysis should be performed on the selected data.
 
-.. image:: images/tutorials/bacteria/04_input_type.png
+.. image:: images/tutorials/bacteria/03_input_type.png
    :width: 300px
    :height: 300px
    :align: center
 
-As we have UDG treated ancient bacterial data here, which has been sequenced in paired-end sequencing mode, we simply select the appropriate types and click on *ok*.
+As we have UDG treated ancient bacterial data here, which has been sequenced in paired-end sequencing mode, we simply select the appropriate types and click on *OK*.
+The *Select input \*fq/\*.fq.gz Files* button on top of the GUI should be green to display, that you have successfully selected your input dataset.
+
 
 Selecting your reference genome
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Continue now by clicking on *Select Reference* and select your reference genome in FastA format.
+
+.. note::
+
+  You don't need to index any reference genomes manually. EAGER will take care of generating required indices on-the-fly when running the pipeline. If an index has been created, the pipeline will figure this out and no new one will be generated to save disk space and time.
+
+.. image:: images/tutorials/bacteria/04_input_fasta.png
+    :width: 300px
+    :height: 300px
+    :align: center
+
 Selecting your results folder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+  EAGER uses a typical folder structure to store any produced output. This is called the results folder, in which EAGER creates subfolders on a per-sample basis, then populating these with the typical EAGER folder structure.
+
+Simply click on the *Select output folder* button, then select a folder of your choice to store the analysis results in the end.
+
+.. image:: images/tutorials/bacteria/05_input_results.png
+    :width: 300px
+    :height: 300px
+    :align: center
+
+.. warning::
+
+  You have to ensure that you have proper access rights to the results folder and the reference genome FastA file or otherwise the analysis will fail.
+
+
 
 Step IV: Configure your Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
