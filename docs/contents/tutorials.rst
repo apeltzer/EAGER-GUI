@@ -163,6 +163,68 @@ All the output BAM files, VCF files and other important analysis results can be 
 Bacterial analysis
 ------------------
 
+EAGER can be used to reconstruct ancient bacterial genomes in an efficient way, too. In order to perform such a bacterial genome reconstruction, we will be reconstructing three sample entries from ancient bacterial data in this tutorial using a *S. aureus* reference genome in FastA format.
+
+Step I: Data preparation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+You should have a couple of folders set up, mainly containing the data, making sure the data follows the guidelines for :ref:`naming_scheme` .
+Ideally, your folder structure should look like:
+
+.. image:: images/tutorials/bacteria/01_input_fastq.png
+   :width: 300px
+   :height: 300px
+   :align: center
+
+.. warning::
+  As we do perform genotyping using the GATK, please ensure that your genome FastA file is ending with a `.fasta` file extension. If you don't do this, the pipeline can fail.
+
+Step II: Starting the GUI
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Depending on your installation type, you should have ensured a working graphical user interface of EAGER and start it. Once you have started the GUI, you will be welcomed by the main user interface of EAGER.
+
+.. image:: images/tutorials/bacteria/02_GUI.png
+   :width: 300px
+   :height: 300px
+   :align: center
+
+Step III: Selecting input
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Selecting FastQ input
+^^^^^^^^^^^^^^^^^^^^^
+You can now click on *Select input \*fq/\*.fq.gz Files* and navigate to your folder where the RAW sequencing input is stored on your network share or local hard drive.
+
+.. image:: images/tutorials/bacteria/03_select_input.png
+   :width: 300px
+   :height: 300px
+   :align: center
+
+.. note::
+
+  You may select **either** single/multiple FastQ files, **or** a folder containing subfolders with FastQ files. EAGER will pick up every FastQ file in all subfolders automatically.
+
+In our case here, we simply select the folder `RAW` and click on *Choose*. A new window is opening up, asking you several questions to determine which kind of analysis should be performed on the selected data.
+
+.. image:: images/tutorials/bacteria/04_input_type.png
+   :width: 300px
+   :height: 300px
+   :align: center
+
+As we have UDG treated ancient bacterial data here, which has been sequenced in paired-end sequencing mode, we simply select the appropriate types and click on *ok*.
+
+Selecting your reference genome
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Selecting your results folder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Step IV: Configure your Analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Step VI: Pick up results!
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Human (WGS) analysis
 --------------------
