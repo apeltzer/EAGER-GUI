@@ -1,10 +1,10 @@
 Tutorials
 =========
 
-This section describes several potential use cases for EAGER. A complete analysis of a couple of mitochondrial captures, a bacterial genome analysis and a analysis of human whole genome shotgun data.
+This section describes several potential use cases for EAGER: A complete analysis of a couple of mitochondrial captures, a bacterial genome analysis and an analysis of human whole genome shotgun data.
 
-Mitochondrial analysis
-----------------------
+Use case I: Mitochondrial analysis
+----------------------------------
 
 First, we will have to make sure that all data that we are using is there. This consists of three samples (Sample A-C) that have been created using a paired-end sequencing run on an Illumina sequencer. In order to run the analysis, we will utilize the EAGER pipeline and configure it step-by-step to run our analysis.
 
@@ -160,8 +160,8 @@ All the output BAM files, VCF files and other important analysis results can be 
 
 .. note:: You can import the results table in CSV format in any compatible sheet calculation software, LibreOffice for example works very well.
 
-Bacterial analysis
-------------------
+Use case II: Bacterial analysis
+------------------------------
 
 EAGER can be used to reconstruct ancient bacterial genomes in an efficient way, too. In order to perform such a bacterial genome reconstruction, we will be reconstructing three sample entries from ancient bacterial data in this tutorial using a *S. aureus* reference genome in FastA format.
 
@@ -311,5 +311,5 @@ All the output BAM files, VCF files and other important analysis results can be 
 
 .. note:: You can import the results table in CSV format in any compatible sheet calculation software, LibreOffice for example works very well.
 
-Human (WGS) analysis
---------------------
+Use Case III: Human (WGS) analysis
+----------------------------------
