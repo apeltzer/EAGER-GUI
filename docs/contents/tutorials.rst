@@ -253,6 +253,50 @@ Simply click on the *Select output folder* button, then select a folder of your 
 Step IV: Configure your Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Now that you have selected your input data, your reference genome and the corresponding output folder, you can configure the pipeline more in detail. Start by configuring how many CPU cores and how much random access memory (RAM) can be used by the pipeline for your analysis.
+
+.. warning::
+
+  If you're unsure what to select for CPU cores and/or RAM consumption, you may want to look up your system configuration prior to starting an analysis here. Some processes can fail and make your system unstable when failing if you select too many CPU cores / use too much memory.
+
+For bacterial data analysis, you may want to deselect the Contamination Estimation module, as it is tailored to mitochondrial contamination estimation and less suited for bacterial data. We would like to get a final FastA file with our called variants incorporated, so we keep the SNP calling, filtering and the VCF2Genome modules turned on in the pipeline.
+
+.. image:: images/tutorials/bacteria/06_gui_configured.png
+    :width: 300px
+    :height: 300px
+    :align: center
+
+.. note::
+
+  The CleanUp module is removing *redundant* data, e.g. intermediate processing results, that are stored in different file formats to save disk space. In almost all cases you can safely keep this module turned on without compromising your analysis results.
+
+After you are done with the configuration of the selected modules, e.g. by clicking on the *Advanced* buttons of the respective tools, you may click on *Generate Config File* on the bottom of the GUI to generate the required pipeline configuration files. A window should open up, telling you that your analysis run has been configured successfully.
+
+.. image:: images/tutorials/bacteria/07_gui_config_created.png
+    :width: 300px
+    :height: 300px
+    :align: center
+
+Step V: Run the Analysis Pipeline
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  In order to execute the generated configuration files, the GUI is already giving you a little hint on how to run the execution part of the pipeline. Open up a Terminal application of your choice and then navigate to your folder(s) containing the configuration files (your *result* folder) and run the `eagercli` command to execute the configuration file(s):
+
+.. code-block: bash
+
+  cd /Users/peltzer/Desktop/Results
+  eagercli .
+
+.. image:: images/tutorials/bacteria/08_run_configuration.png
+  :width: 300px
+  :height: 200px
+  :align: center
+
+.. note::
+
+  You don't need to specify the full path to the generated configuration files, e.g. if you specify the *results* folder, EAGER will detect all configuration files automatically and run these sequentially after each other. For some purposes (e.g. a cluster system) you might want to schedule single jobs for each configuration file however, which can be done by specifying the path to the respective configuration files directly.
+
+
 Step VI: Pick up results!
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
