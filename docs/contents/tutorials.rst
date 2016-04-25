@@ -272,7 +272,7 @@ For bacterial data analysis, you may want to deselect the Contamination Estimati
 
 After you are done with the configuration of the selected modules, e.g. by clicking on the *Advanced* buttons of the respective tools, you may click on *Generate Config File* on the bottom of the GUI to generate the required pipeline configuration files. A window should open up, telling you that your analysis run has been configured successfully.
 
-.. image:: images/tutorials/bacteria/07_gui_config_created.png
+.. image:: images/tutorials/bacteria/07_guI_config_created.png
     :width: 300px
     :height: 300px
     :align: center
@@ -299,6 +299,17 @@ Step V: Run the Analysis Pipeline
 
 Step VI: Pick up results!
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+EAGER creates a CSV based report file in the results folder, which contains statistics for the analysis run. A typical results report looks like this:
+
+.. image:: images/tutorials/mito/10_results_table.png
+    :width: 951px
+    :height: 59px
+    :align: center
+
+All the output BAM files, VCF files and other important analysis results can be found in the sample specific folders in the results folder.
+
+.. note:: You can import the results table in CSV format in any compatible sheet calculation software, LibreOffice for example works very well.
 
 Human (WGS) analysis
 --------------------
