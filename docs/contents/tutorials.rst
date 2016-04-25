@@ -280,7 +280,7 @@ After you are done with the configuration of the selected modules, e.g. by click
 Step V: Run the Analysis Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  In order to execute the generated configuration files, the GUI is already giving you a little hint on how to run the execution part of the pipeline. Open up a Terminal application of your choice and then navigate to your folder(s) containing the configuration files (your *result* folder) and run the `eagercli` command to execute the configuration file(s):
+In order to execute the generated configuration files, the GUI is already giving you a little hint on how to run the execution part of the pipeline. Open up a Terminal application of your choice and then navigate to your folder(s) containing the configuration files (your *result* folder) and run the `eagercli` command to execute the configuration file(s):
 
 .. code-block: bash
 
