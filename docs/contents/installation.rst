@@ -28,18 +28,35 @@ Docker
 
    This is the default way to use EAGER in a dockerized environment. Best user experience, minimum performance drawbacks.
 
+In order to use this approach, you will need either a running Linux operating system or a OSX installation at your hand.
 
-Compiling Deager
+Obtaining Deager
 ^^^^^^^^^^^^^^^^
 
-After you successfully installed all prerequisites (Docker, Docker-Compose) you can start by compiling the helper tool ``deager`` required to run EAGER within Docker more easily. Go to your Home Directory, e.g. Downloads
+Pre-Compiled binary
+~~~~~~~~~~~~~~~~~~~
+
+There are two ways to get our little helper tool `deager` for the easy interaction with the docker container running the actual pipeline. We provide a pre-compiled binary for you to download, or you can simply compile the binary yourself.
 
 .. code-block:: bash
 
    cd ~/Downloads
    git clone https://github.com/apeltzer/deager.git
-   cd deager
-   docker-compose up
+   cd deager/bin/Ubuntu
+   ./deager
+
+In the folder `deager/bin/Ubuntu/` you can find a precompiled binary that should work on many 64bit Linux operating systems. In case this does not work, please compile manually as described in the next section.
+
+
+Compile manually
+~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+  cd ~/Downloads
+  git clone https://github.com/apeltzer/deager.git
+  cd deager/
+  docker-compose up
 
 This will compile the **deager** executable, that you can then later use to run EAGER inside a Docker container more easily, hiding all of the complexity of the pipeline behind three commands. After 2-3 minutes, you should see something like this:
 
@@ -87,8 +104,6 @@ A more extensive description of the options required to run the pipeline can be 
    run:      Run eagercli within --data directory
 
    Options:
-     --gatk <path>      Path to the GATK file (jar/tar.bz2) [default: ~/gatk/]
-                        It has to be provided by the user, since the license prohibits packaging it in our image.
      --data <path>      Directory to use as /data/ directory within eager (default: ~/data)
      --image <str>      Name of the eager image [default: apeltzer/eager]
      --container <str>  Name of the container spun up (default: eager_$USER)
@@ -104,13 +119,21 @@ You will be able to run the EAGER pipeline now with just these four commands off
 
 .. code-block:: bash
 
-   deager start --gatk /path/to/gatk --data /path/to/your/datafolder
+   deager start --data /path/to/your/datafolder
+
+.. note::
+
+  You may need to set the system variable on your system before this will run properly. To do so, simply issue the following on the command line and you're ready to go:
+
+  .. code-block:: bash
+
+  export DOCKER_HOST=unix:///var/run/docker.sock
 
 Afterwards, you can open the GUI to configure an analysis run, illustrated in this little `helper video <https://www.youtube.com/watch?v=cKrBuoiGgNE>`_
 
 .. code-block:: bash
 
-   deager gui --gatk ~/gatk --data ~/data
+   deager gui --data ~/data
 
 
 This should open a graphical interface on your machine, enabling you to configure everything and creating subsequently configuration files used for the pipeline execution in your ``/path/to/your/data`` folder.
@@ -137,7 +160,7 @@ Manual Installation
 
 The manual installation on an infrastructure without access to a docker container is a bit more complex than installing the docker image, as all the requirements and subsequent tools for EAGER need to be linked correctly on the system running the pipeline in the end. This has certain requirements:
 
-  * Java 7 Environment, preferrably the Oracle JDK7
+  * Java 7 Environment, preferably the Oracle JDK7
   * GNU Bash
 
 After this, the following tools need to be installed by the user, ideally system wide or (if this is not possible due to access rights), by manually compiling them. In parentheses you can find the version(s) EAGER has been tested with.
