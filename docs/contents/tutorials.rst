@@ -1,6 +1,6 @@
 Tutorials
 =========
-
+.. _tutorials:
 This section describes several potential use cases for EAGER: A complete analysis of a couple of mitochondrial captures, a bacterial genome analysis and an analysis of human whole genome shotgun data.
 
 Use case I: Mitochondrial analysis
