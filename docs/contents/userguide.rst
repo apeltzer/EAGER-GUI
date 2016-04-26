@@ -20,6 +20,7 @@ The CLI should then find all the generated configuration files (which are stored
 If you have multiple samples, we however recommend executing these by selecting a folder/directory one level up and EAGER would find all XML files in the subdirectories of this folder:
 
 .. code-block:: bash
+
   eagercli /data/real_analysis/
 
 .. note::
@@ -27,8 +28,8 @@ If you have multiple samples, we however recommend executing these by selecting 
   This will run all samples in the folder **real_analysis** for your convenience.
 
 
-Docker Installation & User Guide for Ubuntu 16.04 LTS
-=====================================================
+Docker Installation / First Usage Ubuntu 16.04 LTS
+--------------------------------------------------
 
 This is a simple use case for first time users to run the pipeline using our docker image on a Ubuntu 16.04 LTS host system. It requires you to install Docker on Ubuntu, then running the image and setting up your analysis and finally running the pipeline on your created configuration files. Open up a terminal on your Ubuntu system:
 
@@ -75,7 +76,7 @@ Afterwards, the image will be started and you are ready to go!
 
   ./deager gui --data /path/to/your/data
 
-Now configure the pipeline, e.g. following one of our tutorials at :ref:`tutorials`. After you are done with this, you can simply execute the configuration files:
+Now configure the pipeline, e.g. following one of our tutorials at :ref:`tutorials` . After you are done with this, you can simply execute the configuration files:
 
 .. code-block:: bash
 
