@@ -83,3 +83,5 @@ Now configure the pipeline, e.g. following one of our tutorials at :ref:`tutoria
   ./deager run --data /path/to/your/data
 
 And the pipeline will execute your configurations.
+
+This whole process is also available as a short little video available `here <https://youtu.be/dfsrUIEr2UY>`_ .
