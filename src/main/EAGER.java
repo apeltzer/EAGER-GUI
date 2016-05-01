@@ -80,6 +80,7 @@ public class EAGER {
     private JComboBox rmdup_combobox;
     private JCheckBox schmutzi_checkbox;
     private JButton schmutzi_advanced_button;
+    private JCheckBox useSystemTmpDirCheckBox;
     private JMenuBar jmenubar;
     private JMenu jmenu;
     public Image icon;
@@ -243,6 +244,14 @@ public class EAGER {
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);
                 output_button.setToolTipText("Select your output folder in which the results of the pipeline should be stored.");
+            }
+        });
+
+        useSystemTmpDirCheckBox.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                useSystemTmpDirCheckBox.setToolTipText("If not selected EAGER will attempt to use the output folder for temporary files");
             }
         });
 
@@ -627,6 +636,13 @@ public class EAGER {
 
             }
         });
+
+        useSystemTmpDirCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                communicator.setUsesystemtmpdir(useSystemTmpDirCheckBox.isSelected());
+            }
+        });
     }
 
     /**
@@ -637,6 +653,7 @@ public class EAGER {
     private void collectMainWindowInformation() {
         communicator.setMaxmemory(maxmemory_textfield.getText());
         communicator.setCpucores(cpucores_textfield.getText());
+        communicator.setUsesystemtmpdir(useSystemTmpDirCheckBox.isSelected());
         communicator.setGatk_caller(genotyper.getSelectedItem().toString());
         communicator.setRun_fastqc(fastQCAnalysisCheckBox.isSelected());
         communicator.setRun_cleanup(cleanUpBox.isSelected());
