@@ -38,3 +38,8 @@ You can fix this:
   ./deager gui
 
 And you should be able to run it again!
+
+I have some BAM files already preprocessed and don't want to map everything again
+---------------------------------------------------------------------------------
+
+You can also select BAM files in the EAGER pipeline! Just select the BAM files as input, set the _same_ reference genome as you used for mapping, select an output folder and *deselect adapter clipping & mapping modules* and you're ready to go! You could for example use EAGER in these cases for the assessment of BAM files, genotyping and duplicate removal, without mapping your preprocessed BAM files again.
