@@ -676,7 +676,6 @@ public class EAGER {
         communicator.setMapper_to_use(this.mapper_selection.getSelectedItem().toString());
         communicator.setRun_reportgenerator(runReportGenerator.isSelected());
 
-        generateRGConfiguration(communicator);
 
     }
 
@@ -715,6 +714,8 @@ public class EAGER {
      * tasks of the pipeline, to generate the appropriate configuration files
      */
     private void generateConfiguration(Communicator c) throws IOException {
+        generateRGConfiguration(communicator);
+
         ConfigGenerator cg = new ConfigGenerator(communicator, communicator.getGUI_resultspath(), this, this.runReportGenerator.isSelected());
     }
 
@@ -723,6 +724,8 @@ public class EAGER {
      * tasks of the pipeline, to generate the appropriate configuration files
      */
     private void generateConfiguration(Communicator c, String resultspath) throws IOException {
+        generateRGConfiguration(communicator);
+
         ConfigGenerator cg = new ConfigGenerator(communicator, resultspath, this, this.runReportGenerator.isSelected());
     }
 
@@ -741,9 +744,7 @@ public class EAGER {
 
     private void generateRGConfiguration(Communicator communicator) {
         String filenames = Files.getNameWithoutExtension(this.communicator.getGUI_inputfiles().get(0));
-        File f = new File(this.communicator.getGUI_inputfiles().get(0));
-        String filename = f.getParent();
-        String readgroup = "@RG" + "\\t" + "ID:ILLUMINA-" + filename + "\\t" + "SM:" + filename + "\\t" + "PL:illumina";
+        String readgroup = "@RG" + "\\t" + "ID:ILLUMINA-" + filenames + "\\t" + "SM:" + filenames + "\\t" + "PL:illumina";
         this.communicator.setMapper_readgroup(readgroup);
     }
 
