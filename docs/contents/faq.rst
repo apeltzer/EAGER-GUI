@@ -33,11 +33,20 @@ You can fix this:
 
 .. code-block:: bash
 
+  sed -i '/127.0.1.1/d' ~/.ssh/known_hosts
   docker rm eager_$(whoami)
   ./deager start
   ./deager gui
 
 And you should be able to run it again!
+
+.. note::
+
+  You need to replace "127.0.1.1" with your IP adress, that you find in the INFO field of the error message.
+
+.. note::
+
+  Quick explanation: The image has been updated for example and thus the SSH fingerprint doesn't match anymore with what your local ssh ''known_hosts'' states. We remove this line and then the image is accepted again.
 
 I have some BAM files already preprocessed and don't want to map everything again
 ---------------------------------------------------------------------------------
