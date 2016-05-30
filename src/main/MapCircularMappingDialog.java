@@ -30,6 +30,7 @@ public class MapCircularMappingDialog extends JDialog {
     private JTextField bwa_maxdiff;
     private JTextField bwa_qualityfilter;
     private JTextField chrMTTextField;
+    private JCheckBox extractMappedUnmappedReadsCheckBox;
 
     public MapCircularMappingDialog(final Communicator communicator) {
         setValues(communicator);
@@ -54,6 +55,7 @@ public class MapCircularMappingDialog extends JDialog {
         communicator.setMapper_mismatches(bwa_maxdiff.getText());
         communicator.setMapper_mapquality_filter(bwa_qualityfilter.getText());
         communicator.setCM_tobemapped_against(chrMTTextField.getText());
+        communicator.setRun_mapping_extractmappedandunmapped(extractMappedUnmappedReadsCheckBox.isSelected());
         dispose();
     }
 
@@ -74,6 +76,14 @@ public class MapCircularMappingDialog extends JDialog {
         if(String.valueOf(c.getCM_tobemapped_against()) != null){
             chrMTTextField.setText(c.getCM_tobemapped_against());
         }
+
+        if(c.isRun_mapping_extractmappedandunmapped()){
+            this.extractMappedUnmappedReadsCheckBox.setSelected(true);
+        } else {
+            this.extractMappedUnmappedReadsCheckBox.setSelected(false);
+        }
+
+
     }
 
 
