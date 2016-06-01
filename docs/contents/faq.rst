@@ -52,3 +52,8 @@ I have some BAM files already preprocessed and don't want to map everything agai
 ---------------------------------------------------------------------------------
 
 You can also select BAM files in the EAGER pipeline! Just select the BAM files as input, set the _same_ reference genome as you used for mapping, select an output folder and *deselect adapter clipping & mapping modules* and you're ready to go! You could for example use EAGER in these cases for the assessment of BAM files, genotyping and duplicate removal, without mapping your preprocessed BAM files again.
+
+I'm using the Docker image to run my analysis but it won't work
+---------------------------------------------------------------
+
+Please check first, whether you have file paths with spaces or special characters, for example é or ö/ä/ü. Ideally, restrict your file naming and storing patterns to english paths. Furthermore, make sure that you follow the file naming patterns in detail, as this is mandatory for the pipeline usage.
