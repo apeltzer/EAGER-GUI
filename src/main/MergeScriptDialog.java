@@ -34,6 +34,7 @@ public class MergeScriptDialog extends JDialog {
     private JCheckBox performOnlyAdapterClippingCheckBox;
     private JTextField barcode_3p_clip;
     private JTextField barcode_5p_clip;
+    private JCheckBox clipandmerge_mergedonly_checkbox;
 
     public MergeScriptDialog(final Communicator c) {
         setValues(c);
@@ -53,7 +54,6 @@ public class MergeScriptDialog extends JDialog {
             }
         });
 
-// call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -61,7 +61,6 @@ public class MergeScriptDialog extends JDialog {
             }
         });
 
-// call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
@@ -79,6 +78,7 @@ public class MergeScriptDialog extends JDialog {
         c.setMerge_only_clipping(performOnlyAdapterClippingCheckBox.isSelected());
         c.setMerge_barcode3p(barcode_3p_clip.getText());
         c.setMerge_barcode5p(barcode_5p_clip.getText());
+        c.setMerge_keep_only_merged(clipandmerge_mergedonly_checkbox.isSelected());
         dispose();
     }
 
@@ -112,6 +112,8 @@ public class MergeScriptDialog extends JDialog {
         if((String.valueOf(c.getMerge_barcode5p()) != null)){
             this.barcode_5p_clip.setText(c.getMerge_barcode5p());
         }
+
+        this.clipandmerge_mergedonly_checkbox.setSelected(c.isMerge_keep_only_merged());
 
     }
 
