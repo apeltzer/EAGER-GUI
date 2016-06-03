@@ -73,7 +73,7 @@ public class ContaminationDialog extends JDialog {
     }
 
     private void onOK(Communicator c) {
-        c.setSchmutzi_library_type((String) this.schmutzi_library_combobox.getModel().getSelectedItem());
+        c.setSchmutzi_library_type(((String) this.schmutzi_library_combobox.getModel().getSelectedItem()).toLowerCase());
         dispose();
     }
 
