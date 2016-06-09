@@ -149,6 +149,11 @@ And EAGER will process your data given your configuration files sequentially. Af
 Note that the initial download of the image might take some time, depending on your internet connection.
 
 
+.. note::
+
+   If you need assistance with the Docker image and or would like to get updates if the image is updated, please sign up at our mailing list for docker users of EAGER by sending an e-mail to `<eager-docker@googlegroups.com>`_ .
+
+
 
 
 Manual Installation
