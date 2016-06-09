@@ -19,7 +19,7 @@ This is our in-house application for adapter clipping and read merging. Clicking
     :height: 300px
     :align: center
 
-You can select forward and reverse read adapters here that are then subsequently clipped off your sequencing reads during analysis. Furthermore, Clip&Merge performs a base quality trimming of unmerged reads, filters out sequences falling below a certain length. If you don't want to merge your reads, you can also specify to only clip adapters without merging reads afterwards. Barcodes are supported too, you can specify to trim bases from both 3' and 5' ends as well in the application.
+You can select forward and reverse read adapters here that are then subsequently clipped off your sequencing reads during analysis. Furthermore, Clip&Merge performs a base quality trimming of unmerged reads, filters out sequences falling below a certain length. If you don't want to merge your reads, you can also specify to only clip adapters without merging reads afterwards. Barcodes are supported too, you can specify to trim bases from both 3' and 5' ends as well in the application. Another feature is available to only include merged reads into downstream analysis. Unmerged reads are kept in separate files, one for forward and one for reverse reads, stored in the same folder than the merged ones but unused for further downstream analysis. 
 
 .. warning::
 
