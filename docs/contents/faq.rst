@@ -38,7 +38,7 @@ You can fix this:
   ./deager start
   ./deager gui
 
-And you should be able to run it again!
+And you should be able to run it again! Another way would be to use a text editor of choice on your host system and remove the entry on your host machine then manually if things don't work that way. 
 
 .. note::
 
