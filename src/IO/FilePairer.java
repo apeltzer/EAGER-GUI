@@ -24,6 +24,8 @@ import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created with IntelliJ IDEA.
@@ -83,14 +85,20 @@ public class FilePairer {
         String common_f1 = "";
         String common_f2 = "";
 
+        Pattern lane_patt = Pattern.compile("L0\\d*");
+        Pattern pair_patt = Pattern.compile("R[1,2]");
+
+
         //Information for File #1
         for (String s : splitf1) {
-            if (s.startsWith("L")) {
+            Matcher lane_matcher = lane_patt.matcher(s);
+            if (lane_matcher.matches()) {
                 //then we have the lane information here
                 f1_lane = s;
                 continue;
             }
-            if(s.startsWith("R")){
+            Matcher pair_Matcher = pair_patt.matcher(s);
+            if(pair_Matcher.matches()){
                 //then we have the pair information like R1 = forward, R2 = reverse
                 f1_pair = s;
                 continue;
@@ -103,12 +111,14 @@ public class FilePairer {
 
         //Information for File #2
         for (String s : splitf2) {
-            if (s.startsWith("L")) {
+            Matcher lane_matcher = lane_patt.matcher(s);
+            if (lane_matcher.matches()) {
                 //then we have the lane information here
                 f2_lane = s;
                 continue;
             }
-            if(s.startsWith("R")){
+            Matcher pair_Matcher = pair_patt.matcher(s);
+            if(pair_Matcher.matches()){
                 //then we have the pair information like R1 = forward, R2 = reverse
                 f2_pair = s;
                 continue;
@@ -143,15 +153,21 @@ public class FilePairer {
         for(UnpairedFile entry : listoffiles){
             String[] split = entry.getDescriptor().split("_");
 
+            Pattern lane_patt = Pattern.compile("L0\\d*");
+            Pattern pair_patt = Pattern.compile("R[1,2]");
+
+
 
 
             //Information for File #1
             for (String s : split) {
-                if (s.startsWith("L")) {
+                Matcher lane_matcher = lane_patt.matcher(s);
+                if (lane_matcher.matches()) {
                     //then we have the lane information here
                     continue;
                 }
-                if(s.startsWith("R")){
+                Matcher pair_Matcher = pair_patt.matcher(s);
+                if(pair_Matcher.matches()){
                     //then we have the pair information like R1 = forward, R2 = reverse
                     continue;
                 }
