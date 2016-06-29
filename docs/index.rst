@@ -19,6 +19,8 @@ Contents:
 
    contents/moduledescription
 
+   contents/reports
+
    contents/tutorials
 
    contents/faq
