@@ -201,4 +201,4 @@ The damage on the 2nd base on the 3' end of the merged reads.
 average fragment length
 -----------------------
 
-The average fragment length of your samples reads. 
+The average fragment length of your samples reads.
