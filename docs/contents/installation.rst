@@ -165,7 +165,7 @@ Manual Installation
 
 The manual installation on an infrastructure without access to a docker container is a bit more complex than installing the docker image, as all the requirements and subsequent tools for EAGER need to be linked correctly on the system running the pipeline in the end. This has certain requirements:
 
-  * Java 7 Environment, preferably the Oracle JDK7
+  * Java 8 Environment, preferably the Oracle JDK8
   * GNU Bash
 
 After this, the following tools need to be installed by the user, ideally system wide or (if this is not possible due to access rights), by manually compiling them. In parentheses you can find the version(s) EAGER has been tested with.
@@ -180,7 +180,7 @@ List of Tools tested with EAGER:
   * `BAM2TDF(v14) <http://genomeview.org/manual/Bam2tdf>`_
   * BGZip (depending on your linux distribution, you have this already installed)
   * `Bowtie 2(v2.2.8) <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
-  * `BWA (v0.7.13) <https://sourceforge.net/projects/bio-bwa/>`_
+  * `BWA (v0.7.15) <https://sourceforge.net/projects/bio-bwa/>`_
   * `CircularMapper(latest) <https://github.com/apeltzer/CircularMapper>`_
   * `Clip & Merge(latest) <https://github.com/apeltzer/ClipAndMerge>`_
   * `Schmutzi (latest) <https://github.com/grenaud/schmutzi>`_
@@ -189,7 +189,7 @@ List of Tools tested with EAGER:
   * `EAGER-CLI (latest) <https://github.com/apeltzer/EAGER-CLI>`_
   * `FastX-Tools (v0.0.13) <http://hannonlab.cshl.edu/fastx_toolkit/>`_
   * `FastQC (v0.11.4) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
-  * `GATK (v3.5) <https://www.broadinstitute.org/gatk/>`_
+  * `GATK (v3.6) <https://www.broadinstitute.org/gatk/>`_
   * `mapDamage (v2.0) <http://ginolhac.github.io/mapDamage/>`_
   * `MergedReadExtractor (latest) <https://github.com/apeltzer/MergedReadExtractor>`_
   * `MTNucRatioCalculator (latest) <https://github.com/apeltzer/MTNucRatioCalculator>`_
