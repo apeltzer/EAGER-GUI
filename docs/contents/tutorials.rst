@@ -326,9 +326,9 @@ You should have a couple of folders set up, mainly containing the data, making s
 Ideally, your folder structure should look like:
 
 .. image:: images/tutorials/human/02_data_selection.png
-  :width: 300px
-  :height: 300px
-  :align: center
+    :width: 300px
+    :height: 300px
+    :align: center
 
 .. warning::
 If you need to perform genotyping, please ensure that your genome FastA file is ending with a `.fasta` file extension, or otherwise the GATK might complain about this.
@@ -339,9 +339,9 @@ Step II: Starting the GUI
 Depending on your installation type, you should have ensured a working graphical user interface of EAGER and start it. Once you have started the GUI, you will be welcomed by the main user interface of EAGER.
 
 .. image:: images/tutorials/human/02_GUI.png
-  :width: 300px
-  :height: 300px
-  :align: center
+    :width: 300px
+    :height: 300px
+    :align: center
 
 Step III: Selecting input
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -352,9 +352,9 @@ Selecting FastQ input
 You can now click on *Select input \*fq/\*.fq.gz Files* and navigate to your folder where the RAW sequencing input is stored on your network share or local hard drive.
 
 .. image:: images/tutorials/human/03_select_input.png
-  :width: 300px
-  :height: 300px
-  :align: center
+    :width: 300px
+    :height: 300px
+    :align: center
 
 .. note::
 
@@ -363,9 +363,9 @@ You can now click on *Select input \*fq/\*.fq.gz Files* and navigate to your fol
 In our case here, we simply select the folder `RAW` and click on *Choose*. A new window is opening up, asking you several questions to determine which kind of analysis should be performed on the selected data.
 
 .. image:: images/tutorials/human/04_input_choices.png
-  :width: 300px
-  :height: 300px
-  :align: center
+    :width: 300px
+    :height: 300px
+    :align: center
 
     In our case here, we choose that our data has not been treated with UDG, we have paired-end sequencing data and want to analyse whole genome dataset.
 
@@ -380,9 +380,9 @@ Continue now by clicking on *Select Reference* and select your reference genome 
   You don't need to index any reference genomes manually. EAGER will take care of generating required indices on-the-fly when running the pipeline. If an index has been created, the pipeline will figure this out and no new one will be generated to save disk space and time.
 
 .. image:: images/tutorials/human/05_input_reference.png
-:width: 300px
+    :width: 300px
     :height: 300px
-        :align: center
+    :align: center
 
 Selecting your results folder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -394,9 +394,9 @@ Selecting your results folder
 Simply click on the *Select output folder* button, then select a folder of your choice to store the analysis results in the end.
 
 .. image:: images/tutorials/human/06_input_results.png
-  :width: 300px
-  :height: 300px
-  :align: center
+    :width: 300px
+    :height: 300px
+    :align: center
 
 .. warning::
 
@@ -413,9 +413,9 @@ Now that you have selected your input data, your reference genome and the corres
 
 
 .. image:: images/tutorials/human/07_configuration_selection.png
-  :width: 300px
-  :height: 300px
-  :align: center
+    :width: 300px
+    :height: 300px
+    :align: center
 
 .. note::
 
@@ -424,9 +424,9 @@ Now that you have selected your input data, your reference genome and the corres
 After you are done with the configuration of the selected modules, e.g. by clicking on the *Advanced* buttons of the respective tools, you may click on *Generate Config File* on the bottom of the GUI to generate the required pipeline configuration files. A window should open up, telling you that your analysis run has been configured successfully.
 
 .. image:: images/tutorials/mito/08_configuration_created.png
-:width: 300px
-    :height: 300px
-        :align: center
+     :width: 300px
+     :height: 300px
+     :align: center
 
 Step V: Run the Analysis Pipeline
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -439,9 +439,9 @@ In order to execute the generated configuration files, the GUI is already giving
   eagercli .
 
 .. image:: images/tutorials/human/09_run_configuration.png
-  :width: 300px
-  :height: 200px
-  :align: center
+    :width: 300px
+    :height: 200px
+    :align: center
 
 .. note::
 
@@ -453,9 +453,9 @@ Step VI: Pick up results!
 EAGER creates a CSV based report file in the results folder, which contains statistics for the analysis run. A typical results report looks like this:
 
 .. image:: images/tutorials/mito/10_results_table.png
-  :width: 951px
-  :height: 59px
-  :align: center
+    :width: 951px
+    :height: 59px
+    :align: center
 
 All the output BAM files, VCF files and other important analysis results can be found in the sample specific folders in the results folder.
 
