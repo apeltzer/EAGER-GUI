@@ -20,7 +20,7 @@ Ideally, your folder structure should look like:
    :width: 300px
    :height: 300px
    :align: center
-
+BED
 .. warning::
   If you need to perform genotyping, please ensure that your genome FastA file is ending with a `.fasta` file extension, or otherwise the GATK might complain about this.
 
@@ -62,7 +62,7 @@ In our case here, we choose that our data has not been treated with UDG, we have
 
 .. note::
 
-  You have to specify a **BED** file for your reference genome if you want to analyse capture data in general. A typical BED file that could be used e.g. for HG19 mitochondrial analysis could look like this.
+  You have to specify a **BED** file for your reference genome if you want to analyse capture data in general. A typical BED file that could be used e.g. for HG19 mitochondrial analysis could look like this. Make sure to have tabulators between the six columns in your BED file.
 
   .. code-block:: bash
 
