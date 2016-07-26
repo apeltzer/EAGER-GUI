@@ -38,6 +38,8 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class EAGER {
+    private final String EAGER_VERSION = "1.92.12";
+
     private String filepath;
     private JCheckBox fastQCAnalysisCheckBox;
     private JCheckBox qualityFilteringCheckBox;
@@ -81,6 +83,7 @@ public class EAGER {
     private JCheckBox schmutzi_checkbox;
     private JButton schmutzi_advanced_button;
     private JCheckBox useSystemTmpDirCheckBox;
+    private JButton dedup_advanced_button;
     private JMenuBar jmenubar;
     private JMenu jmenu;
     public Image icon;
@@ -628,6 +631,17 @@ public class EAGER {
 
             }
         });
+
+        dedup_advanced_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeDupDialog deDupDialog = new DeDupDialog(communicator);
+                setWindowPosition(deDupDialog);
+                deDupDialog.setSize(650, 650);
+                deDupDialog.setVisible(true);
+            }
+        });
+
         schmutzi_advanced_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -724,6 +738,7 @@ public class EAGER {
      * tasks of the pipeline, to generate the appropriate configuration files
      */
     private void generateConfiguration(Communicator c, String resultspath) throws IOException {
+        generateEagerVersionConfiguration(communicator);
         generateRGConfiguration(communicator);
 
         ConfigGenerator cg = new ConfigGenerator(communicator, resultspath, this, this.runReportGenerator.isSelected());
@@ -740,6 +755,10 @@ public class EAGER {
                 ((primaryScreen.width - w) / 2) + primaryScreen.x,
                 ((primaryScreen.height - h) / 2) + primaryScreen.y));
 
+    }
+
+    private void generateEagerVersionConfiguration(Communicator communicator) {
+        this.communicator.setEager_verison(EAGER_VERSION);
     }
 
     private void generateRGConfiguration(Communicator communicator) {
