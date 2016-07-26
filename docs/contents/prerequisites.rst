@@ -55,8 +55,8 @@ EAGER relies on naming patterns that files should follow, to determine read pair
 
 .. code-block:: bash
 
-  SomeIDentifier_LaneIdentifier_R1.fq.gz
-  SomeIDentifier_LaneIdentifier_R2.fq.gz
+  SomeIDentifier_R1_LaneIdentifier.fq.gz
+  SomeIDentifier_R2_LaneIdentifier.fq.gz
 
 If you select several samples like this, EAGER will automatically determine which ones belong to each other and process all of them in a single processing run.
 
@@ -64,10 +64,10 @@ Typically, depending on your local sequencing infrastructure or if you received 
 
 .. code-block:: bash
 
-  Sample_XYZ/XYZ_LaneIdentifier_R1.fq.gz
-            /XYZ_LaneIdentifier_R2.fq.gz
-  Sample_UVW/UVW_LaneIdentifier_R1.fq.gz
-            /UVW_LaneIdentifier_R2.fq.gz
+  Sample_XYZ/XYZ_R1_LaneIdentifier.fq.gz
+            /XYZ_R1_LaneIdentifier.fq.gz
+  Sample_UVW/UVW_R1_LaneIdentifier.fq.gz
+            /UVW_R1_LaneIdentifier.fq.gz
 
 In this case you can simply select the parent folder of your input data containing the folders "Sample_XYZ" and "Sample_UVW" and EAGER will cope with the data itself.
 
