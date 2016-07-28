@@ -29,6 +29,7 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,7 +39,7 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class EAGER {
-    private final String EAGER_VERSION = "1.92.12";
+    private final String EAGER_VERSION = "1.92.13";
 
     private String filepath;
     private JCheckBox fastQCAnalysisCheckBox;
@@ -452,6 +453,8 @@ public class EAGER {
                 try {
                     collectMainWindowInformation();
                     if (communicator.getConflict() == 0) {
+                        ArrayList<String> original_gui_inputfiles = communicator.getGUI_inputfiles().stream().map( s -> s.toString() ).collect(Collectors.toCollection(ArrayList::new));
+
                         if (communicator.getGUI_inputfiles().size() == 1) { //Then this is a folder
                             File f = new File(communicator.getGUI_inputfiles().get(0));
                             if (f.isDirectory()) {
@@ -570,10 +573,14 @@ public class EAGER {
                             // For each pair create a new communicator object and let ConfigGenerator store this object
 
                         }
+
                         ConfigurationCreated configurationCreated = new ConfigurationCreated(communicator);
                         setWindowPosition(configurationCreated);
                         configurationCreated.setSize(650, 400);
                         configurationCreated.setVisible(true);
+
+                        communicator.setGUI_inputfiles(original_gui_inputfiles);
+
                     } else {
                         ConfigurationException cfge = new ConfigurationException(communicator);
                         cfge.setSize(650, 400);
