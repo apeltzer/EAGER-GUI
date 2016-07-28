@@ -333,7 +333,10 @@ public class EAGER {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 FastQFileChooser fqfc = new FastQFileChooser(communicator);
-                selectInputFqFilesButton.setForeground(Color.green);
+                //Check if some input was truly selected
+                if(communicator.getGUI_inputfiles() != null){
+                    selectInputFqFilesButton.setForeground(Color.green);
+                }
                 if (checkIfInputWasSelected()) {
                     RunButton.setEnabled(true);
                 } else {
@@ -770,8 +773,10 @@ public class EAGER {
 
     private boolean checkIfInputWasSelected() {
         boolean tmp = false;
-        if (communicator.getGUI_inputfiles().size() != 0 && communicator.getGUI_reference() != null && communicator.getGUI_resultspath() != null) {
-            tmp = true;
+        if (communicator.getGUI_inputfiles() != null && communicator.getGUI_reference() != null && communicator.getGUI_resultspath() != null) {
+            if(communicator.getGUI_inputfiles().size() != 0){
+                tmp = true;
+            }
         }
         return tmp;
     }
