@@ -334,7 +334,7 @@ public class EAGER {
             public void actionPerformed(ActionEvent actionEvent) {
                 FastQFileChooser fqfc = new FastQFileChooser(communicator);
                 selectInputFqFilesButton.setForeground(Color.green);
-                if (checkIfInputWasSelcted()) {
+                if (checkIfInputWasSelected()) {
                     RunButton.setEnabled(true);
                 } else {
                     RunButton.setEnabled(false);
@@ -348,7 +348,7 @@ public class EAGER {
                 ReferenceFastAChooser rffqc = new ReferenceFastAChooser(communicator);
                 referenceButton.setForeground(Color.green);
 
-                if (checkIfInputWasSelcted()) {
+                if (checkIfInputWasSelected()) {
                     RunButton.setEnabled(true);
                 } else {
                     RunButton.setEnabled(false);
@@ -435,7 +435,7 @@ public class EAGER {
             public void actionPerformed(ActionEvent actionEvent) {
                 ResultsFolderChooser rfc = new ResultsFolderChooser(communicator);
                 output_button.setForeground(Color.green);
-                if (checkIfInputWasSelcted()) {
+                if (checkIfInputWasSelected()) {
                     RunButton.setEnabled(true);
                 } else {
                     RunButton.setEnabled(false);
@@ -768,7 +768,7 @@ public class EAGER {
     }
 
 
-    private boolean checkIfInputWasSelcted() {
+    private boolean checkIfInputWasSelected() {
         boolean tmp = false;
         if (communicator.getGUI_inputfiles().size() != 0 && communicator.getGUI_reference() != null && communicator.getGUI_resultspath() != null) {
             tmp = true;
