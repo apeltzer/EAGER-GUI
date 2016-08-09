@@ -349,14 +349,10 @@ public class EAGER {
         referenceButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                ReferenceFastAChooser rffqc = new ReferenceFastAChooser(communicator);
+                ReferenceDialog rd = new ReferenceDialog(communicator, RunButton);
+                rd.setSize(600, 400);
+                rd.setVisible(true);
                 referenceButton.setForeground(Color.green);
-
-                if (checkIfInputWasSelected()) {
-                    RunButton.setEnabled(true);
-                } else {
-                    RunButton.setEnabled(false);
-                }
             }
         });
 

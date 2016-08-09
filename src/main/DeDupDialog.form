@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="contentPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="1742" height="3285"/>
+      <xy x="20" y="20" width="1742" height="4240"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -94,7 +94,7 @@
                   <enabled value="true"/>
                   <lineWrap value="true"/>
                   <rows value="6"/>
-                  <text value="This option applies if you are using the DeDup tool:&#10;&#10;Check this box unless your read names have prefixes indicating merged, forward or reverse (M_,F_,R_).&#10;&#10;If your reads are NOT from ClipAndMerge then you will probably want to check this box."/>
+                  <text value="This option applies if you are using the DeDup tool:&#10;&#10;Check this box unless your read names have prefixes indicating merged, read one or read two (M_,F_,R_).&#10;&#10;If your reads are NOT from ClipAndMerge then you will probably want to check this box. By checking this box, read names will be ignored and all reads are treated as merged."/>
                   <wrapStyleWord value="true"/>
                 </properties>
               </component>
