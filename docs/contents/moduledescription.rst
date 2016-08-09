@@ -57,8 +57,12 @@ This is the default mapping algorithm, largely used for mapping reads to ancient
 CircularMapper
 ^^^^^^^^^^^^^^
 
-This relies on the BWA mapper, but utilizes some tricks to obtain better mapping results on circular genomes. You can set the elongation factor to longer values in case you have data that includes longer reads. The *Reference to extend* value needs to describe the FastA entry that is used by the mapper for extension, e.g. if you have multiple chromosomes in your FastA reference, you need to specify one (or more, separated by a `;`) chromosome to be extended by the algorithm.
+This relies on the BWA mapper, but utilizes some tricks to obtain better mapping results on circular genomes. You can set the elongation factor to longer values in case you have data that includes longer reads. The *Reference to extend* value needs to describe the FastA entry that is used by the mapper for extension, e.g. if you have multiple chromosomes in your FastA reference, you need to specify one (or more, separated by a `;`) chromosome to be extended by the algorithm. 
 
+.. note::
+
+  Make sure that you use the first part of your reference identifier, for example until the first space is reached as identifier. Something like ``gi|123445|`` works, whether our matching method doesn't work with ``gi|34425| 12345``. Don't worry about the identifier containing pipe symbols, this is taken care of. 
+  
 .. image:: images/modules/03_mapping_CircularMapper.png
     :width: 300px
     :height: 300px
