@@ -31,7 +31,6 @@ public class DataTypeDialogue extends JDialog {
     private JCheckBox input_already_merged_jcheckbox;
     private JCheckBox merge_all_lanes_jcheckbox;
     private JCheckBox mt_capture_jcheckbox;
-    private JTextField mtcapture_jtextfield;
     private JComboBox capture_type_combobox;
     private JButton capture_button_select;
     private JButton capture_mt_button_select;
@@ -40,7 +39,7 @@ public class DataTypeDialogue extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-        mtcapture_jtextfield.setText(communicator.getFilter_for_mt());
+
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -51,10 +50,8 @@ public class DataTypeDialogue extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(mt_capture_jcheckbox.isSelected()){
-                    mtcapture_jtextfield.setEnabled(true);
                     capture_mt_button_select.setEnabled(true);
                 } else {
-                    mtcapture_jtextfield.setEnabled(false);
                     capture_mt_button_select.setEnabled(false);
                 }
             }
@@ -136,7 +133,6 @@ public class DataTypeDialogue extends JDialog {
 
         if(mt_capture_jcheckbox.isSelected()) {
             c.setRun_mt_capture_mode(true);
-            c.setFilter_for_mt(mtcapture_jtextfield.getText());
         } else {
             c.setRun_mt_capture_mode(false);
         }
