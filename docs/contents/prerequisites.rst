@@ -74,3 +74,12 @@ In this case you can simply select the parent folder of your input data containi
 .. note::
 
   EAGER does not require your data to be uncompressed such as other pipelines do. All of the tools in the pipeline have been tuned to enable input to be compressed as `fq.gz`, so input from Illumina sequencers can directly processed without uncompressing the datasets first. 
+
+Reference Genomes
+^^^^^^^^^^^^^^^^^
+
+EAGER requires your reference genomes to be in FastA format. Generating an index for mapping is not required, as the pipeline determines whether the index needs to be determined automatically.
+
+.. note::
+
+   If you have multiple reference genomes in a single folder, please generate folders for each of your references, otherwise index generation might run only once, creating indexes for only the first of your reference genomes.
