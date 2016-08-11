@@ -10,7 +10,7 @@ public class ReferenceDialog extends JDialog {
     private JButton buttonCancel;
     private JButton referenceButton;
     private JTextField mtcapture_jtextfield;
-    private JTextPane pleaseInputTheNameTextPane;
+    private JTextPane ifYouAreWorkingTextPane;
     private Communicator communicator;
     private JButton runButton;
 
