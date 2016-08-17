@@ -49,7 +49,7 @@ And you should be able to run it again! Another way would be to use a text edito
   Quick explanation: The image has been updated for example and thus the SSH fingerprint doesn't match anymore with what your local ssh ''known_hosts'' states. We remove this line and then the image is accepted again.
 
 I have some BAM files already preprocessed and don't want to map everything again
----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 
 You can also select BAM files in the EAGER pipeline! Just select the BAM files as input, set the _same_ reference genome as you used for mapping, select an output folder and *deselect adapter clipping & mapping modules* and you're ready to go! You could for example use EAGER in these cases for the assessment of BAM files, genotyping and duplicate removal, without mapping your preprocessed BAM files again.
 
@@ -57,3 +57,9 @@ I'm using the Docker image to run my analysis but it won't work
 ---------------------------------------------------------------
 
 Please check first, whether you have file paths with spaces or special characters, for example é or ö/ä/ü. Ideally, restrict your file naming and storing patterns to english paths. Furthermore, make sure that you follow the file naming patterns in detail, as this is mandatory for the pipeline usage.
+
+I am using EAGER to reconstruct several genomes simultaneously but it doesn't work
+------------------------------------------------------------------------------------
+
+Make sure that you have your individual reference genomes in separate folders and don't use a single folder for all of your references. EAGER relies on generating execution files (named DONE.<modulname>) to figure out whether parts of the pipeline have been executed before.
+If you have two reference genomes in one folder, it will generate indexes for the first reference genome and then find these files, stopping to create an index for the second genome. In order to prevent this, please use different folders for different reference genomes, as mentioned in the file naming pattern section of this documentation.
