@@ -51,6 +51,10 @@ In the folder `deager/bin/Ubuntu/` you can find a precompiled binary that should
 Compile manually
 ~~~~~~~~~~~~~~~~
 
+.. note::
+
+   This is only required if you can't use the precompiled binary provided by us in the `deager/bin/Ubuntu` folder for some reason (e.g. incompatible platforms). In all other cases you shouldn't need to do this at all and can proceed to the next step in the setup phase.
+
 .. code-block:: bash
 
   cd ~/Downloads
