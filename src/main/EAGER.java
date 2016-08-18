@@ -764,7 +764,7 @@ public class EAGER {
     }
 
     private void generateEagerVersionConfiguration(Communicator communicator) {
-        this.communicator.setEager_verison(EAGER_VERSION);
+        this.communicator.setEager_version(EAGER_VERSION);
     }
 
     private void generateRGConfiguration(Communicator communicator) {
