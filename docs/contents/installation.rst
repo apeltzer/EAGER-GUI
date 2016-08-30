@@ -6,7 +6,9 @@ We provide three kinds of installation instructions.
 VirtualBox
 ----------
 
-This should only be used for testing purposes.
+.. warning::
+
+  This should only be used for testing purposes as the image does not get updated at all and was only intended to try out the pipeline!
 
 .. note::
 
