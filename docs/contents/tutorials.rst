@@ -325,7 +325,7 @@ Step I: Data preparation
 You should have a couple of folders set up, mainly containing the data, making sure the data follows the guidelines for :ref:`naming_scheme` .
 Ideally, your folder structure should look like:
 
-.. image:: images/tutorials/human/02_data_selection.png
+.. image:: images/tutorials/human/01_data_selection.png
     :width: 300px
     :height: 300px
     :align: center
