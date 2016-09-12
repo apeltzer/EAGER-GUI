@@ -57,16 +57,16 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="2c301" class="javax.swing.JLabel" binding="threshold">
+          <component id="2c301" class="javax.swing.JLabel" binding="length">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Threshold (-t)"/>
+              <text value="Length (-l)"/>
               <toolTipText value="Number of bases which are considered for plotting nucleotide misincorporations."/>
             </properties>
           </component>
-          <component id="606c2" class="javax.swing.JTextField" binding="DamageProfiler_threshold_field">
+          <component id="606c2" class="javax.swing.JTextField" binding="DamageProfiler_length_field">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -74,16 +74,16 @@
             </constraints>
             <properties/>
           </component>
-          <component id="9c608" class="javax.swing.JLabel" binding="length">
+          <component id="9c608" class="javax.swing.JLabel" binding="advanced">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Length (-l)"/>
+              <text value="Advanced Parameters"/>
               <toolTipText value="Number of bases which are considered for frequency calculations."/>
             </properties>
           </component>
-          <component id="e4f3e" class="javax.swing.JTextField" binding="DamageProfiler_length_field">
+          <component id="e4f3e" class="javax.swing.JTextField" binding="DamageProfiler_advanced_field">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

@@ -9,10 +9,10 @@ public class DamageProfilerDialog extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
-    private JTextField DamageProfiler_threshold_field;
     private JTextField DamageProfiler_length_field;
+    private JTextField DamageProfiler_advanced_field;
+    private JLabel advanced;
     private JLabel length;
-    private JLabel threshold;
     private JCheckBox useAllMappedReadsCheckBox;
 
     public DamageProfilerDialog(final Communicator communicator) {
@@ -50,8 +50,8 @@ public class DamageProfilerDialog extends JDialog {
     }
 
     private void onOK(Communicator c) {
+        c.setMapdamage_advanced(DamageProfiler_advanced_field.getText());
         c.setMapdamage_length(DamageProfiler_length_field.getText());
-        c.setMapdamage_advanced("-t "+DamageProfiler_threshold_field.getText());
         if(useAllMappedReadsCheckBox.isSelected()){
             c.setDamageProfilerOnlyMerged(false);
         } else {
@@ -67,11 +67,11 @@ public class DamageProfilerDialog extends JDialog {
 
 
     private void setValues(Communicator c){
+        if(c.getMapdamage_advanced() != null){
+            this.DamageProfiler_advanced_field.setText(c.getMapdamage_advanced());
+        }
         if(c.getMapdamage_length() != null){
             this.DamageProfiler_length_field.setText(c.getMapdamage_length());
-        }
-        if(c.getMapdamage_advanced() != null){
-            this.DamageProfiler_threshold_field.setText("25");
         }
 
     }
