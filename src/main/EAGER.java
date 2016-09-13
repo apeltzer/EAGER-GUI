@@ -51,7 +51,7 @@ public class EAGER {
     private JButton RunButton;
     private JButton MergeButton;
     private JButton MapButton;
-    private JButton MapDamageButton;
+    private JButton DamageButton;
     private JCheckBox GATKSNPFilteringCheckBox;
     private JButton SNPFilterButton;
     private JButton selectall;
@@ -62,7 +62,7 @@ public class EAGER {
     private JCheckBox merge;
     private JCheckBox map;
     private JCheckBox coverage;
-    private JCheckBox mapdamage;
+    private JCheckBox damage;
     private JCheckBox complexity;
     private JCheckBox gatksnpcall;
     private JButton snpcalladvanced;
@@ -85,6 +85,7 @@ public class EAGER {
     private JButton schmutzi_advanced_button;
     private JCheckBox useSystemTmpDirCheckBox;
     private JButton dedup_advanced_button;
+    private JComboBox damageSelection;
     private JMenuBar jmenubar;
     private JMenu jmenu;
     public Image icon;
@@ -172,11 +173,11 @@ public class EAGER {
                 coverage.setToolTipText("Calculates the coverage of the input files using samtools mpileup and a small Java calculator tool. No further parameters are necessary.");
             }
         });
-        mapdamage.addMouseListener(new MouseAdapter() {
+        damage.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
                 super.mouseEntered(e);    //To change body of overridden methods use File | Settings | File Templates.
-                mapdamage.setToolTipText("mapDamage calculation: Calculates the map damage and deamination patterns on the input files. To change default parameters, click on advanced.");
+                damage.setToolTipText("mapDamage calculation: Calculates the map damage and deamination patterns on the input files. To change default parameters, click on advanced.");
             }
         });
         complexity.addMouseListener(new MouseAdapter() {
@@ -356,14 +357,23 @@ public class EAGER {
             }
         });
 
-        MapDamageButton.addActionListener(new ActionListener() {
+        DamageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                MapDamageDialog mapDamageDialog = new MapDamageDialog(communicator);
-                setWindowPosition(mapDamageDialog);
+                if (damageSelection.getSelectedItem().equals("DamageProfiler")) {
+                    DamageProfilerDialog damageProfilerDialog = new DamageProfilerDialog(communicator);
+                    setWindowPosition(damageProfilerDialog);
 
-                mapDamageDialog.setSize(400, 400);
-                mapDamageDialog.setVisible(true);
+                    damageProfilerDialog.setSize(400, 400);
+                    damageProfilerDialog.setVisible(true);
+
+                } else if (damageSelection.getSelectedItem().equals("mapDamage")) {
+                    MapDamageDialog mapDamageDialog = new MapDamageDialog(communicator);
+                    setWindowPosition(mapDamageDialog);
+
+                    mapDamageDialog.setSize(400, 400);
+                    mapDamageDialog.setVisible(true);
+                }
             }
         });
 
@@ -684,7 +694,7 @@ public class EAGER {
         communicator.setRun_coveragecalc(coverage.isSelected());
         communicator.setRun_gatksnpcalling(gatksnpcall.isSelected());
         communicator.setRun_gatksnpfiltering(GATKSNPFilteringCheckBox.isSelected());
-        communicator.setRun_mapdamage(mapdamage.isSelected());
+        communicator.setRun_mapdamage(damage.isSelected());
         communicator.setRun_mapping(map.isSelected());
         communicator.setRmdup_run(checkbox_rmdup.isSelected());
         communicator.setRun_qualityfilter(qualityFilteringCheckBox.isSelected());
@@ -695,6 +705,7 @@ public class EAGER {
         }
         communicator.setMapper_to_use(this.mapper_selection.getSelectedItem().toString());
         communicator.setRun_reportgenerator(runReportGenerator.isSelected());
+        communicator.setDNA_damage_calculator_to_use(this.damageSelection.getSelectedItem().toString());
 
 
     }
@@ -718,7 +729,7 @@ public class EAGER {
         merge.setSelected(b);
         map.setSelected(b);
         coverage.setSelected(b);
-        mapdamage.setSelected(b);
+        damage.setSelected(b);
         complexity.setSelected(b);
         gatksnpcall.setSelected(b);
         VCF2DraftCheckBox.setSelected(b);
