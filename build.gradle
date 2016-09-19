@@ -1,0 +1,66 @@
+group 'com.uni-tuebingen.de.it.eager.eager-gui'
+version '1.92.16'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.1'
+    }
+}
+
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'com.jfrog.bintray'
+}
+
+sourceCompatibility = 1.8
+
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+
+dependencies {
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile 'com.google.guava:guava:19.0'
+    compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.9'
+    compile group: 'com.intellij', name: 'forms_rt', version: '7.0.3'
+    compile 'com.uni-tuebingen.de.it.eager:EAGER-lib:1.92.16'
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "EAGER",
+                "Implementation-Version": version, "main-Class": "main.EAGER")
+    }
+    doFirst {
+        from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar //, javadocJar
+}
