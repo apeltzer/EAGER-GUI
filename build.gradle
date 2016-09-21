@@ -56,11 +56,34 @@ jar {
     }
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            groupId 'com.uni-tuebingen.de.it.eager'
+            artifactId 'EAGER-GUI'
+        }
+    }
 }
 
-artifacts {
-    archives sourcesJar //, javadocJar
+
+bintray {
+    user = bintrayUser
+    key = bintrayKey
+    publications = ['MyPublication']
+    publish = true
+    pkg {
+        repo = 'EAGER'
+        name = 'EAGER-GUI'
+        licenses = ['GPL-3.0']
+        vcsUrl = "https://github.com/apeltzer/EAGER-GUI"
+        version {
+            name = '1.92.17'
+            desc = 'This is the main project for the EAGER project, with links to some tutorials, subsequent tools and HowTos and a FAQ which will be updated once we get feedback from end users. Please use the different bug trackers for other tools than the actual pipeline, e.g. the Clip&Merge issue tracking if you encounter issues with the Clip&Merge application.'
+            released  = new Date()
+            vcsTag = '1.92.17'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+
+    }
 }
