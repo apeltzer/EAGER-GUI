@@ -60,7 +60,7 @@ To run the container for the first time, simply type:
 
 .. code-block:: bash
 
-  ./deager start --data /path/to/your/data --uid #t
+  ./deager start --data /path/to/your/data --uid \#t
 
 .. note::
 
