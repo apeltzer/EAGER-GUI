@@ -60,11 +60,11 @@ To run the container for the first time, simply type:
 
 .. code-block:: bash
 
-  ./deager start --data /path/to/your/data
+  ./deager start --data /path/to/your/data --uid #t
 
 .. note::
 
-  This can take some minutes, as the docker image with the pipeline is pulled from the internet automatically. If you receive an error message, that you have to set a certain unix variable, please issue:
+  This can take some minutes, as the docker image with the pipeline is pulled from the internet automatically. The UID mapping is required to keep the container using your same local user id. Otherwise you will get access denied errors. If you receive an error message, that you have to set a certain unix variable, please issue:
 
   .. code-block:: bash
 
