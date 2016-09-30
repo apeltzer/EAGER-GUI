@@ -133,7 +133,7 @@ You will be able to run the EAGER pipeline now with just these four commands off
 
   .. code-block:: bash
 
-  export DOCKER_HOST=unix:///var/run/docker.sock
+     export DOCKER_HOST=unix:///var/run/docker.sock
 
 Afterwards, you can open the GUI to configure an analysis run, illustrated in this little `helper video <https://www.youtube.com/watch?v=cKrBuoiGgNE>`_
 
