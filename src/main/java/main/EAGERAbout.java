@@ -96,7 +96,7 @@ public class EAGERAbout extends JDialog {
         buttonOK.setText("OK");
         panel2.add(buttonOK, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         button1 = new JButton();
-        button1.setIcon(new ImageIcon(getClass().getResource("/EAGER_Logo.png")));
+        button1.setIcon(new ImageIcon(getClass().getResource("//EAGER_Logo.png")));
         button1.setText("");
         button1.setToolTipText("Version 1.92.17");
         panel2.add(button1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));

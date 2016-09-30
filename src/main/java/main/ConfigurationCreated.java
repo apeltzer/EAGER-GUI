@@ -27,6 +27,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class ConfigurationCreated extends JDialog {
@@ -57,7 +58,7 @@ public class ConfigurationCreated extends JDialog {
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                onOK();
+                onOK(c);
             }
         });
 
@@ -70,8 +71,8 @@ public class ConfigurationCreated extends JDialog {
         });
     }
 
-    private void onOK() {
-// add your code here
+    private void onOK(Communicator c) {
+        c.setGUI_inputfiles(new ArrayList<>());
         dispose();
     }
 
