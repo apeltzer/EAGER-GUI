@@ -202,3 +202,8 @@ average fragment length
 -----------------------
 
 The average fragment length of your samples reads.
+
+median fragment length
+----------------------
+
+The median fragment length of your samples reads. 
