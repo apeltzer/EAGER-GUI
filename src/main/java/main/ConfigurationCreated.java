@@ -72,7 +72,6 @@ public class ConfigurationCreated extends JDialog {
     }
 
     private void onOK(Communicator c) {
-        c.setGUI_inputfiles(new ArrayList<>());
         dispose();
     }
 

@@ -599,9 +599,11 @@ public class EAGER {
                     e.printStackTrace();
                 }
                 //To make users be able to see whether they already ran the GUI once...
-                if (communicator.getGUI_inputfiles().size() <= 1) {
-                    selectInputFqFilesButton.setForeground(Color.black);
-                }
+
+                referenceButton.setForeground(Color.orange);
+                output_button.setForeground(Color.orange);
+                selectInputFqFilesButton.setForeground(Color.orange);
+
             }
 
         });
