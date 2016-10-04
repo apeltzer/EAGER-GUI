@@ -1,0 +1,20 @@
+pkgname=eager-gui
+pkgver=1.92.17
+pkgrel=1
+pkgdesc="A novel pipeline for reconstructing ancient but also modern genomes."
+realnamegui="EAGER-GUI-${pkgver}.jar"
+arch=('any')
+url="http://it.inf.uni-tuebingen.de/?page_id=161"
+license=('custom')
+depends=('java-runtime')
+source=("$realnamegui" "starterGUI.sh")
+noextract=("$realnamegui") 
+
+md5sums=('SKIP' 'SKIP')
+
+package() {
+  install -D -m755 "${srcdir}/$realnamegui" "${pkgdir}/opt/$pkgname/$realnamegui"
+  install -D -m755 "${srcdir}/starterGUI.sh" "${pkgdir}/opt/$pkgname/starterGUI.sh"
+  install -D -m755 "${pkgdir}/opt/$pkgname/starterGUI.sh" "${pkgdir}/usr/bin/eager"
+}
+
