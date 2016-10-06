@@ -30,7 +30,11 @@ Docker
 
    This is the default way to use EAGER in a dockerized environment. Best user experience, minimum performance drawbacks.
 
-In order to use this approach, you will need either a running Linux operating system or a OSX installation at your hand.
+In order to use this approach, you will need either a running Linux operating system at your hand. 
+
+.. warning::
+
+   In theory, this should work on OSX, but due to the nature of OSX using a Virtualization technique based on VirtualBox, you could instead use the VirtualBox image on such systems, too. Docker uses VirtualBox on OSX, so the performance drawback will be there in all cases! 
 
 Obtaining Deager
 ^^^^^^^^^^^^^^^^
@@ -38,7 +42,12 @@ Obtaining Deager
 Pre-Compiled binary
 ~~~~~~~~~~~~~~~~~~~
 
+
 There are two ways to get our little helper tool `deager` for the easy interaction with the docker container running the actual pipeline. We provide a pre-compiled binary for you to download, or you can simply compile the binary yourself.
+
+.. note:: 
+
+   You should *always* try to use the pre-compiled binaries instead of compiling yourself to keep issues as low as possible. Compiling executables can be cumbersome and should only be done if the pre-compiled binaries are not working for your operating system. 
 
 .. code-block:: bash
 
@@ -47,7 +56,7 @@ There are two ways to get our little helper tool `deager` for the easy interacti
    cd deager/bin/Ubuntu
    ./deager
 
-In the folder `deager/bin/Ubuntu/` you can find a precompiled binary that should work on many 64bit Linux operating systems. In case this does not work, please compile manually as described in the next section.
+In the folder `deager/bin/Ubuntu/` you can find a precompiled binary that should work on 64bit Linux operating systems. In case this does not work, please compile manually as described in the next section.
 
 
 Compile manually
@@ -78,6 +87,10 @@ This will compile the **deager** executable, that you can then later use to run 
    deager_build | La Fin!
 
 And you will find an executable called **deager** in the directory ``amd64/``. You may copy this executable somewhere else on your operating system, e.g. ``/usr/local/bin`` (if you have administrative rights), or call the tool directly. A small video illustrating this compilation procedure can be found `here <https://www.youtube.com/watch?v=kYaKgDixFoc>`_
+
+.. warning:: 
+
+   Attention: This is only generating an executable for linux operating systems, NOT for OSX. OSX is widely not supported as there is also no native docker client available for OSX. 
 
 Running EAGER inside a Docker Container
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
