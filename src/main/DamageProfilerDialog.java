@@ -53,9 +53,8 @@ public class DamageProfilerDialog extends JDialog {
         c.setMapdamage_advanced(DamageProfiler_advanced_field.getText());
         c.setMapdamage_length(DamageProfiler_length_field.getText());
         if(useOnlyMergedReadsCheckBox.isSelected()){
+            DamageProfiler_advanced_field.setText(DamageProfiler_advanced_field.getText() + " -merged");
             c.setDamageProfilerOnlyMerged(true);
-        } else {
-            c.setDamageProfilerOnlyMerged(false);
         }
         dispose();
     }
