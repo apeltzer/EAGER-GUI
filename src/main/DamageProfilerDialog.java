@@ -13,7 +13,7 @@ public class DamageProfilerDialog extends JDialog {
     private JTextField DamageProfiler_advanced_field;
     private JLabel advanced;
     private JLabel length;
-    private JCheckBox useAllMappedReadsCheckBox;
+    private JCheckBox useOnlyMergedReadsCheckBox;
 
     public DamageProfilerDialog(final Communicator communicator) {
         setValues(communicator);
@@ -52,10 +52,10 @@ public class DamageProfilerDialog extends JDialog {
     private void onOK(Communicator c) {
         c.setMapdamage_advanced(DamageProfiler_advanced_field.getText());
         c.setMapdamage_length(DamageProfiler_length_field.getText());
-        if(useAllMappedReadsCheckBox.isSelected()){
-            c.setDamageProfilerOnlyMerged(false);
-        } else {
+        if(useOnlyMergedReadsCheckBox.isSelected()){
             c.setDamageProfilerOnlyMerged(true);
+        } else {
+            c.setDamageProfilerOnlyMerged(false);
         }
         dispose();
     }
