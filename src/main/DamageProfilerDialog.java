@@ -73,7 +73,6 @@ public class DamageProfilerDialog extends JDialog {
         if(c.getMapdamage_length() != null){
             this.DamageProfiler_length_field.setText(c.getMapdamage_length());
         }
-
     }
 
 }
