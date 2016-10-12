@@ -79,10 +79,10 @@ bintray {
         licenses = ['GPL-3.0']
         vcsUrl = "https://github.com/apeltzer/EAGER-GUI"
         version {
-            name = '1.92.17'
+            name = project.version
             desc = 'This is the main project for the EAGER project, with links to some tutorials, subsequent tools and HowTos and a FAQ which will be updated once we get feedback from end users. Please use the different bug trackers for other tools than the actual pipeline, e.g. the Clip&Merge issue tracking if you encounter issues with the Clip&Merge application.'
             released  = new Date()
-            vcsTag = '1.92.17'
+            vcsTag = project.version
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
 
