@@ -15,6 +15,10 @@ import static org.junit.Assert.assertTrue;
  */
 public class TestFilePairer {
 
+
+    /*
+    Inline Class for comparing FilePairs properly!
+     */
     class FilePairCompare implements Comparator<ArrayList<FilePair>> {
 
         @Override
