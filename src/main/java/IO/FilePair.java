@@ -18,6 +18,7 @@ package IO;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created with IntelliJ IDEA.
@@ -60,7 +61,5 @@ public class FilePair {
         Collections.sort(list); //FIXME this is bad ...
         return list;
     }
-
-
 
 }

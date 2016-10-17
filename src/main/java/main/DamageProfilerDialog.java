@@ -17,7 +17,7 @@ public class DamageProfilerDialog extends JDialog {
     private JTextField DamageProfiler_advanced_field;
     private JLabel advanced;
     private JLabel length;
-    private JCheckBox useAllMappedReadsCheckBox;
+    private JCheckBox useOnlyMergedReadsCheckBox;
 
     public DamageProfilerDialog(final Communicator communicator) {
         setValues(communicator);
@@ -54,13 +54,11 @@ public class DamageProfilerDialog extends JDialog {
     }
 
     private void onOK(Communicator c) {
-        c.setMapdamage_advanced(DamageProfiler_advanced_field.getText());
         c.setMapdamage_length(DamageProfiler_length_field.getText());
-        if (useAllMappedReadsCheckBox.isSelected()) {
-            c.setDamageProfilerOnlyMerged(false);
-        } else {
-            c.setDamageProfilerOnlyMerged(true);
+        if (useOnlyMergedReadsCheckBox.isSelected()) {
+            DamageProfiler_advanced_field.setText(DamageProfiler_advanced_field.getText() + " -merged");
         }
+        c.setMapdamage_advanced(DamageProfiler_advanced_field.getText());
         dispose();
     }
 
@@ -127,10 +125,10 @@ public class DamageProfilerDialog extends JDialog {
         panel3.add(advanced, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         DamageProfiler_advanced_field = new JTextField();
         panel3.add(DamageProfiler_advanced_field, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        useAllMappedReadsCheckBox = new JCheckBox();
-        useAllMappedReadsCheckBox.setText("use all mapped reads");
-        useAllMappedReadsCheckBox.setToolTipText("Don't use this for single-end reads.");
-        contentPane.add(useAllMappedReadsCheckBox, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        useOnlyMergedReadsCheckBox = new JCheckBox();
+        useOnlyMergedReadsCheckBox.setText("use all mapped reads");
+        useOnlyMergedReadsCheckBox.setToolTipText("Don't use this for single-end reads.");
+        contentPane.add(useOnlyMergedReadsCheckBox, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
