@@ -463,7 +463,8 @@ public class EAGER {
                     collectMainWindowInformation();
                     if (communicator.getConflict() == 0) {
                         ArrayList<String> original_gui_inputfiles = communicator.getGUI_inputfiles().stream().map(s -> s.toString()).collect(Collectors.toCollection(ArrayList::new));
-
+                        //Make a backup of results path, since we are modifying this and need to reset it later..
+                        String backupResultsPath = communicator.getGUI_resultspath();
                         if (communicator.getGUI_inputfiles().size() == 1) { //Then this is a folder
                             File f = new File(communicator.getGUI_inputfiles().get(0));
                             if (f.isDirectory()) {
@@ -482,6 +483,7 @@ public class EAGER {
                                         communicator.setGUI_resultspath(fileoutput);
                                         generateConfiguration(communicator, fileoutput);
                                     }
+                                    communicator.setGUI_resultspath(backupResultsPath);
                                 } else if (communicator.isPairmenttype() && !communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<FilePair> filePairs = fp.getListofpairs();
@@ -493,6 +495,8 @@ public class EAGER {
                                         communicator.setGUI_resultspath(fileoutput);
                                         generateConfiguration(communicator, fileoutput);
                                     }
+                                    communicator.setGUI_resultspath(backupResultsPath);
+
                                 } else if (!communicator.isPairmenttype() && !communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
@@ -504,6 +508,8 @@ public class EAGER {
                                         communicator.setGUI_resultspath(fileoutput);
                                         generateConfiguration(communicator, fileoutput);
                                     }
+                                    communicator.setGUI_resultspath(backupResultsPath);
+
                                 } else if (!communicator.isPairmenttype() && communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
@@ -515,6 +521,8 @@ public class EAGER {
                                         communicator.setGUI_resultspath(fileoutput);
                                         generateConfiguration(communicator, fileoutput);
                                     }
+                                    communicator.setGUI_resultspath(backupResultsPath);
+
                                 } else if (communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<FilePair> filePairs = fp.getListofpairs();
@@ -546,6 +554,7 @@ public class EAGER {
                                             rv_data = new ArrayList<String>();
                                         }
 
+
                                         while (temp.equals(parent)) {
                                             temp = new File(new File(filepair.getF1()).getParent());
                                             fw_data.add(filepair.getF1());
@@ -562,6 +571,8 @@ public class EAGER {
                                     combined.addAll(rv_data);
                                     communicator.setGUI_inputfiles(combined);
                                     generateConfiguration(communicator, fileoutput);
+                                    communicator.setGUI_resultspath(backupResultsPath);
+
 
 
                                 }
@@ -572,6 +583,8 @@ public class EAGER {
 
                                 communicator.setGUI_resultspath(communicator.getGUI_resultspath() + "/" + id);
                                 generateConfiguration(communicator);
+                                communicator.setGUI_resultspath(backupResultsPath);
+
                             }
                         } else {
                             //if we only select one pair of files
@@ -579,7 +592,8 @@ public class EAGER {
 
                             communicator.setGUI_resultspath(communicator.getGUI_resultspath() + "/" + id);
                             generateConfiguration(communicator);
-                            // For each pair create a new communicator object and let ConfigGenerator store this object
+                            communicator.setGUI_resultspath(backupResultsPath);
+
 
                         }
 
@@ -589,6 +603,8 @@ public class EAGER {
                         configurationCreated.setVisible(true);
 
                         communicator.setGUI_inputfiles(original_gui_inputfiles);
+                        communicator.setGUI_resultspath(backupResultsPath);
+
 
                     } else {
                         ConfigurationException cfge = new ConfigurationException(communicator);
@@ -603,6 +619,7 @@ public class EAGER {
                 referenceButton.setForeground(Color.orange);
                 output_button.setForeground(Color.orange);
                 selectInputFqFilesButton.setForeground(Color.orange);
+
 
             }
 
