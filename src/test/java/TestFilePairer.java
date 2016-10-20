@@ -57,5 +57,13 @@ public class TestFilePairer {
         assertTrue("expected to be equal", result == 0);
     }
 
+    @Test
+    public void file_pairing_normal_case () throws IOException {
+        FilePairer fp = new FilePairer(FilePairData.getInput_file_pairing_normal_case());
+
+        int result = fpcompare.compare(fp.getListofpairs(), FilePairData.getOutput());
+        assertTrue("expected to be equal", result == 0);
+    }
+
 
 }

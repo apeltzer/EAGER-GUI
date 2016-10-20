@@ -44,6 +44,19 @@ public class FilePairData {
     }
 
 
+    private static void setUp_file_pairing_normal_case () {
+        input = new ArrayList<>();
+        output = new ArrayList<>();
+        input.add("SZ11/Sample_SZ11-BIS_S16_L001_R1_001.fastq");
+        input.add("SZ11/Sample_SZ11-BIS_S16_L001_R2_001.fastq");
+        input.add("SZ10/Sample_SZ10-BIS_S15_L001_R1_001.fastq");
+        input.add("SZ10/Sample_SZ10-BIS_S15_L001_R2_001.fastq");
+        output.add(new FilePair(new File("SZ11/Sample_SZ11-BIS_S16_L001_R1_001.fastq").getAbsolutePath(), new File("SZ11/Sample_SZ11-BIS_S16_L001_R2_001.fastq").getAbsolutePath()));
+        output.add(new FilePair(new File("SZ10/Sample_SZ10-BIS_S15_L001_R1_001.fastq").getAbsolutePath(), new File("SZ10/Sample_SZ10-BIS_S15_L001_R2_001.fastq").getAbsolutePath()));
+
+    }
+
+
     /**
      * Getter and setter methods
      * @return
@@ -56,6 +69,11 @@ public class FilePairData {
 
     public static ArrayList<String> getInput_file_pairing_several_lanes(){
         setUp_file_pairing_several_lanes();
+        return input;
+    }
+
+    public static ArrayList<String> getInput_file_pairing_normal_case() {
+        setUp_file_pairing_normal_case();
         return input;
     }
 
