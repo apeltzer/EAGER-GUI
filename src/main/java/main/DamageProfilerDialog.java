@@ -18,6 +18,8 @@ public class DamageProfilerDialog extends JDialog {
     private JLabel advanced;
     private JLabel length;
     private JCheckBox useOnlyMergedReadsCheckBox;
+    private JTextField threshold_field;
+    private JLabel threshold;
 
     public DamageProfilerDialog(final Communicator communicator) {
         setValues(communicator);
@@ -54,11 +56,12 @@ public class DamageProfilerDialog extends JDialog {
     }
 
     private void onOK(Communicator c) {
-        c.setMapdamage_length(DamageProfiler_length_field.getText());
+        c.setDamageProfiler_length(DamageProfiler_length_field.getText());
+        c.setDamageProfiler_threshold(threshold_field.getText());
+        c.getDamageProfiler_advanced(DamageProfiler_advanced_field.getText());
         if (useOnlyMergedReadsCheckBox.isSelected()) {
             DamageProfiler_advanced_field.setText(DamageProfiler_advanced_field.getText() + " -merged");
         }
-        c.setMapdamage_advanced(DamageProfiler_advanced_field.getText());
         dispose();
     }
 
@@ -69,12 +72,18 @@ public class DamageProfilerDialog extends JDialog {
 
 
     private void setValues(Communicator c) {
-        if (c.getMapdamage_advanced() != null) {
-            this.DamageProfiler_advanced_field.setText(c.getMapdamage_advanced());
+        if (c.getDamageProfiler_advanced() != null) {
+            this.DamageProfiler_advanced_field.setText(c.getDamageProfiler_advanced());
         }
-        if (c.getMapdamage_length() != null) {
-            this.DamageProfiler_length_field.setText(c.getMapdamage_length());
+
+        if(c.getDamageProfiler_threshold() != null){
+            this.threshold_field.setText(c.getDamageProfiler_threshold());
         }
+        if (c.getDamageProfiler_length() != null) {
+            this.DamageProfiler_length_field.setText(c.getDamageProfiler_length());
+        }
+
+        this.useOnlyMergedReadsCheckBox.setSelected(c.isDamageProfilerOnlyMerged());
 
     }
 

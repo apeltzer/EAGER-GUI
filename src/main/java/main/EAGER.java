@@ -88,6 +88,8 @@ public class EAGER {
     private JCheckBox useSystemTmpDirCheckBox;
     private JButton dedup_advanced_button;
     private JComboBox damageSelection;
+    private JCheckBox PMDtoolsCheckBox;
+    private JButton pmdtools_advanced_button;
     private JMenuBar jmenubar;
     private JMenu jmenu;
     public Image icon;
@@ -450,6 +452,15 @@ public class EAGER {
                 } else {
                     RunButton.setEnabled(false);
                 }
+            }
+        });
+
+        pmdtools_advanced_button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                PmdToolsDialog pmdtools_dialog = new PmdToolsDialog(communicator);
+                setWindowPosition(pmdtools_dialog);
+                pmdtools_dialog.setSize(400, 400);
+                pmdtools_dialog.setVisible(true);
             }
         });
 
