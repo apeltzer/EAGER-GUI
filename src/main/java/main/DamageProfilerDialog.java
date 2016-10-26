@@ -58,7 +58,7 @@ public class DamageProfilerDialog extends JDialog {
     private void onOK(Communicator c) {
         c.setDamageProfiler_length(DamageProfiler_length_field.getText());
         c.setDamageProfiler_threshold(threshold_field.getText());
-        c.getDamageProfiler_advanced(DamageProfiler_advanced_field.getText());
+        c.setDamageProfiler_advanced(DamageProfiler_advanced_field.getText());
         if (useOnlyMergedReadsCheckBox.isSelected()) {
             DamageProfiler_advanced_field.setText(DamageProfiler_advanced_field.getText() + " -merged");
         }
