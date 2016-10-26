@@ -56,9 +56,9 @@ public class PmdToolsDialog extends JDialog {
 
     private void onOK(Communicator c) {
         c.setPmdtools_advanced(this.pmdTools_advanced_parameters.getText());
-        c.setPMDSFilter(this.PMDSFilterCheckBox);
+        c.setPMDSFilter(this.PMDSFilterCheckBox.isSelected());
         c.setPmdtoolsThreshold(this.pmdsThreshold_field.getText());
-        c.setCpGRestriction(this.cpGRestrictionCheckBox);
+        c.setCpGRestriction(this.cpGRestrictionCheckBox.isSelected());
         c.setCpGRange(this.range_field.getText());
 
         dispose();
