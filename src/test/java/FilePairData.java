@@ -51,8 +51,8 @@ public class FilePairData {
         input.add("SZ11/Sample_SZ11-BIS_S16_L001_R2_001.fastq");
         input.add("SZ10/Sample_SZ10-BIS_S15_L001_R1_001.fastq");
         input.add("SZ10/Sample_SZ10-BIS_S15_L001_R2_001.fastq");
-        output.add(new FilePair(new File("SZ11/Sample_SZ11-BIS_S16_L001_R1_001.fastq").getAbsolutePath(), new File("SZ11/Sample_SZ11-BIS_S16_L001_R2_001.fastq").getAbsolutePath()));
         output.add(new FilePair(new File("SZ10/Sample_SZ10-BIS_S15_L001_R1_001.fastq").getAbsolutePath(), new File("SZ10/Sample_SZ10-BIS_S15_L001_R2_001.fastq").getAbsolutePath()));
+        output.add(new FilePair(new File("SZ11/Sample_SZ11-BIS_S16_L001_R1_001.fastq").getAbsolutePath(), new File("SZ11/Sample_SZ11-BIS_S16_L001_R2_001.fastq").getAbsolutePath()));
 
     }
 
