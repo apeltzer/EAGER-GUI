@@ -63,6 +63,7 @@
             </constraints>
             <properties>
               <text value="PMDS filter"/>
+              <toolTipText value="Filter all reads lower the set threshold. The higher the PMDS, the higher the support for ancient DNA."/>
             </properties>
           </component>
           <hspacer id="dd807">
@@ -84,6 +85,7 @@
             </constraints>
             <properties>
               <text value="CpG restriction"/>
+              <toolTipText value="Restrict calculations to nucleotides within a CpG context. "/>
             </properties>
           </component>
           <component id="972e6" class="javax.swing.JLabel" binding="range">
@@ -100,7 +102,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <toolTipText value="Specify PMDS threshold. Empirically measured value, change it only if you are know more about your data."/>
+            </properties>
           </component>
           <component id="a0fc5" class="javax.swing.JTextField" binding="range_field">
             <constraints>
@@ -108,7 +112,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <toolTipText value="Number of bases from termini which are considered while CpG restriction."/>
+            </properties>
           </component>
           <component id="c4301" class="javax.swing.JLabel" binding="adv_parameters">
             <constraints>
@@ -126,11 +132,12 @@
             </constraints>
             <properties/>
           </component>
-          <vspacer id="f1e0c">
+          <component id="4e444" class="javax.swing.JSeparator">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-          </vspacer>
+            <properties/>
+          </component>
         </children>
       </grid>
     </children>
