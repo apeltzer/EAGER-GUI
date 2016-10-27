@@ -76,7 +76,7 @@ public class DamageProfilerDialog extends JDialog {
             this.DamageProfiler_advanced_field.setText(c.getDamageProfiler_advanced());
         }
 
-        if(c.getDamageProfiler_threshold() != null){
+        if (c.getDamageProfiler_threshold() != null) {
             this.threshold_field.setText(c.getDamageProfiler_threshold());
         }
         if (c.getDamageProfiler_length() != null) {
@@ -120,7 +120,7 @@ public class DamageProfilerDialog extends JDialog {
         buttonCancel.setText("Cancel");
         panel2.add(buttonCancel, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel3 = new JPanel();
-        panel3.setLayout(new GridLayoutManager(2, 2, new Insets(0, 0, 0, 0), -1, -1));
+        panel3.setLayout(new GridLayoutManager(3, 2, new Insets(0, 0, 0, 0), -1, -1));
         contentPane.add(panel3, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         length = new JLabel();
         length.setText("Length (-l)");
@@ -131,11 +131,16 @@ public class DamageProfilerDialog extends JDialog {
         advanced = new JLabel();
         advanced.setText("Advanced Parameters");
         advanced.setToolTipText("Number of bases which are considered for frequency calculations.");
-        panel3.add(advanced, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(advanced, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        threshold = new JLabel();
+        threshold.setText("Threshold (-t)");
+        panel3.add(threshold, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         DamageProfiler_advanced_field = new JTextField();
-        panel3.add(DamageProfiler_advanced_field, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        panel3.add(DamageProfiler_advanced_field, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        threshold_field = new JTextField();
+        panel3.add(threshold_field, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         useOnlyMergedReadsCheckBox = new JCheckBox();
-        useOnlyMergedReadsCheckBox.setText("use all mapped reads");
+        useOnlyMergedReadsCheckBox.setText("use only merged reads");
         useOnlyMergedReadsCheckBox.setToolTipText("Don't use this for single-end reads.");
         contentPane.add(useOnlyMergedReadsCheckBox, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }

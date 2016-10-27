@@ -585,7 +585,6 @@ public class EAGER {
                                     communicator.setGUI_resultspath(backupResultsPath);
 
 
-
                                 }
 
                             } else {
@@ -848,7 +847,7 @@ public class EAGER {
         Masterpanel = new JPanel();
         Masterpanel.setLayout(new GridLayoutManager(14, 3, new Insets(0, 0, 0, 0), -1, -1));
         mainpanel = new JPanel();
-        mainpanel.setLayout(new GridLayoutManager(18, 3, new Insets(0, 0, 0, 0), -1, -1));
+        mainpanel.setLayout(new GridLayoutManager(19, 3, new Insets(0, 0, 0, 0), -1, -1));
         Masterpanel.add(mainpanel, new GridConstraints(2, 0, 9, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         mainpanel.setBorder(BorderFactory.createTitledBorder(""));
         fastQCAnalysisCheckBox = new JCheckBox();
@@ -869,12 +868,12 @@ public class EAGER {
         coverage.setSelected(true);
         coverage.setText("Coverage / Statistics Calculation");
         coverage.setToolTipText("Calculate coverage statistics.");
-        mainpanel.add(coverage, new GridConstraints(12, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(coverage, new GridConstraints(13, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         gatksnpcall = new JCheckBox();
         gatksnpcall.setSelected(true);
         gatksnpcall.setText("SNP Calling");
         gatksnpcall.setToolTipText("Select this and SNP Calling will be run in the pipeline, using the method available in the dropdown menu next to this checkbox.");
-        mainpanel.add(gatksnpcall, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(gatksnpcall, new GridConstraints(15, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         genotyper = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
         defaultComboBoxModel1.addElement("UnifiedGenotyper");
@@ -882,34 +881,34 @@ public class EAGER {
         defaultComboBoxModel1.addElement("ANGSD");
         genotyper.setModel(defaultComboBoxModel1);
         genotyper.setToolTipText("Select the genotyper of choice here.");
-        mainpanel.add(genotyper, new GridConstraints(14, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(genotyper, new GridConstraints(15, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         snpcalladvanced = new JButton();
         snpcalladvanced.setText("Advanced");
-        mainpanel.add(snpcalladvanced, new GridConstraints(14, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(snpcalladvanced, new GridConstraints(15, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         MapButton = new JButton();
         MapButton.setText("Advanced");
         mainpanel.add(MapButton, new GridConstraints(8, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         DamageButton = new JButton();
         DamageButton.setText("Advanced");
-        mainpanel.add(DamageButton, new GridConstraints(13, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(DamageButton, new GridConstraints(14, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         VCF2DraftCheckBox = new JCheckBox();
         VCF2DraftCheckBox.setSelected(true);
         VCF2DraftCheckBox.setText("VCF2Genome");
         VCF2DraftCheckBox.setMnemonic('V');
         VCF2DraftCheckBox.setDisplayedMnemonicIndex(0);
         VCF2DraftCheckBox.setToolTipText("Generate a draft genome with some filtering parameters set.");
-        mainpanel.add(VCF2DraftCheckBox, new GridConstraints(16, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(VCF2DraftCheckBox, new GridConstraints(17, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         advancedVCF2DraftButton = new JButton();
         advancedVCF2DraftButton.setText("Advanced");
-        mainpanel.add(advancedVCF2DraftButton, new GridConstraints(16, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(advancedVCF2DraftButton, new GridConstraints(17, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         GATKSNPFilteringCheckBox = new JCheckBox();
         GATKSNPFilteringCheckBox.setSelected(true);
         GATKSNPFilteringCheckBox.setText("SNP Filtering");
         GATKSNPFilteringCheckBox.setToolTipText("Select this and set the min coverage and min quality that you want your variants to have in the resulting VCF file you created using the genotyper of your choice.");
-        mainpanel.add(GATKSNPFilteringCheckBox, new GridConstraints(15, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(GATKSNPFilteringCheckBox, new GridConstraints(16, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         SNPFilterButton = new JButton();
         SNPFilterButton.setText("Advanced");
-        mainpanel.add(SNPFilterButton, new GridConstraints(15, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(SNPFilterButton, new GridConstraints(16, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         cpucores_textfield = new JTextField();
         cpucores_textfield.setHorizontalAlignment(0);
         cpucores_textfield.setText("4");
@@ -923,7 +922,7 @@ public class EAGER {
         cleanUpBox.setSelected(true);
         cleanUpBox.setText("CleanUp");
         cleanUpBox.setToolTipText("Select this and redundant data files will be deleted. Redundant means, that only files are deleted that are still reproducible without the whole pipeline to rerun, e.g. we delete files to get rid unsorted BAM files (as the sorted BAM inherits the same data!).");
-        mainpanel.add(cleanUpBox, new GridConstraints(17, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(cleanUpBox, new GridConstraints(18, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setText("Memory in GB");
         mainpanel.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -990,10 +989,10 @@ public class EAGER {
         schmutzi_checkbox = new JCheckBox();
         schmutzi_checkbox.setSelected(true);
         schmutzi_checkbox.setText("Contamination Estimation");
-        mainpanel.add(schmutzi_checkbox, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(schmutzi_checkbox, new GridConstraints(12, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         schmutzi_advanced_button = new JButton();
         schmutzi_advanced_button.setText("Advanced");
-        mainpanel.add(schmutzi_advanced_button, new GridConstraints(11, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(schmutzi_advanced_button, new GridConstraints(12, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         useSystemTmpDirCheckBox = new JCheckBox();
         useSystemTmpDirCheckBox.setSelected(true);
         useSystemTmpDirCheckBox.setText("Use system tmp dir");
@@ -1006,13 +1005,20 @@ public class EAGER {
         defaultComboBoxModel4.addElement("DamageProfiler");
         defaultComboBoxModel4.addElement("mapDamage");
         damageSelection.setModel(defaultComboBoxModel4);
-        mainpanel.add(damageSelection, new GridConstraints(13, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(damageSelection, new GridConstraints(14, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         damage = new JCheckBox();
         damage.setEnabled(true);
         damage.setSelected(true);
         damage.setText("Damage Calculation");
         damage.setToolTipText("Calculates post mortem damage pattern.");
-        mainpanel.add(damage, new GridConstraints(13, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(damage, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        PMDtoolsCheckBox = new JCheckBox();
+        PMDtoolsCheckBox.setText("PMDtools");
+        PMDtoolsCheckBox.setToolTipText("Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination. ");
+        mainpanel.add(PMDtoolsCheckBox, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        pmdtools_advanced_button = new JButton();
+        pmdtools_advanced_button.setText("Advanced");
+        mainpanel.add(pmdtools_advanced_button, new GridConstraints(11, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         selectInputFqFilesButton = new JButton();
         selectInputFqFilesButton.setText("Select Input *.fq/*.fq.gz Files");
         selectInputFqFilesButton.setToolTipText("Please select your input FastQ files here, OR a folder containing your unzipped (!) FastQ files.");
