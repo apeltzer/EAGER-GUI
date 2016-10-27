@@ -740,6 +740,7 @@ public class EAGER {
         communicator.setMapper_to_use(this.mapper_selection.getSelectedItem().toString());
         communicator.setRun_reportgenerator(runReportGenerator.isSelected());
         communicator.setDNA_damage_calculator_to_use(this.damageSelection.getSelectedItem().toString());
+        communicator.setRun_pmdtools(PMDtoolsCheckBox.isSelected());
 
 
     }
@@ -770,6 +771,8 @@ public class EAGER {
         GATKSNPFilteringCheckBox.setSelected(b);
         schmutzi_checkbox.setSelected(b);
         cleanUpBox.setSelected(b);
+        PMDtoolsCheckBox.setSelected(b);
+
 
     }
 
