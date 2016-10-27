@@ -171,7 +171,7 @@ The ratio between mt and autosomal reads, calculated as follows:
 
 .. math::
 
-   # of mt reads / # of nuclear reads
+    avg coverage on mitochondrium / average coverage on autosome
 
 
 DMG 1st Base 3'
