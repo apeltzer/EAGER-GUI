@@ -83,3 +83,8 @@ EAGER requires your reference genomes to be in FastA format. Generating an index
 .. note::
 
    If you have multiple reference genomes in a single folder, please generate folders for each of your references, otherwise index generation might run only once, creating indexes for only the first of your reference genomes.
+   
+   
+.. warning::
+
+    Furthermore, EAGER (and some downstream tools) require your input FastA file to have a *.fasta or *.fa file ending and being encoded using UNIX newline characters. The tool 'dos2unix' can be used to convert your input to proper unix formatted FastA files. Rename your input reference to have a proper file ending to ensure the first constraint is met. 
