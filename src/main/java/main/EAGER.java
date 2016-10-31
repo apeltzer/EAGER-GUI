@@ -760,7 +760,6 @@ public class EAGER {
         PMDtoolsCheckBox.setSelected(b);
 
 
-
     }
 
     /**
@@ -1035,6 +1034,8 @@ public class EAGER {
         damage.setToolTipText("Calculates post mortem damage pattern.");
         mainpanel.add(damage, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         PMDtoolsCheckBox = new JCheckBox();
+        PMDtoolsCheckBox.setEnabled(true);
+        PMDtoolsCheckBox.setSelected(false);
         PMDtoolsCheckBox.setText("PMDtools");
         PMDtoolsCheckBox.setToolTipText("Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination. ");
         mainpanel.add(PMDtoolsCheckBox, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
