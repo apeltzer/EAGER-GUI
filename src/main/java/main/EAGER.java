@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
  * To change this template use File | Settings | File Templates.
  */
 public class EAGER {
-    private final String EAGER_VERSION = "1.92.17";
+    private final String EAGER_VERSION = "1.92.20";
 
     private String filepath;
     private JCheckBox fastQCAnalysisCheckBox;
@@ -132,8 +132,6 @@ public class EAGER {
         this.icon = ImageIO.read(getClass().getResource("/EAGER_Logo.png"));
         communicator = new Communicator();
         checkBoxes();
-        VCF2DraftCheckBox.setSelected(false);
-        qualityFilteringCheckBox.setSelected(false);
         final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
         /**
@@ -346,6 +344,8 @@ public class EAGER {
                 } else {
                     RunButton.setEnabled(false);
                 }
+
+                updateSelectedTools();
             }
         });
 
@@ -415,21 +415,7 @@ public class EAGER {
             public void actionPerformed(ActionEvent actionEvent) {
                 //To change body of implemented methods use File | Settings | File Templates.
                 communicator.setGatk_caller(genotyper.getSelectedItem().toString());
-                if (genotyper.getSelectedItem().toString().equals("ANGSD")) {
-                    GATKSNPFilteringCheckBox.setEnabled(false);
-                    VCF2DraftCheckBox.setEnabled(false);
-                    GATKSNPFilteringCheckBox.setSelected(false);
-                    VCF2DraftCheckBox.setSelected(false);
-                    SNPFilterButton.setEnabled(false);
-                    advancedVCF2DraftButton.setEnabled(false);
-                } else {
-                    GATKSNPFilteringCheckBox.setEnabled(true);
-                    VCF2DraftCheckBox.setEnabled(true);
-                    GATKSNPFilteringCheckBox.setSelected(true);
-                    VCF2DraftCheckBox.setSelected(true);
-                    SNPFilterButton.setEnabled(true);
-                    advancedVCF2DraftButton.setEnabled(true);
-                }
+                updateSelectedTools();
             }
         });
 
@@ -770,6 +756,39 @@ public class EAGER {
         GATKSNPFilteringCheckBox.setSelected(b);
         schmutzi_checkbox.setSelected(b);
         cleanUpBox.setSelected(b);
+
+
+    }
+
+    /**
+     * Set some tools selected/deselected upon type of things...
+     */
+    private void updateSelectedTools() {
+        //Human vs Other cases
+        if (communicator.isOrganism()) { //Human case, remove VCF2Genome
+            VCF2DraftCheckBox.setSelected(false);
+
+        } else { // bacterial and other case
+            schmutzi_checkbox.setSelected(false);
+            VCF2DraftCheckBox.setSelected(true);
+            VCF2DraftCheckBox.setEnabled(true);
+        }
+
+        //Special cases for genotypers
+
+        if (communicator.getGatk_caller().equals("HaplotypeCaller")) {
+            VCF2DraftCheckBox.setEnabled(false); // The output of Haplotype Caller is currently not supported at all by VCF2Genome
+            VCF2DraftCheckBox.setSelected(false);
+        }
+
+        if (genotyper.getSelectedItem().toString().equals("ANGSD")) {
+            GATKSNPFilteringCheckBox.setEnabled(false);
+            VCF2DraftCheckBox.setEnabled(false);
+            GATKSNPFilteringCheckBox.setSelected(false);
+            SNPFilterButton.setEnabled(false);
+            advancedVCF2DraftButton.setEnabled(false);
+        }
+
 
     }
 
