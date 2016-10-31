@@ -82,13 +82,17 @@ public class PmdToolsDialog extends JDialog {
             this.pmdsThreshold_field.setText(c.getPmdtoolsThreshold());
         }
 
+        if (c.getCpGRange() != null) {
+            this.range_field.setText(c.getCpGRange());
+        }
+
         // isOrganism = true -> human
         if (c.isOrganism()) {
             this.cpGRestrictionCheckBox.setSelected(c.isCpGRestriction());
-            this.range_field.setText(c.getCpGRange());
         } else {
             this.cpGRestrictionCheckBox.setEnabled(false);
             this.range_field.setEnabled(false);
+            this.range.setEnabled(false);
         }
 
         if (c.getPmdtools_advanced() != null) {
