@@ -447,6 +447,8 @@ public class EAGER {
                 setWindowPosition(pmdtools_dialog);
                 pmdtools_dialog.setSize(400, 400);
                 pmdtools_dialog.setVisible(true);
+
+
             }
         });
 
@@ -757,7 +759,6 @@ public class EAGER {
         GATKSNPFilteringCheckBox.setSelected(b);
         schmutzi_checkbox.setSelected(b);
         cleanUpBox.setSelected(b);
-        PMDtoolsCheckBox.setSelected(b);
 
 
     }
@@ -767,7 +768,7 @@ public class EAGER {
      */
     private void updateSelectedTools() {
         //Human vs Other cases
-        if (communicator.isOrganism()) { //Human case, remove VCF2Genome
+        if (communicator.isOrganismage()) { //Human case, remove VCF2Genome
             VCF2DraftCheckBox.setSelected(false);
 
         } else { // bacterial and other case
@@ -789,6 +790,12 @@ public class EAGER {
             GATKSNPFilteringCheckBox.setSelected(false);
             SNPFilterButton.setEnabled(false);
             advancedVCF2DraftButton.setEnabled(false);
+        }
+
+        // disable PMDtools if sample is modern
+        if(!communicator.isOrganismage()){
+            pmdtools_advanced_button.setEnabled(false);
+            PMDtoolsCheckBox.setEnabled(false);
         }
 
 

@@ -349,7 +349,7 @@
               <enabled value="true"/>
               <selected value="false"/>
               <text value="PMDtools"/>
-              <toolTipText value="Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination. "/>
+              <toolTipText value="Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination.  Only available for ancient samples."/>
             </properties>
           </component>
           <component id="56d70" class="javax.swing.JButton" binding="pmdtools_advanced_button">
