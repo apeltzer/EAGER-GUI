@@ -41,9 +41,10 @@
               <grid row="13" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <enabled value="false"/>
               <selected value="true"/>
               <text value="Coverage / Statistics Calculation"/>
-              <toolTipText value="Calculate coverage statistics."/>
+              <toolTipText value="Calculate coverage statistics.&#10;This is not deselectable as it is required in all cases. "/>
             </properties>
           </component>
           <component id="ebd2a" class="javax.swing.JCheckBox" binding="gatksnpcall">

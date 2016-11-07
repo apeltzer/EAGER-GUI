@@ -858,9 +858,10 @@ public class EAGER {
         map.setToolTipText("This will actually determine whether you want your data to be mapped or not.");
         mainpanel.add(map, new GridConstraints(8, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         coverage = new JCheckBox();
+        coverage.setEnabled(false);
         coverage.setSelected(true);
         coverage.setText("Coverage / Statistics Calculation");
-        coverage.setToolTipText("Calculate coverage statistics.");
+        coverage.setToolTipText("Calculate coverage statistics.\nThis is not deselectable as it is required in all cases. ");
         mainpanel.add(coverage, new GridConstraints(13, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         gatksnpcall = new JCheckBox();
         gatksnpcall.setSelected(false);
@@ -983,6 +984,7 @@ public class EAGER {
         schmutzi_checkbox.setEnabled(true);
         schmutzi_checkbox.setSelected(false);
         schmutzi_checkbox.setText("Contamination Estimation");
+        schmutzi_checkbox.setToolTipText("Run contamination estimation using Schmutzi. ");
         mainpanel.add(schmutzi_checkbox, new GridConstraints(12, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         schmutzi_advanced_button = new JButton();
         schmutzi_advanced_button.setText("Advanced");
@@ -1004,7 +1006,7 @@ public class EAGER {
         damage.setEnabled(true);
         damage.setSelected(false);
         damage.setText("Damage Calculation");
-        damage.setToolTipText("Calculates post mortem damage pattern.");
+        damage.setToolTipText("Calculates post mortem damage patterns.");
         mainpanel.add(damage, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         PMDtoolsCheckBox = new JCheckBox();
         PMDtoolsCheckBox.setEnabled(true);
