@@ -536,61 +536,6 @@ public class EAGER {
                                     communicator.setGUI_resultspath(backupResultsPath);
 
                                 }
-                                /*
-                                else if (communicator.isMerge_bam_files()) {
-
-                                    FilePairer fp = new FilePairer(listoffiles);
-                                    ArrayList<FilePair> filePairs = fp.getListofpairs();
-                                    ArrayList<String> fw_data = new ArrayList<String>();
-                                    ArrayList<String> rv_data = new ArrayList<String>();
-                                    File parent = null;
-                                    File temp = null;
-                                    boolean init = true;
-                                    int exit = filePairs.size() + 1;
-                                    for (FilePair filepair : filePairs) {
-                                        exit--;
-                                        parent = new File(new File(filepair.getF1()).getParent());
-                                        if (init) {
-                                            temp = new File(new File(filepair.getF1()).getParent());
-                                            init = false;
-                                        }
-
-                                        if (!temp.equals(parent) || exit == 0) {
-                                            temp.mkdirs();
-                                            String fileoutput = resultsfolder + "/" + temp.getName();
-                                            communicator.setGUI_resultspath(fileoutput);
-                                            ArrayList<String> combined = new ArrayList<String>();
-                                            combined.addAll(fw_data);
-                                            combined.addAll(rv_data);
-                                            communicator.setGUI_inputfiles(combined);
-                                            generateConfiguration(communicator, fileoutput);
-                                            temp = parent;
-                                            fw_data = new ArrayList<String>();
-                                            rv_data = new ArrayList<String>();
-                                        }
-
-
-                                        while (temp.equals(parent)) {
-                                            temp = new File(new File(filepair.getF1()).getParent());
-                                            fw_data.add(filepair.getF1());
-                                            rv_data.add(filepair.getF2());
-                                            break;
-                                        }
-                                    }
-                                    //flush in the last case
-                                    temp.mkdirs();
-                                    String fileoutput = resultsfolder + "/" + temp.getName();
-                                    communicator.setGUI_resultspath(fileoutput);
-                                    ArrayList<String> combined = new ArrayList<String>();
-                                    combined.addAll(fw_data);
-                                    combined.addAll(rv_data);
-                                    communicator.setGUI_inputfiles(combined);
-                                    generateConfiguration(communicator, fileoutput);
-                                    communicator.setGUI_resultspath(backupResultsPath);
-
-
-                                }
-*/
                             } else {
                                 //if we only select one pair of files
                                 String id = Files.getNameWithoutExtension(communicator.getGUI_inputfiles().get(0)).split("_")[0];
@@ -713,6 +658,16 @@ public class EAGER {
                 communicator.setUsesystemtmpdir(useSystemTmpDirCheckBox.isSelected());
             }
         });
+
+        schmutzi_checkbox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { //Check whether database is selected, state a warning that this needs to be done
+                SchmutziWarningDialog schmutzidialog = new SchmutziWarningDialog(communicator);
+                setWindowPosition(schmutzidialog);
+                schmutzidialog.setSize(650, 650);
+                schmutzidialog.setVisible(true);
+            }
+        });
     }
 
     /**
@@ -773,7 +728,6 @@ public class EAGER {
         gatksnpcall.setSelected(b);
         VCF2DraftCheckBox.setSelected(b);
         GATKSNPFilteringCheckBox.setSelected(b);
-        schmutzi_checkbox.setSelected(b);
         cleanUpBox.setSelected(b);
 
 
@@ -1031,7 +985,8 @@ public class EAGER {
         rmdup_combobox.setModel(defaultComboBoxModel3);
         mainpanel.add(rmdup_combobox, new GridConstraints(10, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         schmutzi_checkbox = new JCheckBox();
-        schmutzi_checkbox.setSelected(true);
+        schmutzi_checkbox.setEnabled(true);
+        schmutzi_checkbox.setSelected(false);
         schmutzi_checkbox.setText("Contamination Estimation");
         mainpanel.add(schmutzi_checkbox, new GridConstraints(12, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         schmutzi_advanced_button = new JButton();
