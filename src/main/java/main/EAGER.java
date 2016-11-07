@@ -469,7 +469,33 @@ public class EAGER {
                             if (f.isDirectory()) {
                                 FileSearcher fs = new FileSearcher();
                                 ArrayList<String> listoffiles = fs.processFiles(f.getAbsolutePath());
+                                boolean bamInput = false;
+                                for (String str : listoffiles) {
+                                    if (str.endsWith(".bam")) {
+                                        bamInput = true;
+                                    } else {
+                                        bamInput = false;
+                                    }
+                                }
+
                                 String resultsfolder = communicator.getGUI_resultspath();
+
+                                if (bamInput) {
+                                    FilePairer fp = new FilePairer(listoffiles);
+                                    ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
+                                    for (ArrayList<String> filename : filePairs) {
+                                        communicator.setGUI_inputfiles(filename);
+                                        File parent = new File(new File(filename.get(0)).getParent());
+                                        parent.mkdirs();
+                                        String fileoutput = resultsfolder + "/" + parent.getName();
+                                        communicator.setGUI_resultspath(fileoutput);
+                                        generateConfiguration(communicator, fileoutput);
+                                    }
+                                    communicator.setGUI_resultspath(backupResultsPath);
+
+                                }
+
+
                                 if (communicator.isInput_already_merged() && !communicator.isMerge_bam_files()) {
                                     communicator.setRun_clipandmerge(false);
                                     for (String filename : listoffiles) {
@@ -509,20 +535,10 @@ public class EAGER {
                                     }
                                     communicator.setGUI_resultspath(backupResultsPath);
 
-                                } else if (!communicator.isPairmenttype() && communicator.isMerge_bam_files()) {
-                                    FilePairer fp = new FilePairer(listoffiles);
-                                    ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
-                                    for (ArrayList<String> filename : filePairs) {
-                                        communicator.setGUI_inputfiles(filename);
-                                        File parent = new File(new File(filename.get(0)).getParent());
-                                        parent.mkdirs();
-                                        String fileoutput = resultsfolder + "/" + parent.getName();
-                                        communicator.setGUI_resultspath(fileoutput);
-                                        generateConfiguration(communicator, fileoutput);
-                                    }
-                                    communicator.setGUI_resultspath(backupResultsPath);
+                                }
+                                /*
+                                else if (communicator.isMerge_bam_files()) {
 
-                                } else if (communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<FilePair> filePairs = fp.getListofpairs();
                                     ArrayList<String> fw_data = new ArrayList<String>();
@@ -574,7 +590,7 @@ public class EAGER {
 
 
                                 }
-
+*/
                             } else {
                                 //if we only select one pair of files
                                 String id = Files.getNameWithoutExtension(communicator.getGUI_inputfiles().get(0)).split("_")[0];
@@ -793,7 +809,7 @@ public class EAGER {
         }
 
         // disable PMDtools if sample is modern
-        if(!communicator.isOrganismage()){
+        if (!communicator.isOrganismage()) {
             pmdtools_advanced_button.setEnabled(false);
             PMDtoolsCheckBox.setEnabled(false);
         }
@@ -1044,7 +1060,7 @@ public class EAGER {
         PMDtoolsCheckBox.setEnabled(true);
         PMDtoolsCheckBox.setSelected(false);
         PMDtoolsCheckBox.setText("PMDtools");
-        PMDtoolsCheckBox.setToolTipText("Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination. ");
+        PMDtoolsCheckBox.setToolTipText("Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination.  Only available for ancient samples.");
         mainpanel.add(PMDtoolsCheckBox, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         pmdtools_advanced_button = new JButton();
         pmdtools_advanced_button.setText("Advanced");

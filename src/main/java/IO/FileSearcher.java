@@ -45,7 +45,7 @@ public final class FileSearcher {
         ) throws IOException {
             if(!aFile.toFile().isDirectory() && !aFile.toFile().getAbsolutePath().startsWith(".")){
               if(aFile.toFile().getAbsolutePath().endsWith(".fq") || aFile.toFile().getAbsolutePath().endsWith(".fastq")
-                      || aFile.toFile().getAbsolutePath().endsWith(".gz") || aFile.toFile().getAbsolutePath().endsWith(".gzip")){
+                      || aFile.toFile().getAbsolutePath().endsWith(".gz") || aFile.toFile().getAbsolutePath().endsWith(".gzip") || aFile.toFile().getAbsolutePath().endsWith(".bam")){
                   fastq_files.add(aFile.toString());
               }
             }

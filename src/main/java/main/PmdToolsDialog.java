@@ -158,11 +158,11 @@ public class PmdToolsDialog extends JDialog {
         range_field.setToolTipText("Number of bases from termini which are considered while CpG restriction.");
         panel3.add(range_field, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         adv_parameters = new JLabel();
-        adv_parameters.setEnabled(false);
+        adv_parameters.setEnabled(true);
         adv_parameters.setText("Advanced parameters");
         panel3.add(adv_parameters, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         pmdTools_advanced_parameters = new JTextField();
-        pmdTools_advanced_parameters.setEditable(false);
+        pmdTools_advanced_parameters.setEditable(true);
         pmdTools_advanced_parameters.setEnabled(true);
         panel3.add(pmdTools_advanced_parameters, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JSeparator separator1 = new JSeparator();
