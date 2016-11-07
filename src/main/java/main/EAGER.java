@@ -723,11 +723,6 @@ public class EAGER {
         merge.setSelected(b);
         map.setSelected(b);
         coverage.setSelected(b);
-        damage.setSelected(b);
-        complexity.setSelected(b);
-        gatksnpcall.setSelected(b);
-        VCF2DraftCheckBox.setSelected(b);
-        GATKSNPFilteringCheckBox.setSelected(b);
         cleanUpBox.setSelected(b);
 
 
@@ -868,7 +863,7 @@ public class EAGER {
         coverage.setToolTipText("Calculate coverage statistics.");
         mainpanel.add(coverage, new GridConstraints(13, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         gatksnpcall = new JCheckBox();
-        gatksnpcall.setSelected(true);
+        gatksnpcall.setSelected(false);
         gatksnpcall.setText("SNP Calling");
         gatksnpcall.setToolTipText("Select this and SNP Calling will be run in the pipeline, using the method available in the dropdown menu next to this checkbox.");
         mainpanel.add(gatksnpcall, new GridConstraints(15, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -890,7 +885,7 @@ public class EAGER {
         DamageButton.setText("Advanced");
         mainpanel.add(DamageButton, new GridConstraints(14, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         VCF2DraftCheckBox = new JCheckBox();
-        VCF2DraftCheckBox.setSelected(true);
+        VCF2DraftCheckBox.setSelected(false);
         VCF2DraftCheckBox.setText("VCF2Genome");
         VCF2DraftCheckBox.setMnemonic('V');
         VCF2DraftCheckBox.setDisplayedMnemonicIndex(0);
@@ -900,7 +895,7 @@ public class EAGER {
         advancedVCF2DraftButton.setText("Advanced");
         mainpanel.add(advancedVCF2DraftButton, new GridConstraints(17, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         GATKSNPFilteringCheckBox = new JCheckBox();
-        GATKSNPFilteringCheckBox.setSelected(true);
+        GATKSNPFilteringCheckBox.setSelected(false);
         GATKSNPFilteringCheckBox.setText("SNP Filtering");
         GATKSNPFilteringCheckBox.setToolTipText("Select this and set the min coverage and min quality that you want your variants to have in the resulting VCF file you created using the genotyper of your choice.");
         mainpanel.add(GATKSNPFilteringCheckBox, new GridConstraints(16, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -1007,7 +1002,7 @@ public class EAGER {
         mainpanel.add(damageSelection, new GridConstraints(14, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         damage = new JCheckBox();
         damage.setEnabled(true);
-        damage.setSelected(true);
+        damage.setSelected(false);
         damage.setText("Damage Calculation");
         damage.setToolTipText("Calculates post mortem damage pattern.");
         mainpanel.add(damage, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
