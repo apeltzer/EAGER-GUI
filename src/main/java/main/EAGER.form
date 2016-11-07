@@ -293,6 +293,7 @@
               <enabled value="true"/>
               <selected value="false"/>
               <text value="Contamination Estimation"/>
+              <toolTipText value="Run contamination estimation using Schmutzi. "/>
             </properties>
           </component>
           <component id="ac877" class="javax.swing.JButton" binding="schmutzi_advanced_button">
@@ -339,7 +340,7 @@
               <enabled value="true"/>
               <selected value="false"/>
               <text value="Damage Calculation"/>
-              <toolTipText value="Calculates post mortem damage pattern."/>
+              <toolTipText value="Calculates post mortem damage patterns."/>
             </properties>
           </component>
           <component id="945a6" class="javax.swing.JCheckBox" binding="PMDtoolsCheckBox" default-binding="true">
