@@ -21,6 +21,7 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'com.jfrog.bintray'
+    apply plugin: 'jacoco'
 }
 
 sourceCompatibility = 1.8
@@ -71,6 +72,13 @@ publishing {
             groupId 'com.uni-tuebingen.de.it.eager'
             artifactId 'EAGER-GUI'
         }
+    }
+}
+
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
     }
 }
 
