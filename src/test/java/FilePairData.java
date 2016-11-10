@@ -57,6 +57,15 @@ public class FilePairData {
     }
 
 
+    private static void setUp_file_pairing_dot_case () {
+        input = new ArrayList<>();
+        output = new ArrayList<>();
+        input.add("Sumsum/Sumsum_M240_SRR2751058_R1.fq.gz");
+        input.add("Sumsum/Sumsum_M240_SRR2751058_R2.fq.gz");
+        output.add(new FilePair(new File("Sumsum/Sumsum_M240_SRR2751058_R1.fq.gz").getAbsolutePath(), new File("Sumsum/Sumsum_M240_SRR2751058_R2.fq.gz").getAbsolutePath()));
+    }
+
+
     /**
      * Getter and setter methods
      * @return
@@ -74,6 +83,11 @@ public class FilePairData {
 
     public static ArrayList<String> getInput_file_pairing_normal_case() {
         setUp_file_pairing_normal_case();
+        return input;
+    }
+
+    public static ArrayList<String> getInput_file_Pairing_dot_case() {
+        setUp_file_pairing_dot_case();
         return input;
     }
 

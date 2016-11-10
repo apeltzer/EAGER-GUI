@@ -76,8 +76,8 @@ public class FilePairer {
 
     private void checkForMate(UnpairedFile f1, UnpairedFile f2) {
 
-        String[] splitf1 = f1.getDescriptor().split("_");
-        String[] splitf2 = f2.getDescriptor().split("_");
+        String[] splitf1 = f1.getDescriptor().split("_|\\.");
+        String[] splitf2 = f2.getDescriptor().split("_|\\.");
         String f1_lane = "";
         String f2_lane = "";
         String f1_pair = "";
@@ -151,7 +151,7 @@ public class FilePairer {
         ArrayList<String> tmp = new ArrayList<String>();
 
         for(UnpairedFile entry : listoffiles){
-            String[] split = entry.getDescriptor().split("_");
+            String[] split = entry.getDescriptor().split("_|\\.");
 
             Pattern lane_patt = Pattern.compile("L0\\d*");
             Pattern pair_patt = Pattern.compile("R[1,2]");

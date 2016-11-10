@@ -23,14 +23,14 @@ public class TestFilePairer {
 
         @Override
         public int compare(ArrayList<FilePair> listA, ArrayList<FilePair> listB) {
-            int result = 0;
+            int result = -1;
             for(int i = 0; i < listA.size(); i++){
                 FilePair pairone = listA.get(i);
                 FilePair pairtwo = listB.get(i);
                 if (pairone.getF1().equals(pairtwo.getF1()) && pairone.getF2().equals(pairtwo.getF2())) {
-                    result+=0;
+                    result=0;
                 } else {
-                    result+=-1;
+                    result=-1;
                 }
             }
             return result;
@@ -63,6 +63,16 @@ public class TestFilePairer {
 
         ArrayList<FilePair> output = FilePairData.getOutput();
         int result = fpcompare.compare(fp.getListofpairs(), output);
+        assertTrue("expected to be equal", result == 0);
+    }
+
+    @Test
+    public void file_pairing_dot_case () throws IOException {
+        FilePairer fp = new FilePairer(FilePairData.getInput_file_Pairing_dot_case());
+
+        ArrayList<FilePair> output = FilePairData.getOutput();
+        ArrayList<FilePair> fp_output = fp.getListofpairs();
+        int result = fpcompare.compare(fp_output, output);
         assertTrue("expected to be equal", result == 0);
     }
 
