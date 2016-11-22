@@ -535,6 +535,53 @@ public class EAGER {
                                     }
                                     communicator.setGUI_resultspath(backupResultsPath);
 
+                                } else if(communicator.isMerge_bam_files()){
+                                    FilePairer fp = new FilePairer(listoffiles);
+                                    ArrayList<FilePair> filePairs = fp.getListofpairs();
+                                    ArrayList<String> fw_data = new ArrayList<String>();
+                                    ArrayList<String> rv_data = new ArrayList<String>();
+                                    File parent = null;
+                                    File temp = null;
+                                    boolean init = true;
+                                    int exit = filePairs.size()+1;
+                                    for (FilePair filepair : filePairs) {
+                                        exit--;
+                                        parent = new File(new File(filepair.getF1()).getParent());
+                                        if (init) {
+                                            temp = new File(new File(filepair.getF1()).getParent());
+                                            init = false;
+                                        }
+
+                                        if (!temp.equals(parent) || exit == 0) {
+                                            temp.mkdirs();
+                                            String fileoutput = resultsfolder + "/" + temp.getName();
+                                            communicator.setGUI_resultspath(fileoutput);
+                                            ArrayList<String> combined = new ArrayList<String>();
+                                            combined.addAll(fw_data);
+                                            combined.addAll(rv_data);
+                                            communicator.setGUI_inputfiles(combined);
+                                            generateConfiguration(communicator, fileoutput);
+                                            temp = parent;
+                                            fw_data = new ArrayList<String>();
+                                            rv_data = new ArrayList<String>();
+                                        }
+
+                                        while (temp.equals(parent)) {
+                                            temp = new File(new File(filepair.getF1()).getParent());
+                                            fw_data.add(filepair.getF1());
+                                            rv_data.add(filepair.getF2());
+                                            break;
+                                        }
+                                    }
+                                    //flush in the last case
+                                    temp.mkdirs();
+                                    String fileoutput = resultsfolder + "/" + temp.getName();
+                                    communicator.setGUI_resultspath(fileoutput);
+                                    ArrayList<String> combined = new ArrayList<String>();
+                                    combined.addAll(fw_data);
+                                    combined.addAll(rv_data);
+                                    communicator.setGUI_inputfiles(combined);
+                                    generateConfiguration(communicator, fileoutput);
                                 }
                             } else {
                                 //if we only select one pair of files
