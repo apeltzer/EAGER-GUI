@@ -3,6 +3,7 @@ This is the main project for the EAGER project, with links to some tutorials, su
 
 [![Build Status](https://lambda.informatik.uni-tuebingen.de/jenkins/buildStatus/icon?job=EAGER-GUI)](https://lambda.informatik.uni-tuebingen.de/jenkins/view/EAGER/job/EAGER-GUI/)
 [![codecov](https://codecov.io/gh/apeltzer/EAGER-GUI/branch/master/graph/badge.svg)](https://codecov.io/gh/apeltzer/EAGER-GUI)
+[ ![Download](https://api.bintray.com/packages/apeltzer/EAGER/EAGER-GUI/images/download.svg) ](https://bintray.com/apeltzer/EAGER/EAGER-GUI/_latestVersion)
 
 Documentation: <http://eager.readthedocs.org>
 
