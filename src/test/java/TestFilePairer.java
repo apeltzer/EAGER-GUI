@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**

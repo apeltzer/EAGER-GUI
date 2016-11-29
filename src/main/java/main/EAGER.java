@@ -535,7 +535,7 @@ public class EAGER {
                                     }
                                     communicator.setGUI_resultspath(backupResultsPath);
 
-                                } else if(communicator.isMerge_bam_files()){
+                                } else if (communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<FilePair> filePairs = fp.getListofpairs();
                                     ArrayList<String> fw_data = new ArrayList<String>();
@@ -543,7 +543,7 @@ public class EAGER {
                                     File parent = null;
                                     File temp = null;
                                     boolean init = true;
-                                    int exit = filePairs.size()+1;
+                                    int exit = filePairs.size() + 1;
                                     for (FilePair filepair : filePairs) {
                                         exit--;
                                         parent = new File(new File(filepair.getF1()).getParent());
@@ -780,7 +780,7 @@ public class EAGER {
      */
     private void updateSelectedTools() {
         //Human vs Other cases
-        if (communicator.isOrganismage()) { //Human case, remove VCF2Genome
+        if (communicator.isOrganism()) { //Human case, remove VCF2Genome
             VCF2DraftCheckBox.setSelected(false);
 
         } else { // bacterial and other case
