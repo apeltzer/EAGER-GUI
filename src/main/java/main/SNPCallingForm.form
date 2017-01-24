@@ -147,8 +147,8 @@
               <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Emit All Sites?"/>
-              <toolTipText value="Emit a call for all sites on the genome, even if only reference call has been made."/>
+              <text value="Emit All Sites / BP_RES Mode HC"/>
+              <toolTipText value="Emit a call for all sites on the genome, even if only reference call has been made. In UnifiedGenotyper this refers to EMIT_ALL_SITES mode, in HaplotypeCaller to BP_RESOLUTION mode."/>
             </properties>
           </component>
           <component id="7d0c0" class="javax.swing.JLabel">
@@ -260,7 +260,8 @@
               <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Emit Conf Sites?"/>
+              <text value="Emit Conf Sites / GVCF Mode HC"/>
+              <toolTipText value="Emits confident sites for UnifiedGenotyper and a GVCF file for HaplotypeCaller if ticked on."/>
             </properties>
           </component>
         </children>

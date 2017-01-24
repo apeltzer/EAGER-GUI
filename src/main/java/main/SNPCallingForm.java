@@ -363,8 +363,8 @@ public class SNPCallingForm extends JDialog {
         label6.setText("Advanced Parameters");
         panel3.add(label6, new GridConstraints(7, 0, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         emitAllSitesCheckbox = new JCheckBox();
-        emitAllSitesCheckbox.setText("Emit All Sites?");
-        emitAllSitesCheckbox.setToolTipText("Emit a call for all sites on the genome, even if only reference call has been made.");
+        emitAllSitesCheckbox.setText("Emit All Sites / BP_RES Mode HC");
+        emitAllSitesCheckbox.setToolTipText("Emit a call for all sites on the genome, even if only reference call has been made. In UnifiedGenotyper this refers to EMIT_ALL_SITES mode, in HaplotypeCaller to BP_RESOLUTION mode.");
         panel3.add(emitAllSitesCheckbox, new GridConstraints(9, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label7 = new JLabel();
         label7.setText("");
@@ -414,7 +414,8 @@ public class SNPCallingForm extends JDialog {
         dbSNPButton.setToolTipText("Select a dbSNP database for annotating variants with existing data. ");
         panel3.add(dbSNPButton, new GridConstraints(0, 3, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         gatk_confident_sites = new JCheckBox();
-        gatk_confident_sites.setText("Emit Conf Sites?");
+        gatk_confident_sites.setText("Emit Conf Sites / GVCF Mode HC");
+        gatk_confident_sites.setToolTipText("Emits confident sites for UnifiedGenotyper and a GVCF file for HaplotypeCaller if ticked on.");
         panel3.add(gatk_confident_sites, new GridConstraints(9, 4, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
