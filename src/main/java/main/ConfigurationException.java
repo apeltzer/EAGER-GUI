@@ -87,10 +87,10 @@ public class ConfigurationException extends JDialog {
         final Spacer spacer2 = new Spacer();
         panel3.add(spacer2, new GridConstraints(1, 0, 3, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         final JLabel label1 = new JLabel();
-        label1.setText("You did not select a proper configuration for the EAGER pipeline. ");
+        label1.setText("EAGER was either unable to find any data in your selected directory or unable to assign proper read pair files to each other. ");
         panel3.add(label1, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label2 = new JLabel();
-        label2.setText(" Please fix remaining issues and try to generate the configuration file again. ");
+        label2.setText("Please check whether you selected the proper data directory and that you follow up on the file naming scheme as shown online in the EAGER Documentation. \n\neager.readthedocs.io/en/latest/contents/prerequisites.html?highlight=file naming#file-naming-scheme\n\n");
         panel3.add(label2, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 

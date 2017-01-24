@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
  * To change this template use File | Settings | File Templates.
  */
 public class EAGER {
-    private final String EAGER_VERSION = "1.92.20";
+    private final String EAGER_VERSION = "1.92.21";
 
     private String filepath;
     private JCheckBox fastQCAnalysisCheckBox;
@@ -603,14 +603,22 @@ public class EAGER {
 
                         }
 
-                        ConfigurationCreated configurationCreated = new ConfigurationCreated(communicator);
-                        setWindowPosition(configurationCreated);
-                        configurationCreated.setSize(650, 400);
-                        configurationCreated.setVisible(true);
+                        /*Check whether we created a proper configuration and if not, issue an Exception Dialogue!
+                         *
+                         */
+                        if (communicator.getGUI_inputfiles().size() <= 1) {
+                            ConfigurationException cfge = new ConfigurationException(communicator);
+                            cfge.setSize(650, 400);
+                            cfge.setVisible(true);
+                        } else {
+                            ConfigurationCreated configurationCreated = new ConfigurationCreated(communicator);
+                            setWindowPosition(configurationCreated);
+                            configurationCreated.setSize(650, 400);
+                            configurationCreated.setVisible(true);
 
-                        communicator.setGUI_inputfiles(original_gui_inputfiles);
-                        communicator.setGUI_resultspath(backupResultsPath);
-
+                            communicator.setGUI_inputfiles(original_gui_inputfiles);
+                            communicator.setGUI_resultspath(backupResultsPath);
+                        }
 
                     } else {
                         ConfigurationException cfge = new ConfigurationException(communicator);
@@ -782,7 +790,6 @@ public class EAGER {
         //Human vs Other cases
         if (communicator.isOrganism()) { //Human case, remove VCF2Genome
             VCF2DraftCheckBox.setSelected(false);
-
         } else { // bacterial and other case
             schmutzi_checkbox.setSelected(false);
             VCF2DraftCheckBox.setSelected(true);
