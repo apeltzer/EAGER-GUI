@@ -157,7 +157,7 @@ public class MapBWADialog extends JDialog {
         panel3.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         map_filteroutunmapped = new JCheckBox();
         map_filteroutunmapped.setEnabled(true);
-        map_filteroutunmapped.setSelected(false);
+        map_filteroutunmapped.setSelected(true);
         map_filteroutunmapped.setText("Filter unmapped Reads");
         panel3.add(map_filteroutunmapped, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         mapper_seedlength_textfield = new JTextField();
