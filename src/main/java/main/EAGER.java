@@ -535,6 +535,18 @@ public class EAGER {
                                     }
                                     communicator.setGUI_resultspath(backupResultsPath);
 
+                                } else if (!communicator.isPairmenttype() && communicator.isMerge_bam_files()) {
+                                  FilePairer fp = new FilePairer(listoffiles);
+                                  ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
+                                  for (ArrayList<String> filename : filePairs) {
+                                      communicator.setGUI_inputfiles(filename);
+                                      File parent = new File(new File(filename.get(0)).getParent());
+                                      parent.mkdirs();
+                                      String fileoutput = resultsfolder + "/" + parent.getName();
+                                      communicator.setGUI_resultspath(fileoutput);
+                                      generateConfiguration(communicator, fileoutput);
+                                    }
+                                    communicator.setGUI_resultspath(backupResultsPath);
                                 } else if (communicator.isMerge_bam_files()) {
                                     FilePairer fp = new FilePairer(listoffiles);
                                     ArrayList<FilePair> filePairs = fp.getListofpairs();
@@ -1044,7 +1056,7 @@ public class EAGER {
         schmutzi_advanced_button.setText("Advanced");
         mainpanel.add(schmutzi_advanced_button, new GridConstraints(12, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         useSystemTmpDirCheckBox = new JCheckBox();
-        useSystemTmpDirCheckBox.setSelected(true);
+        useSystemTmpDirCheckBox.setSelected(false);
         useSystemTmpDirCheckBox.setText("Use system tmp dir");
         mainpanel.add(useSystemTmpDirCheckBox, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         dedup_advanced_button = new JButton();

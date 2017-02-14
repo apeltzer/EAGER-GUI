@@ -82,7 +82,7 @@
             </constraints>
             <properties>
               <enabled value="true"/>
-              <selected value="false"/>
+              <selected value="true"/>
               <text value="Filter unmapped Reads"/>
             </properties>
           </component>
