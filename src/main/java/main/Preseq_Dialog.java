@@ -79,7 +79,7 @@ public class Preseq_Dialog extends JDialog {
             lcextrap_extrapolationsize_textfield.setText(String.valueOf(c.getPreseq_lcextrap_extrapolationsize()));
         }
         if (String.valueOf(c.getPreseq_lcextrap_bootstraps()) != null) {
-            lcextrap_bootstrap_textfield.setText(String.valueOf(c.getPreseq_lcextrap_extrapolationsize()));
+            lcextrap_bootstrap_textfield.setText(String.valueOf(c.getPreseq_lcextrap_bootstraps()));
         }
     }
 

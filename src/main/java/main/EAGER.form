@@ -262,7 +262,7 @@
               <grid row="9" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <selected value="true"/>
+              <selected value="false"/>
               <text value="C&amp;omplexity Estimation"/>
               <toolTipText value="Select this if you'd like to get a library complexity estimation to be done, e.g. for screening a library and finding out if there are enough unique DNA fragments in the library, so a further sequencing would be beneficial."/>
             </properties>
