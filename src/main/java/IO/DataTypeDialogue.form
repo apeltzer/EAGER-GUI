@@ -98,6 +98,7 @@
             <properties>
               <model>
                 <item value="UDG Treated"/>
+                <item value="half-UDG Treated"/>
                 <item value="non-UDG Treated"/>
               </model>
             </properties>

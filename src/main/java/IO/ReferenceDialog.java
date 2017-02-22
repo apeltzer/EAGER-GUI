@@ -1,5 +1,6 @@
 package IO;
 
+import IO.ReferenceFastAChooser;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -41,7 +42,7 @@ public class ReferenceDialog extends JDialog {
         referenceButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                ReferenceFastAChooser rffqc = new ReferenceFastAChooser(communicator);
+                ReferenceFastAChooser rffqc = new ReferenceFastAChooser(communicator, ReferenceFastAChooser.REFERENCE_FASTA);
                 referenceButton.setForeground(Color.green);
 
                 if (checkIfInputWasSelected()) {

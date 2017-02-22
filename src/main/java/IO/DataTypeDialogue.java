@@ -99,11 +99,7 @@ public class DataTypeDialogue extends JDialog {
             c.setOrganism(false);
         }
 
-        if (treatment_combobox.getModel().getSelectedItem().toString().equals("UDG Treated")) {
-            c.setUdgtreatment(true);
-        } else {
-            c.setUdgtreatment(false);
-        }
+        c.setUdgtreatment(treatment_combobox.getModel().getSelectedItem().toString());
 
         if (pairment_combobox.getModel().getSelectedItem().toString().equals("Paired Data")) {
             c.setPairmenttype(true);
@@ -203,6 +199,7 @@ public class DataTypeDialogue extends JDialog {
         treatment_combobox = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel3 = new DefaultComboBoxModel();
         defaultComboBoxModel3.addElement("UDG Treated");
+        defaultComboBoxModel3.addElement("half-UDG Treated");
         defaultComboBoxModel3.addElement("non-UDG Treated");
         treatment_combobox.setModel(defaultComboBoxModel3);
         panel3.add(treatment_combobox, new GridConstraints(2, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));

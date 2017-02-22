@@ -30,13 +30,22 @@ import java.io.File;
 
 
 public class ReferenceFastAChooser {
+    public static final int REFERENCE_FASTA = 0;
+    public static final int REFERENCE_FASTA_MASKED_CAPTURE = 1;
+
     private JFileChooser jfc = new JFileChooser();
     private FileFilter ff;
 
 
-    public ReferenceFastAChooser(Communicator c){
-        if(c.getGUI_reference() != null){
+    public ReferenceFastAChooser(Communicator c, int updateTarget){
+        if ( !(updateTarget == ReferenceFastAChooser.REFERENCE_FASTA || updateTarget == ReferenceFastAChooser.REFERENCE_FASTA_MASKED_CAPTURE) ) {
+            throw new RuntimeException("Invalid target passed to ReferenceFastaAChooser");
+        }
+
+        if(updateTarget == ReferenceFastAChooser.REFERENCE_FASTA && c.getGUI_reference() != null) {
             jfc.setCurrentDirectory(new File(c.getGUI_reference()));
+        } else if (updateTarget == ReferenceFastAChooser.REFERENCE_FASTA_MASKED_CAPTURE && c.getGUI_reference_mask() != null) {
+            jfc.setCurrentDirectory(new File(c.getGUI_reference_mask()));
         }
         ff = new FileFilter() {
             @Override
@@ -53,8 +62,11 @@ public class ReferenceFastAChooser {
         int state = jfc.showOpenDialog(null);
         if (state == JFileChooser.APPROVE_OPTION){
             File f = jfc.getSelectedFile();
-            c.setGUI_reference(f.getAbsolutePath());
-            c.setGUI_filepathinput(f.getAbsolutePath());
+            if ( updateTarget == ReferenceFastAChooser.REFERENCE_FASTA ) {
+                c.setGUI_reference(f.getAbsolutePath());
+            } else if (updateTarget == ReferenceFastAChooser.REFERENCE_FASTA_MASKED_CAPTURE) {
+                c.setGUI_reference_mask(f.getAbsolutePath());
+            }
         }
     }
 }

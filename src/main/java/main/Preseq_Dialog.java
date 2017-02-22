@@ -156,7 +156,7 @@ public class Preseq_Dialog extends JDialog {
         lcextrap_stepsize_textfield.setText("1000");
         panel3.add(lcextrap_stepsize_textfield, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         lcextrap_extrapolationsize_textfield = new JTextField();
-        lcextrap_extrapolationsize_textfield.setText("10000000000");
+        lcextrap_extrapolationsize_textfield.setText("1000000000");
         panel3.add(lcextrap_extrapolationsize_textfield, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         lcextrap_bootstrap_textfield = new JTextField();
         lcextrap_bootstrap_textfield.setText("100");
