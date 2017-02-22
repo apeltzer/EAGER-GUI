@@ -104,6 +104,7 @@ public class PmdToolsDialog extends JDialog {
         c.setPmdtools_advanced(this.pmdTools_advanced_parameters.getText());
         c.setPMDSFilter(this.PMDSFilterCheckBox.isSelected());
         c.setPmdtoolsThreshold(this.pmdsThreshold_field.getText());
+        c.setPmdtoolsCalcRange(this.calc_rangeCheckBox.isSelected());
         c.setCpGRange(this.range_field.getText());
 
         dispose();
@@ -118,6 +119,7 @@ public class PmdToolsDialog extends JDialog {
     private void setValues(Communicator c) {
 
         this.PMDSFilterCheckBox.setSelected(c.isPMDSFilter());
+        this.calc_rangeCheckBox.setSelected(c.isPmdtoolsCalcRange());
 
         if (c.getPmdtoolsThreshold() != null) {
             this.pmdsThreshold_field.setText(c.getPmdtoolsThreshold());
