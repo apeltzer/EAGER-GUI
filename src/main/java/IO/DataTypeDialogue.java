@@ -38,6 +38,7 @@ public class DataTypeDialogue extends JDialog {
     private JComboBox capture_type_combobox;
     private JButton capture_button_select;
     private JButton capture_mt_button_select;
+    private JCheckBox calculateOnTargetCheckBox;
 
     public DataTypeDialogue(final Communicator communicator) {
         setContentPane(contentPane);
@@ -73,6 +74,20 @@ public class DataTypeDialogue extends JDialog {
                 }
             }
         });
+
+        calculateOnTargetCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (calculateOnTargetCheckBox.isSelected()) {
+                    capture_type_combobox.setEnabled(true);
+                    capture_button_select.setEnabled(true);
+                } else {
+                    capture_type_combobox.setEnabled(false);
+                    capture_button_select.setEnabled(false);
+                }
+            }
+        });
+
         capture_button_select.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -120,6 +135,12 @@ public class DataTypeDialogue extends JDialog {
             c.setSnpcapture_type((String) capture_type_combobox.getModel().getSelectedItem());
         } else {
             c.setSnpcapturedata(false);
+        }
+
+        if (calculateOnTargetCheckBox.isSelected()) {
+            c.setCalc_capture_on_target(true);
+        } else {
+            c.setCalc_capture_on_target(false);
         }
 
         if (input_already_merged_jcheckbox.isSelected()) {
@@ -171,7 +192,7 @@ public class DataTypeDialogue extends JDialog {
         buttonOK.setText("OK");
         panel2.add(buttonOK, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel3 = new JPanel();
-        panel3.setLayout(new GridLayoutManager(8, 5, new Insets(0, 0, 0, 0), -1, -1));
+        panel3.setLayout(new GridLayoutManager(9, 5, new Insets(0, 0, 0, 0), -1, -1));
         contentPane.add(panel3, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         panel3.setBorder(BorderFactory.createTitledBorder("Please tell us some more about your input dataset"));
         final JLabel label1 = new JLabel();
@@ -217,15 +238,15 @@ public class DataTypeDialogue extends JDialog {
         panel3.add(snpcap_checkbox, new GridConstraints(4, 1, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         input_already_merged_jcheckbox = new JCheckBox();
         input_already_merged_jcheckbox.setText("Input is already concatenated (skip merging)");
-        panel3.add(input_already_merged_jcheckbox, new GridConstraints(5, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(input_already_merged_jcheckbox, new GridConstraints(6, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         merge_all_lanes_jcheckbox = new JCheckBox();
         merge_all_lanes_jcheckbox.setText("Concatenate lanewise together");
         merge_all_lanes_jcheckbox.setToolTipText("<html>\nTick this if you want to merge e.g. NextSeq Data together into two corresponding R1 and R2 files respectively.\n</html> ");
-        panel3.add(merge_all_lanes_jcheckbox, new GridConstraints(6, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(merge_all_lanes_jcheckbox, new GridConstraints(7, 1, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         mt_capture_jcheckbox = new JCheckBox();
         mt_capture_jcheckbox.setText("MTCapture Data? ");
         mt_capture_jcheckbox.setToolTipText("Check this if you'd like to filter out reads mapping to MT chromosome. In this case specify the FastA identifier for the MT chromosome.");
-        panel3.add(mt_capture_jcheckbox, new GridConstraints(7, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(mt_capture_jcheckbox, new GridConstraints(8, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         capture_type_combobox = new JComboBox();
         capture_type_combobox.setEnabled(false);
         final DefaultComboBoxModel defaultComboBoxModel5 = new DefaultComboBoxModel();
@@ -240,7 +261,10 @@ public class DataTypeDialogue extends JDialog {
         capture_mt_button_select = new JButton();
         capture_mt_button_select.setEnabled(false);
         capture_mt_button_select.setText("Select BED file");
-        panel3.add(capture_mt_button_select, new GridConstraints(7, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(capture_mt_button_select, new GridConstraints(8, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        calculateOnTargetCheckBox = new JCheckBox();
+        calculateOnTargetCheckBox.setText("Calculate on target");
+        panel3.add(calculateOnTargetCheckBox, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
