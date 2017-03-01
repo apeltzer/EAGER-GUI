@@ -125,7 +125,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="10000000000"/>
+              <text value="1000000000"/>
             </properties>
           </component>
           <component id="c78ff" class="javax.swing.JTextField" binding="lcextrap_bootstrap_textfield">

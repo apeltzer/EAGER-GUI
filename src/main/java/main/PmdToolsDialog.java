@@ -1,6 +1,7 @@
 package main;
 
 import IO.Communicator;
+import IO.ReferenceFastAChooser;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
@@ -14,13 +15,16 @@ public class PmdToolsDialog extends JDialog {
     private JButton buttonOK;
     private JButton buttonCancel;
     private JCheckBox PMDSFilterCheckBox;
-    private JCheckBox cpGRestrictionCheckBox;
     private JTextField pmdsThreshold_field;
     private JTextField range_field;
     private JTextField pmdTools_advanced_parameters;
     private JLabel pmdsThreshold;
     private JLabel range;
     private JLabel adv_parameters;
+    private JCheckBox calc_rangeCheckBox;
+    private JButton selectMaskedFastaButton;
+    private JTextPane IfCapturetextPane;
+
 
     public PmdToolsDialog(final Communicator communicator) {
         setValues(communicator);
@@ -55,6 +59,44 @@ public class PmdToolsDialog extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+
+        PMDSFilterCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (PMDSFilterCheckBox.isSelected()) {
+                    pmdsThreshold_field.setEnabled(true);
+
+                    if (communicator.isSnpcapturedata()) {
+                        selectMaskedFastaButton.setEnabled(true);
+                    }
+
+                } else {
+                    pmdsThreshold_field.setEnabled(false);
+                    selectMaskedFastaButton.setEnabled(false);
+                }
+            }
+        });
+
+        calc_rangeCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (calc_rangeCheckBox.isSelected()) {
+                    range_field.setEnabled(true);
+                } else {
+                    range_field.setEnabled(false);
+                }
+            }
+        });
+
+        selectMaskedFastaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ReferenceFastAChooser rffqc = new ReferenceFastAChooser(communicator, ReferenceFastAChooser.REFERENCE_FASTA_MASKED_CAPTURE);
+            }
+        });
+
+        selectMaskedFastaButton.setEnabled(PMDSFilterCheckBox.isEnabled() && communicator.isSnpcapturedata());
     }
 
 
@@ -62,7 +104,7 @@ public class PmdToolsDialog extends JDialog {
         c.setPmdtools_advanced(this.pmdTools_advanced_parameters.getText());
         c.setPMDSFilter(this.PMDSFilterCheckBox.isSelected());
         c.setPmdtoolsThreshold(this.pmdsThreshold_field.getText());
-        c.setCpGRestriction(this.cpGRestrictionCheckBox.isSelected());
+        c.setPmdtoolsCalcRange(this.calc_rangeCheckBox.isSelected());
         c.setCpGRange(this.range_field.getText());
 
         dispose();
@@ -77,6 +119,7 @@ public class PmdToolsDialog extends JDialog {
     private void setValues(Communicator c) {
 
         this.PMDSFilterCheckBox.setSelected(c.isPMDSFilter());
+        this.calc_rangeCheckBox.setSelected(c.isPmdtoolsCalcRange());
 
         if (c.getPmdtoolsThreshold() != null) {
             this.pmdsThreshold_field.setText(c.getPmdtoolsThreshold());
@@ -84,15 +127,6 @@ public class PmdToolsDialog extends JDialog {
 
         if (c.getCpGRange() != null) {
             this.range_field.setText(c.getCpGRange());
-        }
-
-        // isOrganism = true -> human
-        if (c.isOrganism()) {
-            this.cpGRestrictionCheckBox.setSelected(c.isCpGRestriction());
-        } else {
-            this.cpGRestrictionCheckBox.setEnabled(false);
-            this.range_field.setEnabled(false);
-            this.range.setEnabled(false);
         }
 
         if (c.getPmdtools_advanced() != null) {
@@ -133,9 +167,10 @@ public class PmdToolsDialog extends JDialog {
         buttonCancel.setText("Cancel");
         panel2.add(buttonCancel, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel3 = new JPanel();
-        panel3.setLayout(new GridLayoutManager(6, 2, new Insets(0, 0, 0, 0), -1, -1));
+        panel3.setLayout(new GridLayoutManager(9, 2, new Insets(0, 0, 0, 0), -1, -1));
         contentPane.add(panel3, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         PMDSFilterCheckBox = new JCheckBox();
+        PMDSFilterCheckBox.setSelected(true);
         PMDSFilterCheckBox.setText("PMDS filter");
         PMDSFilterCheckBox.setToolTipText("Filter all reads lower the set threshold. The higher the PMDS, the higher the support for ancient DNA.");
         panel3.add(PMDSFilterCheckBox, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -144,29 +179,41 @@ public class PmdToolsDialog extends JDialog {
         pmdsThreshold = new JLabel();
         pmdsThreshold.setText("PMDS threshold");
         panel3.add(pmdsThreshold, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        cpGRestrictionCheckBox = new JCheckBox();
-        cpGRestrictionCheckBox.setText("CpG restriction");
-        cpGRestrictionCheckBox.setToolTipText("Restrict calculations to nucleotides within a CpG context. ");
-        panel3.add(cpGRestrictionCheckBox, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         range = new JLabel();
         range.setText("Range");
-        panel3.add(range, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(range, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         pmdsThreshold_field = new JTextField();
         pmdsThreshold_field.setToolTipText("Specify PMDS threshold. Empirically measured value, change it only if you are know more about your data.");
         panel3.add(pmdsThreshold_field, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         range_field = new JTextField();
+        range_field.setEnabled(false);
         range_field.setToolTipText("Number of bases from termini which are considered while CpG restriction.");
-        panel3.add(range_field, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        panel3.add(range_field, new GridConstraints(6, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         adv_parameters = new JLabel();
         adv_parameters.setEnabled(true);
         adv_parameters.setText("Advanced parameters");
-        panel3.add(adv_parameters, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(adv_parameters, new GridConstraints(8, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         pmdTools_advanced_parameters = new JTextField();
         pmdTools_advanced_parameters.setEditable(true);
         pmdTools_advanced_parameters.setEnabled(true);
-        panel3.add(pmdTools_advanced_parameters, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        panel3.add(pmdTools_advanced_parameters, new GridConstraints(8, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JSeparator separator1 = new JSeparator();
-        panel3.add(separator1, new GridConstraints(4, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel3.add(separator1, new GridConstraints(7, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        calc_rangeCheckBox = new JCheckBox();
+        calc_rangeCheckBox.setText("Calculate range");
+        panel3.add(calc_rangeCheckBox, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JSeparator separator2 = new JSeparator();
+        panel3.add(separator2, new GridConstraints(4, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label1 = new JLabel();
+        label1.setText("Capture mask");
+        panel3.add(label1, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        selectMaskedFastaButton = new JButton();
+        selectMaskedFastaButton.setEnabled(false);
+        selectMaskedFastaButton.setText("Select masked fasta");
+        panel3.add(selectMaskedFastaButton, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        IfCapturetextPane = new JTextPane();
+        IfCapturetextPane.setText("PMDS filtering will cause a bias towards the reference. You can prevent this for caputure experiments by using a fasta file that has the captured SNPs masked.");
+        panel3.add(IfCapturetextPane, new GridConstraints(2, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
     }
 
     /**

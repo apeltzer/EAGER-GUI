@@ -1031,7 +1031,7 @@ public class EAGER {
         final JSeparator separator1 = new JSeparator();
         mainpanel.add(separator1, new GridConstraints(3, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         complexity = new JCheckBox();
-        complexity.setSelected(true);
+        complexity.setSelected(false);
         complexity.setText("Complexity Estimation");
         complexity.setMnemonic('O');
         complexity.setDisplayedMnemonicIndex(1);
