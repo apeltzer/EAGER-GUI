@@ -99,7 +99,7 @@
               </grid>
             </constraints>
             <properties>
-              <toolTipText value="&lt;html&gt;&#10;&lt;br&gt;-p (min number of nucleotides overlapping for merging,default=10)&lt;/br&gt;&#10;&lt;br&gt;-e (error rate for merging forward and reverse reads, default=0.05)&lt;/br&gt;&#10;&lt;br&gt;-u (write unmerged fw+rv reads into separate file)&lt;/br&gt;&#10;&lt;br&gt;-no_clipping&lt;/br&gt;&#10;&lt;br&gt;-no_merging&lt;/br&gt;&#10;&lt;br&gt;--timeEstimation for estimating runtimes&lt;/br&gt;&#10;&lt;br&gt;--verbose for printing additional processing information.&lt;/br&gt;"/>
+              <toolTipText value="&lt;html&gt;&#10;&lt;br&gt;-m (minimum overlap of adapter vs read for adapter clipping, default=8, use smaller values for SE data&lt;/br&gt;&#10;&lt;br&gt;-p (min number of nucleotides overlapping for merging,default=10)&lt;/br&gt;&#10;&lt;br&gt;-e (error rate for merging forward and reverse reads, default=0.05)&lt;/br&gt;&#10;&lt;br&gt;-u (write unmerged fw+rv reads into separate file)&lt;/br&gt;&#10;&lt;br&gt;-no_clipping&lt;/br&gt;&#10;&lt;br&gt;-no_merging&lt;/br&gt;&#10;&lt;br&gt;--timeEstimation for estimating runtimes&lt;/br&gt;&#10;&lt;br&gt;--verbose for printing additional processing information.&lt;/br&gt;"/>
             </properties>
           </component>
           <component id="cd742" class="javax.swing.JLabel">
