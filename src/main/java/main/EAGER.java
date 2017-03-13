@@ -618,7 +618,7 @@ public class EAGER {
                         /*Check whether we created a proper configuration and if not, issue an Exception Dialogue!
                          *
                          */
-                        if (communicator.getGUI_inputfiles().size() <= 1) {
+                        if (communicator.getGUI_inputfiles().size() <= 1 && communicator.isPairmenttype()) {
                             ConfigurationException cfge = new ConfigurationException(communicator);
                             cfge.setSize(650, 400);
                             cfge.setVisible(true);

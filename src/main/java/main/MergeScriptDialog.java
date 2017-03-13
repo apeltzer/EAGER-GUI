@@ -171,7 +171,7 @@ public class MergeScriptDialog extends JDialog {
         label2.setToolTipText("Choose different backward read adaptor");
         panel3.add(label2, new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         mergescript_advancedfield = new JTextField();
-        mergescript_advancedfield.setToolTipText("<html>\n<br>-p (min number of nucleotides overlapping for merging,default=10)</br>\n<br>-e (error rate for merging forward and reverse reads, default=0.05)</br>\n<br>-u (write unmerged fw+rv reads into separate file)</br>\n<br>-no_clipping</br>\n<br>-no_merging</br>\n<br>--timeEstimation for estimating runtimes</br>\n<br>--verbose for printing additional processing information.</br>");
+        mergescript_advancedfield.setToolTipText("<html>\n<br>-m (minimum overlap of adapter vs read for adapter clipping, default=8, use smaller values for SE data</br>\n<br>-p (min number of nucleotides overlapping for merging,default=10)</br>\n<br>-e (error rate for merging forward and reverse reads, default=0.05)</br>\n<br>-u (write unmerged fw+rv reads into separate file)</br>\n<br>-no_clipping</br>\n<br>-no_merging</br>\n<br>--timeEstimation for estimating runtimes</br>\n<br>--verbose for printing additional processing information.</br>");
         panel3.add(mergescript_advancedfield, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setText("Advanced Parameters");
