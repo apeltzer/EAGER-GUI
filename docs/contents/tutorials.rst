@@ -20,7 +20,7 @@ Ideally, your folder structure should look like:
    :width: 300px
    :height: 300px
    :align: center
-BED
+
 .. warning::
   If you need to perform genotyping, please ensure that your genome FastA file is ending with a `.fasta` file extension, or otherwise the GATK might complain about this.
 
