@@ -22,7 +22,8 @@ Ideally, your folder structure should look like:
    :align: center
 
 .. warning::
-  If you need to perform genotyping, please ensure that your genome FastA file is ending with a `.fasta` file extension, or otherwise the GATK might complain about this.
+ 
+ If you need to perform genotyping, please ensure that your genome FastA file is ending with a `.fasta` file extension, or otherwise the GATK might complain about this.
 
 Step II: Starting the GUI
 ~~~~~~~~~~~~~~~~~~~~~~~~~
