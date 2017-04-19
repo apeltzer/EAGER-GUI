@@ -84,6 +84,7 @@ public class MergeScriptDialog extends JDialog {
         c.setMerge_barcode3p(barcode_3p_clip.getText());
         c.setMerge_barcode5p(barcode_5p_clip.getText());
         c.setMerge_keep_only_merged(clipandmerge_mergedonly_checkbox.isSelected());
+        c.setMerge_tool("Clip&Merge");
         dispose();
     }
 

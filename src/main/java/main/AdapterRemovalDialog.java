@@ -60,6 +60,7 @@ public class AdapterRemovalDialog extends JDialog {
         c.setQuality_readlength(Integer.parseInt(minimum_sequence_length_textfield.getText()));
         c.setMerge_only_clipping(performOnlyAdapterClippingCheckBox.isSelected());
         c.setMerge_min_adapter_overlap(Integer.parseInt(minimum_adapter_overlap_textfield.getText()));
+        c.setMerge_tool("AdapterRemoval");
         dispose();
     }
 
