@@ -287,12 +287,22 @@ public class EAGER {
         MergeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                MergeScriptDialog ms = new MergeScriptDialog(communicator);
-                setWindowPosition(ms);
+                if(((String) merge_tool_combobox.getModel().getSelectedItem()).equals("CM")){
+                    MergeScriptDialog ms = new MergeScriptDialog(communicator);
+                    setWindowPosition(ms);
 
-                ms.setSize(400, 400);
-                ms.setVisible(true);
-                ms.setLocationByPlatform(true);
+                    ms.setSize(400, 400);
+                    ms.setVisible(true);
+                    ms.setLocationByPlatform(true);
+                } else {
+                    AdapterRemovalDialog adapterRemovalDialog = new AdapterRemovalDialog(communicator);
+                    setWindowPosition(adapterRemovalDialog);
+
+                    adapterRemovalDialog.setSize(400,400);
+                    adapterRemovalDialog.setVisible(true);
+                    adapterRemovalDialog.setLocationByPlatform(true);
+                }
+
             }
         });
 
