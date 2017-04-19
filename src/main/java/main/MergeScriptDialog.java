@@ -38,6 +38,7 @@ public class MergeScriptDialog extends JDialog {
     private JTextField barcode_3p_clip;
     private JTextField barcode_5p_clip;
     private JCheckBox clipandmerge_mergedonly_checkbox;
+    private JTextField minimum_adapter_overlap_textfield;
 
     public MergeScriptDialog(final Communicator c) {
         setValues(c);
@@ -76,6 +77,7 @@ public class MergeScriptDialog extends JDialog {
         c.setMerge_fwadaptor(fwread.getText());
         c.setMerge_bwadaptor(bwread.getText());
         c.setMerge_advanced(mergescript_advancedfield.getText());
+        c.setMerge_min_adapter_overlap(Integer.parseInt(minimum_adapter_overlap_textfield.getText()));
         c.setQuality_minreadquality(Integer.parseInt(mergescript_textfield_minbasequality.getText()));
         c.setQuality_readlength(Integer.parseInt(mergescript_textfield_minsequencelength.getText()));
         c.setMerge_only_clipping(performOnlyAdapterClippingCheckBox.isSelected());
@@ -99,6 +101,10 @@ public class MergeScriptDialog extends JDialog {
         }
         if (c.getMerge_advanced() != null) {
             this.mergescript_advancedfield.setText(c.getMerge_advanced());
+        }
+
+        if(c.getMerge_min_adapter_overlap() != 0){
+            this.minimum_adapter_overlap_textfield.setText(String.valueOf(c.getMerge_min_adapter_overlap()));
         }
         if (String.valueOf(c.getQuality_minreadquality()) != null) {
             this.mergescript_textfield_minbasequality.setText(String.valueOf(c.getQuality_minreadquality()));
