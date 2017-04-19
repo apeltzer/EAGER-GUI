@@ -287,7 +287,7 @@ public class EAGER {
         MergeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if(((String) merge_tool_combobox.getModel().getSelectedItem()).equals("CM")){
+                if (((String) merge_tool_combobox.getModel().getSelectedItem()).equals("Clip&Merge")) {
                     MergeScriptDialog ms = new MergeScriptDialog(communicator);
                     setWindowPosition(ms);
 
@@ -298,7 +298,7 @@ public class EAGER {
                     AdapterRemovalDialog adapterRemovalDialog = new AdapterRemovalDialog(communicator);
                     setWindowPosition(adapterRemovalDialog);
 
-                    adapterRemovalDialog.setSize(400,400);
+                    adapterRemovalDialog.setSize(400, 400);
                     adapterRemovalDialog.setVisible(true);
                     adapterRemovalDialog.setLocationByPlatform(true);
                 }
@@ -547,15 +547,15 @@ public class EAGER {
                                     communicator.setGUI_resultspath(backupResultsPath);
 
                                 } else if (!communicator.isPairmenttype() && communicator.isMerge_bam_files()) {
-                                  FilePairer fp = new FilePairer(listoffiles);
-                                  ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
-                                  for (ArrayList<String> filename : filePairs) {
-                                      communicator.setGUI_inputfiles(filename);
-                                      File parent = new File(new File(filename.get(0)).getParent());
-                                      parent.mkdirs();
-                                      String fileoutput = resultsfolder + "/" + parent.getName();
-                                      communicator.setGUI_resultspath(fileoutput);
-                                      generateConfiguration(communicator, fileoutput);
+                                    FilePairer fp = new FilePairer(listoffiles);
+                                    ArrayList<ArrayList<String>> filePairs = fp.getSingleEndDataList();
+                                    for (ArrayList<String> filename : filePairs) {
+                                        communicator.setGUI_inputfiles(filename);
+                                        File parent = new File(new File(filename.get(0)).getParent());
+                                        parent.mkdirs();
+                                        String fileoutput = resultsfolder + "/" + parent.getName();
+                                        communicator.setGUI_resultspath(fileoutput);
+                                        generateConfiguration(communicator, fileoutput);
                                     }
                                     communicator.setGUI_resultspath(backupResultsPath);
                                 } else if (communicator.isMerge_bam_files()) {
@@ -915,10 +915,10 @@ public class EAGER {
      */
     private void $$$setupUI$$$() {
         Masterpanel = new JPanel();
-        Masterpanel.setLayout(new GridLayoutManager(14, 3, new Insets(0, 0, 0, 0), -1, -1));
+        Masterpanel.setLayout(new GridLayoutManager(6, 3, new Insets(0, 0, 0, 0), -1, -1));
         mainpanel = new JPanel();
         mainpanel.setLayout(new GridLayoutManager(19, 3, new Insets(0, 0, 0, 0), -1, -1));
-        Masterpanel.add(mainpanel, new GridConstraints(2, 0, 9, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+        Masterpanel.add(mainpanel, new GridConstraints(2, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         mainpanel.setBorder(BorderFactory.createTitledBorder(""));
         fastQCAnalysisCheckBox = new JCheckBox();
         fastQCAnalysisCheckBox.setSelected(true);
@@ -933,7 +933,7 @@ public class EAGER {
         map.setMnemonic('P');
         map.setDisplayedMnemonicIndex(2);
         map.setToolTipText("This will actually determine whether you want your data to be mapped or not.");
-        mainpanel.add(map, new GridConstraints(8, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(map, new GridConstraints(8, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         coverage = new JCheckBox();
         coverage.setEnabled(false);
         coverage.setSelected(true);
@@ -944,7 +944,7 @@ public class EAGER {
         gatksnpcall.setSelected(false);
         gatksnpcall.setText("SNP Calling");
         gatksnpcall.setToolTipText("Select this and SNP Calling will be run in the pipeline, using the method available in the dropdown menu next to this checkbox.");
-        mainpanel.add(gatksnpcall, new GridConstraints(15, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(gatksnpcall, new GridConstraints(15, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         genotyper = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
         defaultComboBoxModel1.addElement("UnifiedGenotyper");
@@ -968,7 +968,7 @@ public class EAGER {
         VCF2DraftCheckBox.setMnemonic('V');
         VCF2DraftCheckBox.setDisplayedMnemonicIndex(0);
         VCF2DraftCheckBox.setToolTipText("Generate a draft genome with some filtering parameters set.");
-        mainpanel.add(VCF2DraftCheckBox, new GridConstraints(17, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(VCF2DraftCheckBox, new GridConstraints(17, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         advancedVCF2DraftButton = new JButton();
         advancedVCF2DraftButton.setText("Advanced");
         mainpanel.add(advancedVCF2DraftButton, new GridConstraints(17, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -976,7 +976,7 @@ public class EAGER {
         GATKSNPFilteringCheckBox.setSelected(false);
         GATKSNPFilteringCheckBox.setText("SNP Filtering");
         GATKSNPFilteringCheckBox.setToolTipText("Select this and set the min coverage and min quality that you want your variants to have in the resulting VCF file you created using the genotyper of your choice.");
-        mainpanel.add(GATKSNPFilteringCheckBox, new GridConstraints(16, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(GATKSNPFilteringCheckBox, new GridConstraints(16, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         SNPFilterButton = new JButton();
         SNPFilterButton.setText("Advanced");
         mainpanel.add(SNPFilterButton, new GridConstraints(16, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -987,26 +987,21 @@ public class EAGER {
         mainpanel.add(cpucores_textfield, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label1 = new JLabel();
         label1.setText("CPU Cores to be used");
-        mainpanel.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 16), null, 0, false));
         cleanUpBox = new JCheckBox();
         cleanUpBox.setEnabled(true);
         cleanUpBox.setSelected(true);
         cleanUpBox.setText("CleanUp");
         cleanUpBox.setToolTipText("Select this and redundant data files will be deleted. Redundant means, that only files are deleted that are still reproducible without the whole pipeline to rerun, e.g. we delete files to get rid unsorted BAM files (as the sorted BAM inherits the same data!).");
-        mainpanel.add(cleanUpBox, new GridConstraints(18, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(cleanUpBox, new GridConstraints(18, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setText("Memory in GB");
-        mainpanel.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 16), null, 0, false));
         maxmemory_textfield = new JTextField();
         maxmemory_textfield.setHorizontalAlignment(0);
         maxmemory_textfield.setText("32");
         maxmemory_textfield.setToolTipText("Choose the amount of memory you'd like to use with the pipeline. Do not choose more than you actually have, this might crash the pipeline!");
         mainpanel.add(maxmemory_textfield, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        merge = new JCheckBox();
-        merge.setSelected(true);
-        merge.setText("Clip and Merge");
-        merge.setToolTipText("Do you want to merge your reads, e.g. when having paired end reads with negative overlap?");
-        mainpanel.add(merge, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         qualityFilteringCheckBox = new JCheckBox();
         qualityFilteringCheckBox.setEnabled(true);
         qualityFilteringCheckBox.setSelected(true);
@@ -1035,10 +1030,10 @@ public class EAGER {
         checkbox_rmdup.setSelected(true);
         checkbox_rmdup.setText("Remove Duplicates");
         checkbox_rmdup.setToolTipText("This will determine whether you want to run duplicate removal on your data or not.");
-        mainpanel.add(checkbox_rmdup, new GridConstraints(10, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(checkbox_rmdup, new GridConstraints(10, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         selectall = new JButton();
         selectall.setText("Select / Deselect All");
-        mainpanel.add(selectall, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(selectall, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 32), null, 0, false));
         final JSeparator separator1 = new JSeparator();
         mainpanel.add(separator1, new GridConstraints(3, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         complexity = new JCheckBox();
@@ -1062,7 +1057,7 @@ public class EAGER {
         schmutzi_checkbox.setSelected(false);
         schmutzi_checkbox.setText("Contamination Estimation");
         schmutzi_checkbox.setToolTipText("Run contamination estimation using Schmutzi. ");
-        mainpanel.add(schmutzi_checkbox, new GridConstraints(12, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(schmutzi_checkbox, new GridConstraints(12, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         schmutzi_advanced_button = new JButton();
         schmutzi_advanced_button.setText("Advanced");
         mainpanel.add(schmutzi_advanced_button, new GridConstraints(12, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -1084,16 +1079,26 @@ public class EAGER {
         damage.setSelected(false);
         damage.setText("Damage Calculation");
         damage.setToolTipText("Calculates post mortem damage patterns.");
-        mainpanel.add(damage, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(damage, new GridConstraints(14, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         PMDtoolsCheckBox = new JCheckBox();
         PMDtoolsCheckBox.setEnabled(true);
         PMDtoolsCheckBox.setSelected(false);
         PMDtoolsCheckBox.setText("PMDtools");
         PMDtoolsCheckBox.setToolTipText("Likelihood framework to detect DNA sequences, which probably originate from modern day DNA contamination.  Only available for ancient samples.");
-        mainpanel.add(PMDtoolsCheckBox, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        mainpanel.add(PMDtoolsCheckBox, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(191, 20), null, 0, false));
         pmdtools_advanced_button = new JButton();
         pmdtools_advanced_button.setText("Advanced");
         mainpanel.add(pmdtools_advanced_button, new GridConstraints(11, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        merge_tool_combobox = new JComboBox();
+        final DefaultComboBoxModel defaultComboBoxModel5 = new DefaultComboBoxModel();
+        defaultComboBoxModel5.addElement("Clip&Merge");
+        defaultComboBoxModel5.addElement("AdapterRemoval");
+        merge_tool_combobox.setModel(defaultComboBoxModel5);
+        mainpanel.add(merge_tool_combobox, new GridConstraints(6, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        merge = new JCheckBox();
+        merge.setSelected(true);
+        merge.setText("Adapter RM / Merging");
+        mainpanel.add(merge, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         selectInputFqFilesButton = new JButton();
         selectInputFqFilesButton.setText("Select Input *.fq/*.fq.gz Files");
         selectInputFqFilesButton.setToolTipText("Please select your input FastQ files here, OR a folder containing your unzipped (!) FastQ files.");
@@ -1106,16 +1111,16 @@ public class EAGER {
         runReportGenerator.setSelected(true);
         runReportGenerator.setText("Create Report?");
         runReportGenerator.setToolTipText("Generates useful reports of your processed data.");
-        Masterpanel.add(runReportGenerator, new GridConstraints(11, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Masterpanel.add(runReportGenerator, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         RunButton = new JButton();
         RunButton.setText("Generate Config File");
         RunButton.setToolTipText("<html>\n<br>This will generate the EAGER config file required to process the data.</br>\n<br>This is inactive as long as you didn't select reference, input and output folders</br>\n</html>");
-        Masterpanel.add(RunButton, new GridConstraints(13, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Masterpanel.add(RunButton, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         aboutButton = new JButton();
         aboutButton.setText("About");
-        Masterpanel.add(aboutButton, new GridConstraints(13, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Masterpanel.add(aboutButton, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JSeparator separator2 = new JSeparator();
-        Masterpanel.add(separator2, new GridConstraints(12, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        Masterpanel.add(separator2, new GridConstraints(4, 0, 1, 3, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         output_button = new JButton();
         output_button.setText("Select output folder");
         output_button.setToolTipText("Select your output folder here. This can be a single folder for one sample or a general output folder for more than one sample.");
