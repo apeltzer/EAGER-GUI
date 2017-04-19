@@ -90,6 +90,7 @@ public class EAGER {
     private JComboBox damageSelection;
     private JCheckBox PMDtoolsCheckBox;
     private JButton pmdtools_advanced_button;
+    private JComboBox merge_tool_combobox;
     private JMenuBar jmenubar;
     private JMenu jmenu;
     public Image icon;
