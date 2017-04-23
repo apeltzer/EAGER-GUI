@@ -759,6 +759,7 @@ public class EAGER {
         communicator.setUsesystemtmpdir(useSystemTmpDirCheckBox.isSelected());
         communicator.setGatk_caller(genotyper.getSelectedItem().toString());
         communicator.setRun_fastqc(fastQCAnalysisCheckBox.isSelected());
+        communicator.setMerge_tool(merge_tool_combobox.getSelectedItem().toString());
         communicator.setRun_cleanup(cleanUpBox.isSelected());
         communicator.setRun_clipandmerge(merge.isSelected());
         communicator.setRun_complexityestimation(complexity.isSelected());
