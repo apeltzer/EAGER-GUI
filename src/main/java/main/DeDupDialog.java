@@ -1,11 +1,11 @@
 package main;
 
-import javax.swing.*;
 import IO.Communicator;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,11 +40,11 @@ public class DeDupDialog extends JDialog {
     }
 
     private void setValues(Communicator c) {
-        checkBox_allReadsAsMerged.setSelected(c.isRmdup_allReadsAsMerged());
+        checkBox_allReadsAsMerged.setSelected(c.isRmdup_all_reads_as_merged());
     }
 
     private void onOk(Communicator c) {
-        c.setRmdup_allReadsAsMerged(checkBox_allReadsAsMerged.isSelected());
+        c.setRmdup_all_reads_as_merged(checkBox_allReadsAsMerged.isSelected());
         dispose();
     }
 
