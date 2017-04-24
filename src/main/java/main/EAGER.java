@@ -761,7 +761,7 @@ public class EAGER {
         communicator.setRun_fastqc(fastQCAnalysisCheckBox.isSelected());
         communicator.setMerge_tool(merge_tool_combobox.getSelectedItem().toString());
 
-        if(merge_tool_combobox.getSelectedItem().toString().equals("AdapterRemoval")){
+        if (merge_tool_combobox.getSelectedItem().toString().equals("AdapterRemoval")) {
             communicator.setRmdup_all_reads_as_merged(true);
         }
 

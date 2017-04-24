@@ -1,5 +1,5 @@
 group 'com.uni-tuebingen.de.it.eager.eager-gui'
-version '1.92.31'
+version '1.92.32'
 
 
 buildscript {
