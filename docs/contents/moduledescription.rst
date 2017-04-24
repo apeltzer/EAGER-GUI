@@ -151,7 +151,7 @@ This module is used to configure contamination estimation using ``schmutzi``. In
 Coverage/Statistics Calculation
 -------------------------------
 
-This module handles coverage and other statistics calculation using QualiMap. In almost all cases, just leave this enabled.
+This module handles coverage and other statistics calculation using QualiMap. This is enabled by default and can not be turned off at all.
 
 
 MapDamage Calculation
