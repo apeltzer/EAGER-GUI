@@ -9,22 +9,31 @@ FastQC
 
 This module can not be configured and is utilized to gain first insight into a raw sequencing dataset to determine important basic statistics, such as for example GC content and average read lengths prior to modifying the data. This should be used whenever you want to analyze data coming from sequencing without having an idea if even sequencing was successful as it creates basic plots showing whether the data is suitable for further downstream analysis.
 
-Clip and Merge
---------------
+Adapter RM / Merging
+--------------------
 
-This is our in-house application for adapter clipping and read merging. Clicking on the *Advanced* button next to this application, will open up a configuration window as depicted below.
+Enables you to select either our in-house adapter clipping and read merging application Clip&Merge or AdapterRemoval v2.2+ for adapter removal and read merging.
+
+Clicking on the **Advanced** button next to this, you will get either the advanced configuration for Clip&Merge as depicted below:
 
 .. image:: images/modules/01_clipandmerge.png
     :width: 300px
     :height: 300px
     :align: center
 
-You can select forward and reverse read adapters here that are then subsequently clipped off your sequencing reads during analysis. Furthermore, Clip&Merge performs a base quality trimming of unmerged reads, filters out sequences falling below a certain length. If you don't want to merge your reads, you can also specify to only clip adapters without merging reads afterwards. Barcodes are supported too, you can specify to trim bases from both 3' and 5' ends as well in the application. Another feature is available to only include merged reads into downstream analysis. Unmerged reads are kept in separate files, one for forward and one for reverse reads, stored in the same folder than the merged ones but unused for further downstream analysis. 
+You can select forward and reverse read adapters here that are then subsequently clipped off your sequencing reads during analysis. Furthermore, Clip&Merge performs a base quality trimming of unmerged reads, filters out sequences falling below a certain length. Also, you can specify the minimum adapter overlap length you require (the number of bases of your specified adapter sequence required to overlap with your sequencing read). If you don't want to merge your reads, you can also specify to only clip adapters without merging reads afterwards. Barcodes are supported too, you can specify to trim bases from both 3' and 5' ends as well in the application. Another feature is available to only include merged reads into downstream analysis. Unmerged reads are kept in separate files, one for forward and one for reverse reads, stored in the same folder than the merged ones but unused for further downstream analysis.
 
 .. warning::
 
   Specifying wrong adapters, trimming too many bases here will result in poor analysis performance, so make sure beforehand which adapters to use in your analysis.
 
+
+In case you selected AdapterRemoval, you will be able to select basically the same criteria than for Clip&Merge. The **Advanced** setting will look like this in that case:
+
+.. image:: images/modules/01_adapterremoval.png
+    :width: 300px
+    :height: 300px
+    :align: center
 
 QualityFiltering
 ----------------
