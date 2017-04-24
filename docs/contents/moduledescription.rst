@@ -25,7 +25,7 @@ You can select forward and reverse read adapters here that are then subsequently
 
 .. warning::
 
-  Specifying wrong adapters, trimming too many bases here will result in poor analysis performance, so make sure beforehand which adapters to use in your analysis.
+  Specifying wrong adapters, trimming too many bases here will result in poor analysis performance, so make sure beforehand which adapters to use in your analysis. For single ended data, it is advisable to use AdapterRemoval v2, as it is more sensitive to very small adapter fragments.
 
 
 In case you selected AdapterRemoval, you will be able to select basically the same criteria than for Clip&Merge. The **Advanced** setting will look like this in that case:
@@ -34,6 +34,10 @@ In case you selected AdapterRemoval, you will be able to select basically the sa
     :width: 300px
     :height: 300px
     :align: center
+
+.. note::
+
+   It is completely up to you which adapter removal and merging procedure you'd like to use in your analysis. Recommendation: Use Clip&Merge for paired-end data with subsequent merging and AdapterRemoval for single-end data and paired-end data without read merging.
 
 QualityFiltering
 ----------------
