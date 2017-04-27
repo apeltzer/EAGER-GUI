@@ -92,4 +92,4 @@ In many cases you might already figure out what went wrong with just reading thi
 
 .. note::
 
-    If you send us an e-mail reporting an error/bug or just because you didn't find out yourself what might have went wrong, please always include the ''EAGER.log'' logfile. This is important for us to understand what might have gone wrong. 
+    If you send us an e-mail reporting an error/bug or just because you didn't find out yourself what might have went wrong, please always include the ''EAGER.log'' logfile. This is important for us to understand what might have gone wrong.
