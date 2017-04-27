@@ -83,3 +83,13 @@ This is not directly supported in the pipeline but there is a possibility to ach
 .. note:: 
 
     You need to select the same reference genome in the input selection to get proper statistics.
+
+I have an error and I don't know what to do
+-------------------------------------------
+
+A good start would be having a look at your ''EAGER.log'' logfile. This contains information about the commands causing potential errors, runtime and other important information. It helps us to verify whats going on even if you contact us directly.
+In many cases you might already figure out what went wrong with just reading this file!
+
+.. note::
+
+    If you send us an e-mail reporting an error/bug or just because you didn't find out yourself what might have went wrong, please always include the ''EAGER.log'' logfile. This is important for us to understand what might have gone wrong. 

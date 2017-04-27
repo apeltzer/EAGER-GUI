@@ -208,15 +208,15 @@ List of Tools tested with EAGER:
   * `EAGER-CLI (latest) <https://github.com/apeltzer/EAGER-CLI>`_
   * `FastX-Tools (v0.0.13) <http://hannonlab.cshl.edu/fastx_toolkit/>`_
   * `FastQC (v0.11.4) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
-  * `GATK (v3.6) <https://www.broadinstitute.org/gatk/>`_
+  * `GATK (v3.7+) <https://www.broadinstitute.org/gatk/>`_
   * `mapDamage (v2.0) <http://ginolhac.github.io/mapDamage/>`_
   * `MergedReadExtractor (latest) <https://github.com/apeltzer/MergedReadExtractor>`_
   * `MTNucRatioCalculator (latest) <https://github.com/apeltzer/MTNucRatioCalculator>`_
   * `Picard-Tools (v1.140) <http://broadinstitute.github.io/picard/>`_
-  * `Preseq (v2.0) <http://smithlabresearch.org/software/preseq/>`_
+  * `Preseq (v2.0+) <http://smithlabresearch.org/software/preseq/>`_
   * `QualiMap (v2.3) <http://qualimap.bioinfo.cipf.es/>`_
   * `ReportTable (latest) <https://github.com/apeltzer/ReportTable>`_
-  * `Samtools (v1.3.0) <http://www.htslib.org/>`_
+  * `Samtools (v1.4.0+) <http://www.htslib.org/>`_
   * `Stampy (current) <http://www.well.ox.ac.uk/project-stampy>`_
   * `Tabix (v1.3.0) <http://www.htslib.org/download/>`_
   * `VCF2Genome (latest) <https://github.com/apeltzer/VCF2Genome>`_
