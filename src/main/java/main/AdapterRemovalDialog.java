@@ -126,13 +126,13 @@ public class AdapterRemovalDialog extends JDialog {
         label1.setText("Minimum Base Quality");
         panel3.add(label1, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         minimum_base_quality_textfield = new JTextField();
-        minimum_base_quality_textfield.setText("30");
+        minimum_base_quality_textfield.setText("20");
         panel3.add(minimum_base_quality_textfield, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label2 = new JLabel();
         label2.setText("Minimum Sequence Length");
         panel3.add(label2, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         minimum_sequence_length_textfield = new JTextField();
-        minimum_sequence_length_textfield.setText("20");
+        minimum_sequence_length_textfield.setText("30");
         panel3.add(minimum_sequence_length_textfield, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         final JLabel label3 = new JLabel();
         label3.setText("Minimum Adapter Overlap");
