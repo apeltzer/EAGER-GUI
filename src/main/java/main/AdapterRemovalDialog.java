@@ -18,6 +18,7 @@ public class AdapterRemovalDialog extends JDialog {
     private JCheckBox performOnlyAdapterClippingCheckBox;
     private JTextField forward_adapter_textfield;
     private JTextField reverse_adapter_textfield;
+    private JCheckBox adapter_merged_only;
 
     public AdapterRemovalDialog(Communicator communicator) {
         setValues(communicator);
@@ -60,6 +61,7 @@ public class AdapterRemovalDialog extends JDialog {
         c.setQuality_readlength(Integer.parseInt(minimum_sequence_length_textfield.getText()));
         c.setMerge_only_clipping(performOnlyAdapterClippingCheckBox.isSelected());
         c.setMerge_min_adapter_overlap(Integer.parseInt(minimum_adapter_overlap_textfield.getText()));
+        c.setMerge_keep_only_merged(adapter_merged_only.isSelected());
         c.setMerge_tool("AdapterRemoval");
         dispose();
     }
@@ -88,6 +90,10 @@ public class AdapterRemovalDialog extends JDialog {
         if (c.getMerge_min_adapter_overlap() == 0) {
             this.minimum_adapter_overlap_textfield.setText(String.valueOf(c.getMerge_min_adapter_overlap()));
         }
+
+        if (c.isMerge_keep_only_merged()) {
+            this.adapter_merged_only.setSelected(c.isMerge_keep_only_merged());
+        }
     }
 
     {
@@ -106,10 +112,10 @@ public class AdapterRemovalDialog extends JDialog {
      */
     private void $$$setupUI$$$() {
         contentPane = new JPanel();
-        contentPane.setLayout(new GridLayoutManager(4, 1, new Insets(10, 10, 10, 10), -1, -1));
+        contentPane.setLayout(new GridLayoutManager(5, 1, new Insets(10, 10, 10, 10), -1, -1));
         final JPanel panel1 = new JPanel();
         panel1.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        contentPane.add(panel1, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
+        contentPane.add(panel1, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1, true, false));
         panel1.add(panel2, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
@@ -158,6 +164,10 @@ public class AdapterRemovalDialog extends JDialog {
         reverse_adapter_textfield = new JTextField();
         reverse_adapter_textfield.setText("AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT");
         panel4.add(reverse_adapter_textfield, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        adapter_merged_only = new JCheckBox();
+        adapter_merged_only.setSelected(true);
+        adapter_merged_only.setText("Keep merged only");
+        contentPane.add(adapter_merged_only, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
