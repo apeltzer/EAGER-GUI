@@ -165,6 +165,7 @@ public class AdapterRemovalDialog extends JDialog {
         reverse_adapter_textfield.setText("AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT");
         panel4.add(reverse_adapter_textfield, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         adapter_merged_only = new JCheckBox();
+        adapter_merged_only.setSelected(true);
         adapter_merged_only.setText("Keep merged only");
         contentPane.add(adapter_merged_only, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
