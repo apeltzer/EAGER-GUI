@@ -1097,8 +1097,8 @@ public class EAGER {
         mainpanel.add(pmdtools_advanced_button, new GridConstraints(11, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         merge_tool_combobox = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel5 = new DefaultComboBoxModel();
-        defaultComboBoxModel5.addElement("Clip&Merge");
         defaultComboBoxModel5.addElement("AdapterRemoval");
+        defaultComboBoxModel5.addElement("Clip&Merge");
         merge_tool_combobox.setModel(defaultComboBoxModel5);
         mainpanel.add(merge_tool_combobox, new GridConstraints(6, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         merge = new JCheckBox();
