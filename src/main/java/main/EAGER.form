@@ -383,8 +383,8 @@
             </constraints>
             <properties>
               <model>
-                <item value="Clip&amp;Merge"/>
                 <item value="AdapterRemoval"/>
+                <item value="Clip&amp;Merge"/>
               </model>
             </properties>
           </component>
