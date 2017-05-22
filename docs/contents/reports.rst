@@ -26,6 +26,10 @@ This is the number of raw reads after clipping (and merging if this has been app
 
 The number of merged reads, merged by Clip & Merge.
 
+# Reads not attempted to map
+----------------------------
+
+Only stated when using AdapterRemoval v2 to remove adapters and perform read merging. Pairs that could not be merged (e.g. having no negative insert) are stated here, but only if both partners occur (fw/rv). Singletons are still taken into the analysis.
 
 % merged reads
 --------------
