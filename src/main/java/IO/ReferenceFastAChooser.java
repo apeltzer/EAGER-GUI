@@ -50,7 +50,7 @@ public class ReferenceFastAChooser {
         ff = new FileFilter() {
             @Override
             public boolean accept(File file) {
-                return file.isDirectory() || file.getName().toLowerCase().endsWith(".fa") || file.getName().toLowerCase().endsWith(".fasta") | file.getName().toLowerCase().endsWith(".fas");
+                return file.isDirectory() || file.getName().toLowerCase().endsWith(".fa") || file.getName().toLowerCase().endsWith(".fasta") | file.getName().toLowerCase().endsWith(".fas") || file.getName().toLowerCase().endsWith(".fna");
             }
 
             @Override
