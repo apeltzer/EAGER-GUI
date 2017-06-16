@@ -191,7 +191,7 @@ After this, the following tools need to be installed by the user, ideally system
 
 .. note::
 
-  The EAGER-GUI, EAGER-CLI and all other components developed within the EAGER pipeline can be downloaded from their respective **Release** sections on GitHub as pre-compiled JAR files. You don't need to re-compile these applications manually. In case you want to, please use `IntelliJ IDE <http://jetbrains.com>`_ to do so.
+  The EAGER-GUI, EAGER-CLI and all other components developed within the EAGER pipeline can be downloaded from Bintray as pre-compiled JAR files. You don't need to re-compile these applications manually. In case you prefer to, please use `IntelliJ IDE <http://jetbrains.com>`_ to do so.
 
 List of Tools tested with EAGER:
 
