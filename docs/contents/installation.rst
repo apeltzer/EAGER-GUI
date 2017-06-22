@@ -191,15 +191,16 @@ After this, the following tools need to be installed by the user, ideally system
 
 .. note::
 
-  The EAGER-GUI, EAGER-CLI and all other components developed within the EAGER pipeline can be downloaded from their respective **Release** sections on GitHub as pre-compiled JAR files. You don't need to re-compile these applications manually. In case you want to, please use `IntelliJ IDE <http://jetbrains.com>`_ to do so.
+  The EAGER-GUI, EAGER-CLI and all other components developed within the EAGER pipeline can be downloaded from Bintray as pre-compiled JAR files. You don't need to re-compile these applications manually. In case you prefer to, please use `IntelliJ IDE <http://jetbrains.com>`_ to do so.
 
 List of Tools tested with EAGER:
 
   * `ANGSD(v0.910) <http://popgen.dk/wiki/index.php/ANGSD>`_
+  * `AdapterRemoval (v2.2.1) <https://github.com/MikkelSchubert/adapterremoval>`_
   * `BAM2TDF(v14) <http://genomeview.org/manual/Bam2tdf>`_
   * BGZip (depending on your linux distribution, you have this already installed)
-  * `Bowtie 2(v2.2.8) <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
-  * `BWA (v0.7.15) <https://sourceforge.net/projects/bio-bwa/>`_
+  * `Bowtie 2(v2+ <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_
+  * `BWA (v0.7.15+) <https://sourceforge.net/projects/bio-bwa/>`_
   * `CircularMapper(latest) <https://github.com/apeltzer/CircularMapper>`_
   * `Clip & Merge(latest) <https://github.com/apeltzer/ClipAndMerge>`_
   * `Schmutzi (latest) <https://github.com/grenaud/schmutzi>`_
@@ -209,10 +210,10 @@ List of Tools tested with EAGER:
   * `FastX-Tools (v0.0.13) <http://hannonlab.cshl.edu/fastx_toolkit/>`_
   * `FastQC (v0.11.4) <http://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_
   * `GATK (v3.7+) <https://www.broadinstitute.org/gatk/>`_
-  * `mapDamage (v2.0) <http://ginolhac.github.io/mapDamage/>`_
-  * `MergedReadExtractor (latest) <https://github.com/apeltzer/MergedReadExtractor>`_
+  * `LibraryComplexityPlotter (latest) <https://github.com/apeltzer/LibraryComplexityPlotter>`_
+  * `mapDamage (v2.0+) <http://ginolhac.github.io/mapDamage/>`_
   * `MTNucRatioCalculator (latest) <https://github.com/apeltzer/MTNucRatioCalculator>`_
-  * `Picard-Tools (v1.140) <http://broadinstitute.github.io/picard/>`_
+  * `Picard-Tools (v2+) <http://broadinstitute.github.io/picard/>`_
   * `Preseq (v2.0+) <http://smithlabresearch.org/software/preseq/>`_
   * `QualiMap (v2.3) <http://qualimap.bioinfo.cipf.es/>`_
   * `ReportTable (latest) <https://github.com/apeltzer/ReportTable>`_
