@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
  * To change this template use File | Settings | File Templates.
  */
 public class EAGER {
-    private final String EAGER_VERSION = "1.92.21";
+    private final String EAGER_VERSION = getEAGERVersion();
 
     private String filepath;
     private JCheckBox fastQCAnalysisCheckBox;
@@ -110,6 +110,7 @@ public class EAGER {
      */
     public static void main(String[] args) throws IOException {
         JFrame frame = new JFrame("EAGER");
+        System.out.println(EAGER.class.getPackage().getImplementationVersion());
         setWindowPosition(frame);
         EAGER eager = new EAGER();
         frame.setIconImage(eager.icon);
@@ -124,6 +125,7 @@ public class EAGER {
         eager.qualityFilteringCheckBox.setEnabled(false);
         eager.RunButton.setEnabled(false);
     }
+
 
     /**
      * Main method used to generate the EAGER GUI
@@ -903,6 +905,10 @@ public class EAGER {
             }
         }
         return tmp;
+    }
+
+    private String getEAGERVersion() {
+        return EAGER.class.getPackage().getImplementationVersion();
     }
 
     {
