@@ -19,9 +19,20 @@ paccache -r -k0
 #JDK8, BT2, BWA, Samtools, etc.
 
 pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome
-paccache -r -k0 #clean up again
+
+#Clean up intermediate files
+paccache -r -k0
+
 pacman -Sy --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat
+
+#Clean up intermediate files
+paccache -r -k0
+
 pacman -Sy --noconfirm --force bowtie2 picard-tools stampy angsd gatk schmutzi
+
+#Clean up intermediate files
+paccache -r -k0
+
 pacman -Sy --noconfirm --force eager-gui eager-cli
 
 #Create analysis mountpoint
