@@ -60,6 +60,7 @@ Running the GUI
 ^^^^^^^^^^^^^^^
 
 Now we can run the GUI for
+
 .. code-block:: bash
 
    singularity exec -B /path/to/your/data:/data /home/<username>/Downloads/apeltzer-EAGER-GUI-master.img eager
