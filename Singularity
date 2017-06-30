@@ -20,6 +20,7 @@ paccache -r -k0
 
 pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome
 paccache -r -k0 #clean up again
+
 pacman -Sy --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat
 pacman -Sy --noconfirm --force bowtie2 picard-tools stampy angsd
 pacman -Sy --noconfirm --force schmutzi eager-gui eager-cli gatk
