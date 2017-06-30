@@ -16,13 +16,13 @@ paccache -r -k0 #clean up
 #Oracle JDK7, BT2, BWA, Samtools, etc.
 #Install all the dependencies of my pipeline
 
-pacman -S --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome 
+pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome
 paccache -r -k0 #clean up again
-pacman -S --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat 
-pacman -S --noconfirm --force bowtie2 picard-tools stampy angsd 
-pacman -S --noconfirm --force schmutzi eager-gui eager-cli gatk
+pacman -Sy --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat
+pacman -Sy --noconfirm --force bowtie2 picard-tools stampy angsd
+pacman -Sy --noconfirm --force schmutzi eager-gui eager-cli gatk
 mkdir -p /data
-rm /var/cache/pacman/pkg/*
+paccache -r -k0 #clean up
 
 %files
 # Add GATK Licence to image to be consistent with Licencing Permission by Broad Institute
