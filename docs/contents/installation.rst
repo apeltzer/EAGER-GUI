@@ -45,16 +45,26 @@ In order to use this approach, you will need a running Linux operating system at
 
 First of all, install Singularity on your machine that you would like to use for the setup.
 To do this, follow the instructions from the authors `here <http://singularity.lbl.gov/install-linux>`_. There are installation instructions for OSX and Windows, too - but these will have some performance drawbacks.
-Once you have a working singularity installation, there is just two commands you will need to run for getting EAGER to work:
+Once you have a working singularity installation, there is just three commands you will need to run for getting EAGER to work:
+
+First of all, download the pipeline at a location where you want to run your analysis, e.g. ``/home/<username>/Downloads``. Switch to that directory and type this in the commandline:
+
+.. code-block:: bash
+
+   singularity pull shub://apeltzer/EAGER-GUI:master
+   #or in case that this did not work, run this:
+   singularity pull shub://1560
 
 
 Running the GUI
 ^^^^^^^^^^^^^^^
 
+Now we can run the GUI for
 .. code-block:: bash
 
-   singularity exec -B /path/to/your/data:/data shup://apeltzer/eager-gui eager
+   singularity exec -B /path/to/your/data:/data /home/<username>/Downloads/apeltzer-EAGER-GUI-master.img eager
    #/path/to/your/data = Path where you store RAW sequencing data, a reference genome in FastA format and the folder where you store your results in the end.
+   #/home/<username>/Downloads/apeltzer-EAGER-GUI-master.img is the name of the previously downloaded image file.
 
 This will open the EAGER graphical user interface (GUI), that is required for configuring the pipeline.
 Make sure to remember this path, as you will need it for the pipeline execution later on. Within the GUI, you can find your data in ``/data``. You can navigate there when opening input files, the reference genome or the results and should also not select any folders or files in other directories.
@@ -76,7 +86,8 @@ You can now run the actual analysis procedure with ``eagercli`` by issuing the f
 
 .. code-block:: bash
 
-   singularity exec -B /path/to/your/data:/data shup://apeltzer/eager-gui eagercli /data
+   singularity exec -B /path/to/your/data:/data  /home/<username>/Downloads/apeltzer-EAGER-GUI-master.img eagercli /data
+   #again, keep the same path to your data and specify the ".img" path as before.
 
 This will run the analysis procedure on your machine using the ``eagercli`` application inside the container.
 
