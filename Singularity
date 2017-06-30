@@ -3,25 +3,31 @@ From: finalduty/archlinux:daily
 
 %post
 
-echo "Server = http://mirror.de.leaseweb.net/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
-
+#Adding mirrors to pacman mirrorlist
 echo "Server = http://mirror.de.leaseweb.net/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist
 echo "[lambdait]" >> /etc/pacman.conf
 echo "SigLevel = Never" >> /etc/pacman.conf
 echo "Server = https://lambda.informatik.uni-tuebingen.de/repo/mypkgs/" >> /etc/pacman.conf
+
+#Installing basic dependencies
 pacman -Sy --noconfirm freetype2 ttf-dejavu git libcups mesa-libgl rsync strace r python2 gsl libxtst
-paccache -r -k0 #clean up
-#Install all the dependencies of my pipelin
-#Installing Required Packages
-#Oracle JDK7, BT2, BWA, Samtools, etc.
+
+#Clean up
+paccache -r -k0
+
 #Install all the dependencies of my pipeline
+#JDK8, BT2, BWA, Samtools, etc.
 
 pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome
 paccache -r -k0 #clean up again
 pacman -Sy --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat
 pacman -Sy --noconfirm --force bowtie2 picard-tools stampy angsd
 pacman -Sy --noconfirm --force schmutzi eager-gui eager-cli gatk
+
+#Create analysis mountpoint
 mkdir -p /data
+
+#Clean up
 paccache -r -k0 #clean up
 
 %files
