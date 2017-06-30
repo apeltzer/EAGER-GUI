@@ -8,7 +8,6 @@ echo "Server = http://mirror.de.leaseweb.net/archlinux/\$repo/os/\$arch" >> /etc
 echo "[lambdait]" >> /etc/pacman.conf
 echo "SigLevel = Never" >> /etc/pacman.conf
 echo "Server = https://lambda.informatik.uni-tuebingen.de/repo/mypkgs/" >> /etc/pacman.conf
-echo "#!/bin/bash\n pacman -Q eager-gui eager-cli gatk jdk dedup circularmapper clipandmerge fastqc preseq vcf2genome bwa mapdamage fastx_toolkit htslib eagerstat r eager-reportengine bowtie2 picard-tools stampy angsd schmutzi" >> /usr/bin/versions
 
 
 #Installing basic dependencies
