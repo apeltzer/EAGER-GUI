@@ -33,3 +33,16 @@ Contact me via GitHub or via e-Mail <alexander.peltzer@uni-tuebingen.de> for que
 
 
 Releases: The releases for this project can be found on [Bintray](https://bintray.com/apeltzer/EAGER/) or direct download from there [respectively](https://dl.bintray.com/apeltzer/EAGER/com/uni-tuebingen/de/it/eager/).
+
+
+
+## IMPORTANT LICENSING INFORMATION
+ 
+
+The GATK is licensed by the Broad Institute and is made available to academic users of the EAGER pipeline described at http://it.inf.uni-tuebingen.de/?page_id=161 for non-commercial research use only. The full text of the GATK license is available at https://www.broadinstitute.org/gatk/about/license.html. For more information about GATK, please visit the GATK website at https://www.broadinstitute.org.
+ 
+
+## GATK DOCUMENTATION RESOURCES AND SUPPORT
+ 
+
+General GATK documentation can be found at on the GATK website at http://www.broadinstitute.org/gatk/guide/. Users of this pipeline are welcome to ask GATK-related questions and report problems that are not specific to this pipeline in the GATK forum at http://gatkforums.broadinstitute.org/gatk. 
