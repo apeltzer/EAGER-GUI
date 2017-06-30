@@ -97,7 +97,16 @@ This will run the analysis procedure on your machine using the ``eagercli`` appl
    The results will be stored in the folder you selected in the configuration procedure. A good practice would be to have a separate folder inside your ``path/to/your/data`` just for this purpose.
 
 
+Reproducibility
+^^^^^^^^^^^^^^^
 
+An important feature of this Singularity based approach is, that you can rerun both configuration and analysis whenever you want it. Simply keep the downloaded "pulled" image file with your whole analysis and you can reproduce everything in the future. For your convenience, we even created a small script that can be used e.g. for a publication to state which versions of each tool were used to produce a result (!). You can see these by running
+
+.. code-block:: bash
+
+   singularity exec -B /path/to/your/data:/data /home/<username>/Downloads/apeltzer-EAGER-GUI-master.img versions
+
+This will produce a list of the used tools within the selected image that were used to produce a result. 
 
 
 
