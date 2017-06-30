@@ -52,8 +52,7 @@ First of all, download the pipeline at a location where you want to run your ana
 .. code-block:: bash
 
    singularity pull shub://apeltzer/EAGER-GUI:master
-   #or in case that this did not work, run this:
-   singularity pull shub://1560
+
 
 
 Running the GUI
