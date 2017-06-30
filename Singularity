@@ -46,7 +46,7 @@ paccache -r -k0 #clean up
 %files
 # Add GATK Licence to image to be consistent with Licencing Permission by Broad Institute
 GATKLicence.txt /usr/share/licenses/common/GATKLicence.txt
-runVersions.sh /usr/bin/runVersions
+runVersions.sh /usr/bin/versions
 
 %labels
 Maintainer	alexander.peltzer@uni-tuebingen.de
