@@ -19,7 +19,7 @@ paccache -r -k0
 #Install all the dependencies of my pipeline
 #JDK8, BT2, BWA, Samtools, etc.
 
-pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome
+pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fastqc preseq vcf2genome damageprofiler
 
 #Clean up intermediate files
 paccache -r -k0
@@ -50,4 +50,22 @@ runVersions.sh /usr/bin/versions
 %labels
 Maintainer	alexander.peltzer@uni-tuebingen.de
 Version	1.92
+
+%test
+
+bwa
+samtools
+mapDamage -h
+damageprofiler -h
+dedup -h
+clipandmerge -h
+fastqc -h
+vcf2genome -h
+qualimap -h
+ReportTable -h
+schmutzi -h
+bowtie2 -h
+eagercli
+picard -h
+gatk --help
 
