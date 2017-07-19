@@ -53,8 +53,7 @@ Version	1.92
 
 %test
 
-bwa
-samtools
+#cant test bwa and samtools unfortunately...
 mapDamage -h
 damageprofiler -h
 dedup -h
