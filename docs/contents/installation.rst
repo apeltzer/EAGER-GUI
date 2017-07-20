@@ -103,9 +103,9 @@ An important feature of this Singularity based approach is, that you can rerun b
 
 .. code-block:: bash
 
-   singularity exec -B /path/to/your/data:/data /home/<username>/Downloads/apeltzer-EAGER-GUI-master.img versions
+   singularity exec -B /path/to/your/data:/data /home/<username>/Downloads/apeltzer-EAGER-GUI-master.img eagerVersions utilized_versions.txt
 
-This will produce a list of the used tools within the selected image that were used to produce a result. 
+This will produce a textfile, containing information of the used tools within the selected image that were used to produce a result. Version tags of all the tools are then available in that specific textfile, too.
 
 
 
