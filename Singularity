@@ -24,7 +24,7 @@ pacman -Sy --noconfirm --force jdk bam2tdf dedup circularmapper clipandmerge fas
 #Clean up intermediate files
 paccache -r -k0
 
-pacman -Sy --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat eagerVersions
+pacman -Sy --noconfirm --force fastx_toolkit htslib qualimap mapdamage bwa eager-reportengine eagerstat eagerversions
 
 #Clean up intermediate files
 paccache -r -k0
