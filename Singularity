@@ -11,7 +11,7 @@ echo "Server = https://lambda.informatik.uni-tuebingen.de/repo/mypkgs/" >> /etc/
 
 
 #Installing basic dependencies
-pacman -Sy --noconfirm freetype2 ttf-dejavu git libcups mesa-libgl rsync strace r python2 gsl libxtst
+pacman -Sy --noconfirm freetype2 ttf-dejavu git libcups mesa-libgl rsync strace r python2 gsl libxtst intel-tbb
 
 #Clean up
 paccache -r -k0
@@ -59,7 +59,8 @@ samtools || true
 mapDamage -h
 damageprofiler -h
 dedup -h
-clipandmerge -h
+ClipAndMerge
+AdapterRemoval --version 
 fastqc -h
 vcf2genome -h
 qualimap -h
@@ -67,6 +68,6 @@ ReportTable -h
 schmutzi -h
 bowtie2 -h
 eagercli
-picard -h
-gatk --help
+picard || true
+gatk --version 
 
