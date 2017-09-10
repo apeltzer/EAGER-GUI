@@ -113,18 +113,14 @@ public class MergeScriptDialog extends JDialog {
         if (String.valueOf(c.getQuality_readlength()) != null) {
             this.mergescript_textfield_minsequencelength.setText(String.valueOf(c.getQuality_readlength()));
         }
-        if (String.valueOf(c.isMerge_only_clipping()) != null) {
-            this.performOnlyAdapterClippingCheckBox.setSelected(c.isMerge_only_clipping());
-        }
+        this.performOnlyAdapterClippingCheckBox.setSelected(c.isMerge_only_clipping());
         if ((String.valueOf(c.getMerge_barcode3p()) != null)) {
             this.barcode_3p_clip.setText(c.getMerge_barcode3p());
         }
         if ((String.valueOf(c.getMerge_barcode5p()) != null)) {
             this.barcode_5p_clip.setText(c.getMerge_barcode5p());
         }
-
         this.clipandmerge_mergedonly_checkbox.setSelected(c.isMerge_keep_only_merged());
-
     }
 
 
