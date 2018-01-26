@@ -5,12 +5,11 @@ jdk:
 script: gradle build
 env:
  - version=1.92.37
-
 deploy:
   provider: releases
   api_key:
     secure: rKz/Yh1WfnZjKexSAUXw7zmakfARlEprYE9+fv3gTxU5IX0ObToHv12F+bntyoxd7/De8M6IUYRYgfayKriz/EXKz6PHfsdrNaYtY6h5KnOvK7ynU590+A8KVotI7xC1M8UNYtg5TVA6QXW+KP+uCRIQPm19EtMk3s50HcbQyKa73Gkbu/lLQDbIZkXbUnFGVeVAUWnYWXTTHksnhOGNoRbRM0WFFRYmr49WBF9YB94ZScg9sFXh+aHL5/I9a5AvVWP7IKn4V19079e4HiINH86R6oXdLyIaPh81yRNEBQ9oZztKhtd/We9bRm10gLnzSZEUyce+LXpPIJ/cp4uS+gaZvivtXyxPBfxp6vmCXJaM+xoLF2GAJsRBENEQIRlNWpV2YXazwsVjkT2rnO0xUGDH9N7L+1Uly77QNBzJ+7OHax1KKVuc50aE+XTPoBq5L0gD/+ACuQpMHLcUs70tFcpb4qQtrh0R8Wnf7IZFnA9XNwWA4X5A3ejq4AaOyMtNvqbJgDlGuu5OD9GHAH0hTnjD68+f5ov+wzkQU4gjZwKSGYxHvpUd/TnLne1Wyvj36MaoeQsDPCnL6MxVAHs/j6KWF1bQnGIWkJldOM0N6zvd5p0OxQp+KtbbjfOyb/o9TZW8i68jwEcOvtiM3fV3nScD+zIx+Z3CBY6e9a0rhXk=
-  file: build/libs/EAGER-GUI-$VERSION.jar
+  file: build/libs/EAGER-GUI-$version.jar
   skip_cleanup: true
   on:
     tags: true
