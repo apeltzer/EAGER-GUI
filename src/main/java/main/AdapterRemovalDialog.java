@@ -19,6 +19,7 @@ public class AdapterRemovalDialog extends JDialog {
     private JTextField forward_adapter_textfield;
     private JTextField reverse_adapter_textfield;
     private JCheckBox adapter_merged_only;
+    private JCheckBox qualityBase64CheckBox;
 
     public AdapterRemovalDialog(Communicator communicator) {
         setValues(communicator);
@@ -62,6 +63,7 @@ public class AdapterRemovalDialog extends JDialog {
         c.setMerge_only_clipping(performOnlyAdapterClippingCheckBox.isSelected());
         c.setMerge_min_adapter_overlap(Integer.parseInt(minimum_adapter_overlap_textfield.getText()));
         c.setMerge_keep_only_merged(adapter_merged_only.isSelected());
+        c.setQualityBase64(qualityBase64CheckBox.isSelected());
         c.setMerge_tool("AdapterRemoval");
         dispose();
     }
@@ -89,6 +91,7 @@ public class AdapterRemovalDialog extends JDialog {
             this.minimum_adapter_overlap_textfield.setText(String.valueOf(c.getMerge_min_adapter_overlap()));
         }
         this.adapter_merged_only.setSelected(c.isMerge_keep_only_merged());
+        this.qualityBase64CheckBox.setSelected(c.isQualityBase64());
     }
 
     {
@@ -107,10 +110,10 @@ public class AdapterRemovalDialog extends JDialog {
      */
     private void $$$setupUI$$$() {
         contentPane = new JPanel();
-        contentPane.setLayout(new GridLayoutManager(5, 1, new Insets(10, 10, 10, 10), -1, -1));
+        contentPane.setLayout(new GridLayoutManager(6, 1, new Insets(10, 10, 10, 10), -1, -1));
         final JPanel panel1 = new JPanel();
         panel1.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
-        contentPane.add(panel1, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
+        contentPane.add(panel1, new GridConstraints(5, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, 1, null, null, null, 0, false));
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new GridLayoutManager(1, 2, new Insets(0, 0, 0, 0), -1, -1, true, false));
         panel1.add(panel2, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
@@ -163,6 +166,9 @@ public class AdapterRemovalDialog extends JDialog {
         adapter_merged_only.setSelected(false);
         adapter_merged_only.setText("Keep merged only");
         contentPane.add(adapter_merged_only, new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        qualityBase64CheckBox = new JCheckBox();
+        qualityBase64CheckBox.setText("Quality base 64");
+        contentPane.add(qualityBase64CheckBox, new GridConstraints(4, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
