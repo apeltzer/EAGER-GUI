@@ -3,7 +3,6 @@ This is the main project for the EAGER project, with links to some tutorials, su
 
 [![Build Status](https://travis-ci.org/apeltzer/EAGER-GUI.svg?branch=master)](https://travis-ci.org/apeltzer/EAGER-GUI)
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/291)
-[![codecov](https://codecov.io/gh/apeltzer/EAGER-GUI/branch/master/graph/badge.svg)](https://codecov.io/gh/apeltzer/EAGER-GUI)
 [ ![Download](https://api.bintray.com/packages/apeltzer/EAGER/EAGER-GUI/images/download.svg) ](https://bintray.com/apeltzer/EAGER/EAGER-GUI/_latestVersion)
 [![Documentation Status](https://readthedocs.org/projects/eager/badge/?version=latest)](http://eager.readthedocs.io/en/latest/?badge=latest)
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/EAGER-aDNA)
