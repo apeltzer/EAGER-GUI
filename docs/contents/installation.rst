@@ -51,7 +51,7 @@ First of all, download the pipeline at a location where you want to run your ana
 
 .. code-block:: bash
 
-   singularity pull shub://apeltzer/EAGER-GUI:master
+   singularity pull shub://apeltzer/EAGER-GUI
 
 
 
