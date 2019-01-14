@@ -7,6 +7,10 @@ This is the main project for the EAGER project, with links to some tutorials, su
 [![Documentation Status](https://readthedocs.org/projects/eager/badge/?version=latest)](http://eager.readthedocs.io/en/latest/?badge=latest)
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/EAGER-aDNA)
 
+There is a successor project on this: https://github.com/nf-core/EAGER2
+Check it out - not feature complete (yet!), but soon to be! 
+
+
 Documentation: <http://eager.readthedocs.org>
 
 FAQ: <http://eager.readthedocs.org/en/latest/contents/faq.html#faq>
