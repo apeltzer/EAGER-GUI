@@ -762,11 +762,6 @@ public class EAGER {
         communicator.setGatk_caller(genotyper.getSelectedItem().toString());
         communicator.setRun_fastqc(fastQCAnalysisCheckBox.isSelected());
         communicator.setMerge_tool(merge_tool_combobox.getSelectedItem().toString());
-
-        if (merge_tool_combobox.getSelectedItem().toString().equals("AdapterRemoval")) {
-            communicator.setRmdup_all_reads_as_merged(true);
-        }
-
         communicator.setRun_cleanup(cleanUpBox.isSelected());
         communicator.setRun_clipandmerge(merge.isSelected());
         communicator.setRun_complexityestimation(complexity.isSelected());
