@@ -1,3 +1,8 @@
+# DEPRECATED
+
+Please instead use https://github.com/nf-core/eager as EAGERv1 won't be developed any further.
+
+
 # EAGER-GUI
 This is the main project for the EAGER project, with links to some tutorials, subsequent tools and HowTos and a FAQ which will be updated once we get feedback from end users. Please use the different bug trackers for other tools than the actual pipeline, e.g. the Clip&Merge issue tracking if you encounter issues with the Clip&Merge application.
 
